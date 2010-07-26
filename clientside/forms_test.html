@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Forms, Alerts, Tooltips, Icons</title>
+	
+	<link rel="stylesheet" type="text/css" href="css/screen.css" />
+	<link rel="stylesheet" type="text/css" href="css/forms.css" />
+	<link rel="stylesheet" type="text/css" href="css/alerts.css" />
+	<link rel="stylesheet" type="text/css" href="css/library/SyntaxHighlighter.css" />
+	
+	<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="js/library/shCore.js"></script>
+	<script type="text/javascript" src="js/library/shBrushCss.js"></script>
+	<script type="text/javascript" src="js/library/shBrushJScript.js"></script>
+	<script type="text/javascript" src="js/library/shBrushPhp.js"></script>
+
+	<style>
+		#wrapper {
+			font-family:"Myriad Pro",Helvetica;
+			font-size: 16px;
+			width: 600px;
+			margin: 20px auto;
+		}
+	</style>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			dp.SyntaxHighlighter.ClipboardSwf = 'js/library/clipboard.swf';
+		    dp.SyntaxHighlighter.HighlightAll('code');
+		
+			jQuery.fn.simplehints = function() {
+				return this.each(function() {
+					var $this = $(this);
+					
+					if ($this.attr('value').length == 0) 
+						$this.attr('value', $this.attr('title'));
+							
+					$(this).focus(function () {
+						if ($this.attr('value') == $this.attr('title'))	
+							$(this).get(0).setSelectionRange(0,0);
+					}).keypress(function() {
+						if ($this.attr('value') == $this.attr('title') && $this.attr('type') != 'select-one')
+							$this.attr('value', '').addClass("bold");
+					}).change(function() {
+						if ($this.attr('value') != $this.attr('title'))
+							$this.addClass("bold");
+						if ($this.attr('value') == $this.attr('title'))
+							$this.removeClass("bold");
+					}).blur(function() {
+						if ($this.attr('value') == '')
+							$this.attr('value', $this.attr('title')).removeClass("bold");
+					}).parents('form').submit(function(e) {
+						if ($this.attr('value') == $this.attr('title'))
+							$this.attr('value', '');
+					});
+				});
+			};
+			
+			$(this).find('form .hint').simplehints();
+		});
+	</script>
+</head>
+
+<body>
+	<div id="wrapper">
+
+		<div id="header">
+			
+		</div>
+
+		<div id="content">
+			<h1>Simple Hints</h1>
+
+			<p>A clone of the <a href="http://www.me.com/">MobileMe</a> login form without the use of LABELS</p>
+			
+			<pre name="code" class="jscript">
+				$(document).ready(function(){
+					jQuery.fn.simplehints = function() {
+						return this.each(function() {
+							var $this = $(this);
+
+							if ($this.attr('value').length == 0) 
+								$this.attr('value', $this.attr('title'));
+
+							$(this).focus(function () {
+								if ($this.attr('value') == $this.attr('title'))	
+									$(this).get(0).setSelectionRange(0,0);
+							}).keypress(function() {
+								if ($this.attr('value') == $this.attr('title') && $this.attr('type') != 'select-one')
+									$this.attr('value', '').addClass("bold");
+							}).change(function() {
+								if ($this.attr('value') != $this.attr('title'))
+									$this.addClass("bold");
+								if ($this.attr('value') == $this.attr('title'))
+									$this.removeClass("bold");
+							}).blur(function() {
+								if ($this.attr('value') == '')
+									$this.attr('value', $this.attr('title')).removeClass("bold");
+							}).parents('form').submit(function(e) {
+								if ($this.attr('value') == $this.attr('title'))
+									$this.attr('value', '');
+							});
+						});
+					};
+
+					$(this).find('form .hint').simplehints();
+				});
+			</pre>
+			<form method="post" action="" id="" enctype="multipart/form-data" autocomplete="off">
+
+				<div style="width: 100%;">
+					<div class="message" style="margin: 0 18px 0 0;"><div id="alert"></div></div>
+
+					<span class="float_left" style="width: 45%;">
+						<input type="text" name="fname" class="input wide hint" title="First Name" value="" tabindex="1" />
+						<input type="text" name="email" class="input wide hint" title="Email" value="" tabindex="3" />
+					</span>
+
+					<span class="float_left" style="margin-left: 8px; padding-left: 20px;  width: 50%">
+						<input type="text" name="lname" class="input wide hint" title="Last Name" value="" tabindex="2" />
+						<input type="text" name="phone" class="input wide hint" title="Phone Number" value="" tabindex="4" />
+					</span>
+					<div class="clearboth"></div>
+					
+					<input type="text" id="email" name="email" class="input full hint" title="Email" value=""/>
+					<div class="clear"></div>
+
+					<input type="text" id="phone" name="phone" class="input full hint" title="Phone" value=""/>
+					<div class="clear"></div>
+
+					<select id="discipline" name="discipline" class="select full hint" title="Discipline">
+						<option value="Discipline">Discipline</option>
+						<option value="COTA">COTA</option>
+						<option value="OT">OT</option>
+						<option value="OTA">OTA</option>
+						<option value="PT">PT</option>
+						<option value="PTA">PTA</option>
+						<option value="SLP">SLP</option>
+						<option value="SLPA">SLPA</option>
+					</select>
+					<div class="clear"></div>
+					
+					<p style="margin-top: 20px;">What types of settings (check all that apply)?</p>
+					<p style="font-size: 12px; margin-bottom: 20px;">
+					<input type="checkbox" name="setting[]" tabindex="9" value="Hospitals/Acute Care (LTAC/Long Term Care)"> Hospitals/Acute Care (LTAC/Long Term Care)<br />
+					<input type="checkbox" name="setting[]" tabindex="10" value="Skilled Nursing Facilities/Nursing Homes/Assisted Living Facilities"> Skilled Nursing Facilities/Nursing Homes/Assisted Living Facilities<br />
+					<input type="checkbox" name="setting[]" tabindex="11" value="Outpatient Clinics"> Outpatient Clinics<br />
+					<input type="checkbox" name="setting[]" tabindex="12" value="Home Health"> Home Health<br />
+					<input type="checkbox" name="setting[]" tabindex="13" value="Schools"> Schools<br />
+					</p>
+
+					What disciplines are used at the facility (check all that apply)?<br />
+					<p style="font-size: 12px; margin-bottom: 20px;">
+					<input type="checkbox" name="facility[]" tabindex="14" value="PT"> PT<br />
+					<input type="checkbox" name="facility[]" tabindex="15" value="PTA"> PTA<br />
+					<input type="checkbox" name="facility[]" tabindex="16" value="OT"> OT<br />
+					<input type="checkbox" name="facility[]" tabindex="17" value="OTA"> OTA<br />
+					<input type="checkbox" name="facility[]" tabindex="18" value="SLP"> SLP<br />
+					</p>
+
+					Are you currently using contract therapists?<br />
+					<p style="font-size: 12px;">
+					<input type="radio" name="current_contract" value="Yes" tabindex="19"> Yes
+					<input type="radio" name="current_contract" value="No" tabindex="20"> No<br />
+					</p>
+
+					<div class="clear"></div>
+					<textarea id="message" name="message" class="textarea full hint" title="Questions or Comments"></textarea>
+				</div>
+
+				<div class="clear">&nbsp;</div>
+				<input type="submit" name="submit" class="button-primary" value="Submit Contact Form" />
+			</form>
+		</div>
+
+		<div id="footer">
+			
+		</div>
+
+	</div>
+
+</body>
+</html>
