@@ -1,0 +1,155 @@
+/* @group Table Sorter */
+
+table.tablesorter {
+	border-collapse: collapse;
+}
+
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+	text-align: left;
+}
+
+table.tablesorter thead tr .header {
+	cursor: pointer;
+}
+
+table.tablesorter tbody td {
+	
+}
+
+table.tablesorter tbody tr.even td {
+	
+}
+
+table.tablesorter tbody tr.odd td {
+	background-color: #F9F9F9;
+}
+
+table.tablesorter tbody tr:hover td, table.tablesorter tbody tr:hover th {
+	background-color: #FFFFCF;
+	color: #000;
+	cursor: pointer;
+}
+
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(images/asc.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+}
+
+table.tablesorter thead tr .headerSortDown {
+	background-image: url(images/desc.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+}
+
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+	background-color: #4c4c4c;
+	color: #fff;
+}
+
+table.tablesorter thead tr .headerSortDown:first-child {
+	-moz-border-radius: 5px 0 0 0;
+	-webkit-border-radius: 5px 0 0 0;
+}
+
+table.tablesorter thead tr .headerSortUp:first-child {
+	-moz-border-radius: 5px 0 0 0;
+	-webkit-border-radius: 5px 0 0 0;
+}
+
+/* @end */
+
+/* @group Table Style */
+
+.hastable table {
+	background: #fff;
+	width: 100%;
+}
+
+.hastable thead td, .hastable thead th {
+	background: #dfdfdf url(images/gray-grad.png) repeat-x scroll left top;
+	font-weight: bold;
+	padding: 10px 6px;
+	text-align: center;
+}
+
+.hastable thead th:first-child {
+	-moz-border-radius-topleft: 5px;
+	-webkit-border-top-left-radius: 5px;
+}
+
+.hastable thead th:last-child {
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-right-radius: 5px;
+}
+
+.hastable tr td {
+	text-align: left;
+	vertical-align: top;
+	padding: 8px;
+	color: #616161;
+}
+
+.hastable td:first-child {
+	border-left: 1px solid #dedede;
+}
+
+.hastable td:last-child {
+	border-right: 1px solid #dedede;
+}
+
+.hastable th, .hastable td {
+	border-bottom: 1px solid #dedede;
+}
+
+.hastable tbody th td {
+	padding: 8px 8px;
+	text-align: left;
+}
+
+.hastable tbody tr.alt td {
+	color: #464646;
+}
+
+.hastable tbody tr.alt td, .hastable tbody tr.alt th {
+	background-color: #f5f5f5;
+}
+
+.hastable tbody tr:hover td, .hastable tbody tr:hover th {
+	background-color: #FFFFCF;
+}
+
+/* @end */
+
+/* @group Row Actions */
+
+.row-actions {
+	visibility: hidden;
+	padding-top: 10px;
+	font-size: 11px;
+}
+
+.hastable tr:hover .row-actions {
+	visibility: visible;
+}
+
+.row-actions a:hover {
+	color: #D54E21 !important;
+}
+
+a.edit {
+	padding-left: 17px;
+	background: url(/images/icons/user_edit.png) no-repeat left;
+}
+
+a.delete {
+	padding-left: 17px;
+	background: url(/images/icons/trash.png) no-repeat left;
+}
+
+a.edit:hover, a.delete:hover {
+	text-decoration: underline;
+	color: #0073EA;
+}
+
+/* @end */

@@ -1,0 +1,132 @@
+/* @group Creative Commons License
+----------------------------------------*/
+div#license {
+	position: absolute;
+	right: 0; 
+	bottom: 0;
+	display: none;
+	
+}
+
+/* @end */
+
+/* @group Default Elements
+----------------------------------------*/
+body {
+	background: #DDF;
+}
+
+body, p, td, th, li {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 1.5em;
+	color: #000000;
+}
+
+p		{margin:0 0 20px 0;}
+p.last	{margin: 0;}
+strong	{font-weight:bold;}
+em		{font-style:italic;}
+
+blockquote {
+	margin: 0 0 18px 18px; 
+	color:#666666; 
+	font-style: italic;
+}
+
+a:link, a:visited {
+	color:#B1DA67;
+}
+
+a:hover, a:active {
+	color:#5C8127;
+	text-decoration:none;
+}
+
+h1 {
+	font-size:36px;
+}
+
+h2 {
+	font-size:30px;
+	margin: 20px 0;
+	color: #222; 
+	/*text-shadow: 0px 2px 3px #555;*/
+	display: inline-block;
+}
+
+h3 {
+	font-size:24px;
+}
+
+h4 {
+	font-size:16px;
+}
+
+h5 {
+	font-size:12px;
+}
+
+h6 {
+	font-size:10px;
+}
+/* @end */
+
+/* @group Layout 
+----------------------------------------*/
+#header {
+	text-align: center;
+	height: 100px;
+	margin-bottom: 20px;
+	padding-top: 20px;
+}
+
+#navigation {
+	background: #AAD;
+	margin: 0 0 20px 0;
+	padding: .5em;
+}
+
+#navigation li {
+	background: #AAD;
+	display: inline;
+	margin: 0 20px;
+}
+
+#content {
+
+}
+
+#sidebar {
+	background: #FDD;
+}
+
+#footer {
+	text-align: center;
+	font-weight: bold;
+}
+
+#header, #footer {
+	background: #CCE;
+}
+/* @end */
+
+
+/* @group Typography 
+----------------------------------------*/
+#figure p {
+	float: right;
+	width: 150px;
+	height: 200px;
+	margin: .5em;
+	padding: .5em;
+	background: #000;
+	color: white;
+}
+/* @end */
+
+/* @group Disqus Module */
+#disqus_thread {
+	margin: .5em;
+}
+/* @end */

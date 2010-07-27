@@ -1,0 +1,23 @@
+img	{
+	border: 0;
+}
+input[type="file"],input[type="button"],input[type="submit"],input[type="reset"] {
+	border-width: 1px;
+	border-style: solid;
+	-moz-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+}
+
+select option {
+	padding: 2px;
+}
+
+p,ul,ol,blockquote,input,select {
+	font-size: 12px;
+}
+
+div#navigation {
+	display: none !important;
+}
