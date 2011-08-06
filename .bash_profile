@@ -10,8 +10,8 @@ alias :::='cd ../../..'
 alias rm='rm -i'
 alias ll='ls -lah'
 
-alias get-current-branch="git branch 2>/dev/null | grep '^*' | colrm 1 2"
-alias get-current-color="if [[ \$(get-current-branch) == \"master\" ]] ; then echo \"1;33m\" ; else echo \"0m\" ; fi"
+# alias get-current-branch="git branch 2>/dev/null | grep '^*' | colrm 1 2"
+# alias get-current-color="if [[ \$(get-current-branch) == \"master\" ]] ; then echo \"1;33m\" ; else echo \"0m\" ; fi"
 
 if [ $(uname) = 'Linux' ]; then
 unalias ls
@@ -45,7 +45,7 @@ if [ "$SHELL" = "/bin/bash" ]; then
   
   #include the current git branch in the prompt (source http://gist.github.com/168835 )
   #I added a bright yellow color if on the master branch
-  export PS1="\\W:\[\033[\$(get-current-color)\]\$(get-current-branch)\\[\033[0m\]\$ "
+  # export PS1="\\W:\[\033[\$(get-current-color)\]\$(get-current-branch)\\[\033[0m\]\$ "
 fi
 
 ########## Git ###################
@@ -58,11 +58,24 @@ alias gd='git diff | $EDITOR'
 alias ga='git add'
 alias gl='git log'
 
-########## Misc ###################
-# general path munging
+
+########## Colors ###################
+# http://www.blaenkdenum.com/2009/07/my-mac-os-x-terminal/
+# export PS1="\u\[$(tput setaf 2)\]@\[$(tput sgr0)\]\[$(tput setaf 2)\]\[$(tput sgr0)\]\h:[\w] \[$(tput setaf 2)\]$\[$(tput sgr0)\] "
+# export LSCOLORS="gxfxcxdxbxegedabagacad"
+# export PS1="\u@\d:"
+# export CLICOLOR=1;
+# export PS1="\[\033[1;34m\][\$(date +%H%M)][\u@\h:\w]$\[\033[0m\] "
+
+########## Paths ###################
+export PATH=$PATH:
+export PATH=$PATH:/usr/local/bin:/opt/local/bin:/opt/bin:~/bin
 PATH=${PATH}:~/bin
 PATH=${PATH}:/usr/local/bin
 
 ########## X11 ###################
 export DISPLAY=:0.0
 PATH=${PATH}:/usr/X11R6/bin
+
+
+
