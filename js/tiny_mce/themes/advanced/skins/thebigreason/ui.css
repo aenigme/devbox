@@ -20,7 +20,7 @@
 .thebigreasonSkin table.mceLayout tr.mceFirst td {border-top:1px solid #CCC}
 .thebigreasonSkin table.mceLayout tr.mceLast td {border-bottom:1px solid #CCC;background:url('img/toolbarbg.png') center repeat-x;}
 .thebigreasonSkin table.mceToolbar, .thebigreasonSkin tr.mceFirst .mceToolbar tr td, .thebigreasonSkin tr.mceLast .mceToolbar tr td {border:0; margin:0; padding:0;}
-.thebigreasonSkin td.mceToolbar {padding-top:1px; vertical-align:top;background:url('img/toolbarbg.png') center repeat-x;}
+.thebigreasonSkin td.mceToolbar {padding-top:1px; vertical-align:top;background: #efefef}
 .thebigreasonSkin .mceIframeContainer {border-top:1px solid #CCC; border-bottom:1px solid #CCC}
 .thebigreasonSkin .mceStatusbar {font:11px'Lucida Grande',Helvetica,Arial,sans-serif; overflow:visible; color:#666; display:block; height:20px}
 .thebigreasonSkin .mceStatusbar div {float:left; margin:3px 0 0 4px; color:#666;}
