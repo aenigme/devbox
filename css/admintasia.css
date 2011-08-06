@@ -607,6 +607,26 @@ ul#icons span.ui-icon {
 	
 /* @group Pagination */
 
+.pager_container {
+	padding: 10px;
+}
+
+.pagination a, .pagination strong {
+	padding: 4px 6px 4px 6px;
+}
+
+.pager_details {
+	float: right;
+	margin-top: -22px;
+	line-height: 16px;
+}
+
+#phonebook_pager_tail .pager_details {
+	position: relative;
+	margin: 0 0 0 auto;
+	
+}
+
 .pagination li a {
 	padding:3px 6px 2px;
 	display:block;
@@ -647,6 +667,26 @@ a.btn span.ui-icon {
 }*/
 
 button { float: right; margin: .5em .4em .5em 0; cursor: pointer; padding: .2em .6em .3em .6em; line-height: 1.4em; width:auto; overflow:visible; }
+
+/* @end */
+
+/* @group Ordered and Unordered Lists */
+
+ul.checklist {
+	list-style:none outside none;
+	margin:0 -10px 0 0;
+	padding:0;
+	width:190px;
+}
+
+ul.checklist li {
+	background:url("/images/icons/bullet-a.gif") no-repeat scroll 0 4px transparent;
+	color:#33749F;
+	font-weight:bold;
+	text-shadow:0 1px 1px rgba(255, 255, 255, 0.5);
+	padding:0 0 0 20px;
+	line-height: 18px;
+}
 
 /* @end */
 	
@@ -903,7 +943,7 @@ button { float: right; margin: .5em .4em .5em 0; cursor: pointer; padding: .2em 
 
 #nav-site {
 	/*background: transparent url(behance/background.png) repeat;*/
-	font-family: “Trebuchet MS”, Helvetica, “Helvetica Neue”, Arial, sans-serif;
+	font-family: "Trebuchet MS", Helvetica, "Helvetica Neue", Arial, sans-serif;
 	color: #fff;
 	position: relative;
 	height: 48px;
@@ -949,14 +989,14 @@ button { float: right; margin: .5em .4em .5em 0; cursor: pointer; padding: .2em 
 	font-size: 10px;
 	font-weight: 700;
 	padding: 4px;
-	width: 60px;
+	width: 75px;
 	display: block;
 	text-align: center;
 	margin-bottom: 4px;
 }
 
 #nav-site .tab strong {
-	font-family: “Impact”, Charcoal, sans-serif;
+	/*font-family: "Impact", Charcoal, sans-serif;*/
 	font-weight: 700;
 }
 
@@ -1062,4 +1102,11 @@ button { float: right; margin: .5em .4em .5em 0; cursor: pointer; padding: .2em 
 
 /* @end */
 
+/* @end */
+
+/* @group Misc */
+
+p {
+	margin-bottom: 10px;
+}
 /* @end */

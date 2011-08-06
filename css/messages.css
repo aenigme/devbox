@@ -208,6 +208,64 @@
 }
 /* @end */
 
+
+/* @group Content Box*/
+
+.system_messages .content_box{
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	background: #fff;
+	border: #d4d4d4 solid 1px;
+	margin-bottom: 10px;
+	height: 50px;
+}
+
+.system_messages .content_box .cont {
+	padding: 4px 8px 6px;
+	-moz-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+	border-top: #000 solid 0px !important;
+	font-size: 0.9em;
+	line-height: 1.7em;
+	margin-top: 10px;
+}
+
+.system_messages .warning {
+	background: #FFF6BF;
+	border: 1px solid #FDD845;
+}
+
+.system_messages .error {
+	background: #F9E5E6 url("/images/icons/alerts/error.png") 5px 50% no-repeat;
+	border:1px solid #E8AAAD;
+	color:#B50007;
+	padding: 0 0 0 55px;
+}
+
+.system_messages .warning {
+	background: #F9F9E5 url("/images/icons/alerts/warning.png") 5px 50% no-repeat;
+	border:1px solid #E8E3AA;
+	color:#828400;
+	padding: 0 0 0 55px;
+}
+
+.system_messages.tip {
+	background: #E5ECF9 url("/images/icons/alerts/info.png") 5px 50% no-repeat;
+	border:1px solid #AAC6E8;
+	color:#0055B5;
+	padding: 0 0 0 55px;
+}
+
+.system_messages .success {
+	background: #E9F9E5 url("/images/icons/alerts/success.png") 5px 50% no-repeat;
+	border:1px solid #B4E8AA;
+	color:#1C8400;
+	padding: 0 0 0 55px;
+}
+
+/* @end */
+
 /* @group message box chethstudios */
 
 
@@ -315,3 +373,48 @@ background-image:url(&#39;http://1.bp.blogspot.com/_5rlxf3T9Z9U/SsIXiIlQU2I/AAAA
 	margin-right: 10px;
 }
 /* @end */
+
+.tooltip, .tooltip_x, .required {
+	margin-left: 6px;
+	margin-top: 14px;
+	float: left;
+	cursor: pointer;
+	position: relative;
+}
+
+.tooltip_x {
+	cursor: default;
+}
+
+.tooltip img, .tooltip_x img {
+	border: none !important;
+	background: none !important;
+	position: relative;
+	padding: 0 !important;
+}
+
+.required {
+	width: 16px;
+	height: 16px;
+	background: url(/images/icons/required.png) no-repeat;
+}
+
+span.empty {
+	background: none;
+}
+
+.fail {
+	width: 16px;
+	height: 16px;
+	background: url(/images/icons/required.png) no-repeat;
+	margin: 14px 0 0 6px;
+	position: absolute;
+	float: none;
+}
+
+.fail img {
+	border: none !important;
+	background: none !important;
+	margin: -5px 0 0 -5px;
+}
+

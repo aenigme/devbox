@@ -5,7 +5,6 @@ div#license {
 	right: 0; 
 	bottom: 0;
 	display: none;
-	
 }
 
 /* @end */
@@ -72,9 +71,9 @@ h6 {
 }
 /* @end */
 
-/* @group Layout 
+/* @group Tpl Layout 
 ----------------------------------------*/
-#header {
+/*#header {
 	text-align: center;
 	height: 100px;
 	margin-bottom: 20px;
@@ -108,9 +107,45 @@ h6 {
 
 #header, #footer {
 	background: #CCE;
-}
+}*/
 /* @end */
 
+/* @group Comments 
+----------------------------------------*/
+
+ul.comment_list li {
+	border-bottom:1px solid #bbb;
+	margin:8px 0 8px 0px;
+	padding:20px 0 5px;
+	clear: both;
+}
+
+ul.comment_list li .gravatar {
+	width: 80px;
+	height: 80px;
+	border: 4px solid #fff;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 10px;
+}
+
+ul.comment_list li .gravatar a {
+	width: 80px;
+	height: 80px;
+	display: block;
+	background: transparent;
+}
+
+ul.comment_list li .author {
+	font-weight: 700;
+}
+
+ul.comment_list li .date {
+	font-size: 10px; 
+	color: #555;
+}
+
+/* @end */
 
 /* @group Typography 
 ----------------------------------------*/

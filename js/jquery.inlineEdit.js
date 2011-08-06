@@ -204,47 +204,59 @@ $.inlineEdit = function(urls, options){
 	{
 		linkClicked = true;
 		
-		confirm("Are you sure you wish to delete this record?", function () {
-		
-			$('.editFieldSaveControllers > button, .editField').attr('disabled', 'disabled').html('Removing...');
-		
-			var $td = $('.editField').eq(0).parents('.editableSingle, .editableMulti .editableSelect');
-			var url = editableUrls.remove;
-			var id = options.getId($td);
-		
-			$.ajax({
-				url: url + id,
-				type: 'POST',
-				success: function(msg){
-					$('.editField').each(function(){
-						var $td = $(this).parents('.editableSingle, .editableMulti, .editableSelect');
-					
-						if (msg == 1) {
-							if (options.animate) {
-								$td.slideUp(500, function(){
-									$(this).remove();
-								});
-							} else {
-								$td.remove();
-							}
-						} else {
-							removeEditField($td, getInitialValue($td), false, options.colors.error);
+		AttentionBox.showMessage('Are you sure you wish to delete this record?',
+		{
+			buttons : 
+			[
+				{ caption : "Cancel", cancel: false },
+				{ caption : "Delete" }
+			],
+			callback: function(action)
+			{	
+				if (action == "Delete")
+				{
+					$('.editFieldSaveControllers > button, .editField').attr('disabled', 'disabled').html('Removing...');
+
+					var $td = $('.editField').eq(0).parents('.editableSingle, .editableMulti .editableSelect');
+					var url = editableUrls.remove;
+					var id = options.getId($td);
+
+					$.ajax({
+						url: url + id + '/',
+						type: 'POST',
+						success: function(msg){
+							$('.editField').each(function(){
+								var $td = $(this).parents('.editableSingle, .editableMulti, .editableSelect');
+
+								if (msg == 1) {
+									if (options.animate) {
+										$td.slideUp(500, function(){
+											$(this).remove();
+										});
+									} else {
+										$td.remove();
+									}
+								} else {
+									removeEditField($td, getInitialValue($td), false, options.colors.error);
+								}
+							});
+
+							options.afterRemove({
+								success: msg == 1,
+								id: id
+							});
+						},
+						error: function(){
+							$('.editField').each(function(){
+								var $td = $(this).parents('.editableSingle, .editableMulti, .editableSelect');
+								removeEditField($td, getInitialValue($td), false, options.colors.error);
+							});
 						}
 					});
-				
-					options.afterRemove({
-						success: msg == 1,
-						id: id
-					});
-				},
-				error: function(){
-					$('.editField').each(function(){
-						var $td = $(this).parents('.editableSingle, .editableMulti, .editableSelect');
-						removeEditField($td, getInitialValue($td), false, options.colors.error);
-					});
 				}
-			});
+			}
 		});
+
 	}
 	
 	function removeEditField($td, value, animateColor, fromColor)
@@ -317,7 +329,7 @@ $.inlineEdit = function(urls, options){
 			var color = options.colors.standard;
 			
 			$.ajax({
-				url: url + id,
+				url: url + id + '/',
 				data: {data: value},
 				type: 'POST',
 				success: function(msg){

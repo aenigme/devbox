@@ -67,10 +67,10 @@ form li:after, form li div:after{
 	border-color: #298cba !important;
 	text-shadow: rgba(255,255,255,1) 0 1px 0;
 	text-shadow: rgba(0,0,0,0.3) 0 -1px 0;
-	background: #21759B url(../images/buttons/button-grad.png) repeat-x scroll left top;
+	background-color: #21759B;
 }
 .button-primary:active {
-	background: #21759b url(../images/buttons/button-grad-active.png) repeat-x scroll left top !important;
+	background-color: #21759b !important;
 }
 
 .button-primary:hover {
@@ -82,7 +82,7 @@ form li:after, form li div:after{
 	border-color: #bbb;
 	color: #464646;
 	text-shadow: rgba(255,255,255,1) 0 1px 0;
-	background: #f2f2f2 url(../images/buttons/white-grad.png) repeat-x scroll left top;
+	background-color: #f2f2f2;
 }
 
 .button-secondary:hover {
@@ -91,7 +91,13 @@ form li:after, form li div:after{
 }
 
 .button-secondary:active {
-	background: #f2f2f2 url(../images/buttons/white-grad-active.png) repeat-x scroll left top;
+	background-color: #f2f2f2;
+}
+
+input.big {
+	font-size: 18px !important;
+	line-height: 26px;
+	padding: 4px 16px;
 }
 
 /* @end */
@@ -100,7 +106,7 @@ form li:after, form li div:after{
 /* @group Size */
 
 input.small, select.small, label.small {
-	width:25%!important;
+	width:30%!important;
 }
 
 input.medium, select.medium, textarea.medium, label.medium {
@@ -159,16 +165,16 @@ textarea.rte, textarea.wysiwyg {
 
 /* @group Labels */
 
-form label, .portlet-content label {
+ form label, .portlet-content label, .form-container form label {
 	font:14px Arial, Helvetica, sans-serif;
 	font-weight:700;
 	clear: both;
 	display:block;
 	padding:3px 0;
 	margin:10px 0;
-	width: 120px;
+	width: 120px !important;
 	float: left;
-}
+} 
 
 
 form label.large {
@@ -244,18 +250,20 @@ form .fieldlist li input, form .fieldlist li label{
 	float:none;
 }
 
-.input, .filevalue, #docvalue, .textarea {
+.input, .filevalue, #docvalue, .textarea, .select {
 	background: #fff;
-	border: 1px solid #aaa;
+	border: 1px solid #ccc;
 	padding: 5px;
 	margin-top: 8px;
 	margin-bottom: 5px;
+	margin-right: 2px;
 	width: 380px;
 	font-size: 14px;
 	font-weight: 700;
 	color: #bbb;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	height: 22px;
 }
 
 input.bold, select.bold, textarea.bold {
@@ -266,17 +274,26 @@ input.bold, select.bold, textarea.bold {
 }
 
 .select{
-	background: #fff;
-	border: 1px solid #aaa;
-	padding: 5px;
-	margin-top: 8px;
-	margin-bottom: 5px;
 	width: 390px;
-	font-size: 14px;
-	font-weight: 700;
-	color: #bbb;
-	-moz-border-radius: 3px;
-	-webkit-border-radius: 3px;
+	height: 34px;
+}
+
+.select_skin {
+	background: url('/images/uniform/select_btn.png') no-repeat scroll right 0 transparent;
+	height: 32px;
+	width: 36px;
+	float: left;
+	margin-left: -40px;
+	margin-top: 9px;
+	pointer-events: none;
+	z-index: 99;
+}
+
+#webmenu_msdd + .select_skin{
+	position: relative;
+	z-index: 1;
+	top: -8px;
+	left: 393px;
 }
 
 .textarea{
@@ -335,4 +352,62 @@ input.bold, select.bold, textarea.bold {
 }
 
 /* @end */
+/* @end */
+
+/* @group Custom */
+
+
+input#exp {
+	width: 155px !important;
+	float: left;
+}
+
+input#csv {
+	width: 110px !important;
+	float: left;
+	position: relative;
+	top: -34px;
+	left: 54px;
+}
+
+input#exp + span.tooltip, input#exp + span.tooltip_x, input#exp + span.required {
+	width: 15px !important;
+	float: left;
+	margin-left: 12px;
+	display: inline;
+	position: relative;
+}
+
+input#csv + span.tooltip, input#csv + span.tooltip_x, input#csv + span.required {
+	width: 15px !important;
+	float: left;
+	margin-left: -6px;
+	position: relative;
+	top: -80px;
+	left: 193px;
+}
+
+input#city {
+	width: 205px !important;
+	float: left;
+}
+
+label#csv_label {
+	clear: none;
+	margin-left: 35px;
+	padding-top: 7px;
+	width: 45px;
+	position: absolute;
+	left: 510px;
+}
+
+.shoppingcart_column input.small {
+	width: 20px !important;
+}
+
+.shoppingcart_column .button-secondary {
+	margin-top: 15px;
+	margin-left: 10px;
+}
+
 /* @end */
