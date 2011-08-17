@@ -72,8 +72,11 @@ html, body {
 /* maxvoltar.com/archive/-webkit-font-smoothing */
 html { -webkit-font-smoothing: antialiased; }
 
-/* force scrollbar */
-html { overflow-y: scroll; }
+/* force scrollbar, hide X due to bug in FF4+ */
+html { 
+	overflow-x: hidden; 
+	overflow-y: scroll; 
+}
 
 ins { 
 	background-color: #ff9; 
