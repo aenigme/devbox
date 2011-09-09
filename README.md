@@ -19,6 +19,4 @@ Features
 License
 -------
 
-# bingbong is released under the General Public License (GPL) scheme. Fiji is released under the General Public License.
-
-It is an Open Source project, so everybody is welcome to contribute with plugins, patches, bug reports, tutorials, documentation, and artwork..
+bingbong is released under the General Public License (GPL) scheme. It is an Open Source project, so everybody is welcome to contribute with plugins, patches, bug reports, tutorials, documentation, and artwork.
