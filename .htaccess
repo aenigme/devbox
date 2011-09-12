@@ -1,0 +1,49 @@
+RewriteEngine on
+RewriteBase /
+
+# Add www rule
+# RewriteCond %{HTTP_HOST} ^example.com$ [NC]
+# RewriteRule ^(.*)$ http://www.example.com/$1 [R=301,L]
+
+# Remove www rule
+RewriteCond %{HTTP_HOST} ^www.example.com$ [NC]
+RewriteRule ^(.*)$ http://example.com/$1 [R=301,L]
+
+# Trailing slash
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ $1/ [R=301,NC,L]
+
+# Secure directories
+RewriteRule ^(application|system) index.php/$1 [L]
+RedirectMatch 404 /\.git(/|$)
+RedirectMatch 404 /\.svn(/|$)
+RedirectMatch 404 /css/(/|$)
+RedirectMatch 404 /fonts/(/|$)
+RedirectMatch 404 /images/(/|$)
+RedirectMatch 404 /js/(/|$)
+RedirectMatch 404 /temp/(/|$)
+
+# Kohana bootstrap
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /index.php/$1 [QSA,L]
+
+# gzip compression.
+<IfModule mod_deflate.c>
+  # html, xml, css, and js:
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/x-javascript text/javascript application/javascript application/json
+  # webfonts and svg:
+  <FilesMatch ".(ttf|otf|eot|svg)$" >
+    SetOutputFilter DEFLATE
+  </FilesMatch>
+</IfModule>
+
+# Force PDF download
+<FilesMatch "\.(?i:pdf)$">
+  ForceType application/octet-stream
+  Header set Content-Disposition attachment
+</FilesMatch>
+
+redirect 301 /index.php /mailchimp.php
+# redirect 301 /search /therapists/search
