@@ -1,5 +1,6 @@
 <?php
 	require_once ('_debug.php');
+	
 	global $web_path;
 	
 	// CSS USED FOR STYLING QUERY DEBUG INFORMATION
@@ -31,7 +32,7 @@
 	// SET DEFAULT FOR A GIVEN VARIABLE
 	function set_default(&$var, $default="") 
 	{
-		$var = (!isset($var) || (($var == "" || $var == "0000-00-00 00:00:00" || $var == "0000-00-00"))) ? $default:$var;
+		$var = (!isset($var) || (($var == "" || $var == "0000-00-00 00:00:00" || $var == "0000-00-00"))) ? $default : $var;
 	}
 		
 	// ESCAPES SPECIAL CHARACTERS IN A STRING FOR USE IN A SQL STATEMENT
@@ -42,9 +43,9 @@
 				$output[$var] = xss_clean($val);
 			endforeach;
 		else :
-			$output = (get_magic_quotes_gpc()) ? stripslashes($str):$str;
+			$output = (get_magic_quotes_gpc()) ? stripslashes($str) : $str;
 			$output = xss_clean($output);
-			$output = (function_exists("mysql_real_escape_string")) ?  mysql_real_escape_string($output):addslashes($output);
+			$output = (function_exists("mysql_real_escape_string")) ?  mysql_real_escape_string($output) : addslashes($output);
 		endif;
 		
 		return $output;
@@ -56,7 +57,7 @@
 		if($result && mysql_num_rows($result) > 0) :
 			return mysql_fetch_array($result);
 		else :
-			return false;
+			return FALSE;
 		endif;
 	}
 	
@@ -70,7 +71,7 @@
 			endforeach;
 			mysql_data_seek($result,0);
 		else :
-			return false;
+			return FALSE;
 		endif;
 	}
 	
@@ -85,7 +86,7 @@
 			$output = trim($output,",");
 			return $output;
 		else :
-			return false;
+			return FALSE;
 		endif;
 	}
 	
@@ -300,10 +301,10 @@
 	
 	function format_url($url) 
 	{
-		if(!empty($url)) :
-			$output = (preg_match("/http(s?):\/\//",$url)) ? $url: "http://{$url}";
-		elseif : 
-			$output = false;
+		if (!empty($url)) :
+			$output = (preg_match("/http(s?):\/\//", $url)) ? $url : "http://{$url}";
+		else : 
+			$output = FALSE;
 		endif;
 		
 		return $output;
@@ -337,45 +338,45 @@
 		
 		switch($rule) {
 			case "required": 
-				$output = (strlen($value) > 0) ? $valid: $invalid;
+				$output = (strlen($value) > 0) ? $valid : $invalid;
 				break;
 				
 			case "username":
 				$pattern = '/^[a-z\d_]{5,20}$/i';
-				$output = (preg_match($pattern, $value)) ? $valid: $invalid;
+				$output = (preg_match($pattern, $value)) ? $valid : $invalid;
 				break;
 				
 			case "url":
-				$output=(filter_var($value, FILTER_VALIDATE_URL)) ? $valid: $invalid;
+				$output=(filter_var($value, FILTER_VALIDATE_URL)) ? $valid : $invalid;
 				break;
 				
 			case "email":
 				$pattern = '/^([a-z0-9])(([-a-z0-9._\+])*([a-z0-9]))*\@([a-z0-9])' . '(([a-z0-9-])*([a-z0-9]))+' . '(\.([a-z0-9])([-a-z0-9_-])?([a-z0-9])+)+$/i';
-				$output = (preg_match($pattern, $value)) ? $valid: $invalid;
+				$output = (preg_match($pattern, $value)) ? $valid : $invalid;
 				break;
 			
 			case "ssn":
 				$pattern = '/^[\d]{3}-[\d]{2}-[\d]{4}$/';
-				$output = (preg_match($pattern, $value)) ? $valid: $invalid;
+				$output = (preg_match($pattern, $value)) ? $valid : $invalid;
 				break;
 				
 			case "phone":
 				$pattern = '/[\(?\d{3}\)?]?	[-\s.]?\d{3}[-\s.]\d{4}/x';
-				$output = (preg_match($pattern, $value)) ? $valid: $invalid;
+				$output = (preg_match($pattern, $value)) ? $valid : $invalid;
 				break;
 			
 			case "date":
 				$pattern = "^((18|19|20)\d\d)-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])$";
-				$output = (preg_match($pattern, $value)) ? $valid: $invalid;
+				$output = (preg_match($pattern, $value)) ? $valid : $invalid;
 				break;
 			
 			case "zipcode":
 				$pattern = "/^([0-9]{5})(-[0-9]{4})?$/i";
-				$output = (preg_match($pattern, $value)) ? $valid: $invalid;
+				$output = (preg_match($pattern, $value)) ? $valid : $invalid;
 				break;
 			
 			case "password":
-				$output = (strlen($value) >= 5) ? $valid: $invalid;
+				$output = (strlen($value) >= 5) ? $valid : $invalid;
 				break;
 		}
 		
