@@ -1,0 +1,33 @@
+div.message {
+	border: 1px solid;
+	background:#ffff66 none repeat scroll 0 0;
+	color: #000;
+	display:none;
+	padding:10px;
+
+}
+
+div.message ul, div.message li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.invalid_post {
+	border: 1px solid #FEEFB3;
+}
+
+.error_msg {
+	background-color:#FAC0C2;
+	color:#AE2727;
+	display:block;
+	padding:8px;
+	font-size: 12px;
+}
+
+p > input[type="checkbox"] + span.tooltip, p > input[type="radio"] + span.tooltip {
+	margin-left: -9999px;
+	position: absolute;
+	display: none;
+}
+

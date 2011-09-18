@@ -1,0 +1,171 @@
+/* @group Typography
+----------------------------------------*/
+/*Primary color (olive): #cacb98*/
+/*Secondary color (brown): #8c8275*/
+/*Ligh text: #989876*/
+/*Dark text: #6c6d50*/
+/*Blue text: #384759*/
+/*Orange backgroud: #cc6734*/ 
+/*White background: #fefefe*/
+/*Cufon: Gotham (300,400);*/
+
+body {
+	margin: 20px auto 0;
+	line-height: 18px;
+}
+
+body, p, td, th, li {
+	font-family: 'Helvetica Neue', Helvetica, Arial, FreeSans, sans-serif;
+	font-size: 14px;
+	line-height: 1.5em;
+	color: #DDF;
+}
+
+p		{margin:0 0 20px 0;}
+p.last	{margin: 0;}
+strong	{font-weight:bold;}
+em		{font-style:italic;}
+
+blockquote {
+	margin: 0 0 18px 18px; 
+	color:#666666; 
+	font-style: italic;
+}
+
+a:link, a:visited {
+	color:#B1DA67;
+}
+
+a:hover, a:active {
+	color:#5C8127;
+	text-decoration:none;
+}
+
+h1 {
+	font-size:36px;
+}
+
+h2 {
+	font-size:30px;
+}
+
+h3 {
+	font-size:24px;
+}
+
+h4 {
+	font-size:16px;
+}
+
+h5 {
+	font-size:12px;
+}
+
+h6 {
+	font-size:10px;
+}
+/* @end */
+
+/* @group Tpl Layout 
+----------------------------------------*/
+#wrapper {
+	text-align: center;
+	height: 100px;
+	margin-bottom: 20px;
+	padding-top: 20px;
+}
+/* @end */
+
+/* @group Comments 
+----------------------------------------*/
+
+ul.comment_list li {
+	border-bottom:1px solid #bbb;
+	margin:8px 0 8px 0px;
+	padding:20px 0 5px;
+	clear: both;
+}
+
+ul.comment_list li .gravatar {
+	width: 80px;
+	height: 80px;
+	border: 4px solid #fff;
+	float: left;
+	margin-right: 20px;
+	margin-bottom: 10px;
+}
+
+ul.comment_list li .gravatar a {
+	width: 80px;
+	height: 80px;
+	display: block;
+	background: transparent;
+}
+
+ul.comment_list li .author {
+	font-weight: 700;
+}
+
+ul.comment_list li .date {
+	font-size: 10px; 
+	color: #555;
+}
+
+/* @end */
+
+/* @group General Settings */
+
+div#content {
+	padding: 10px 10px;
+}
+div#content h3 {
+	font-size: 30px;
+	font-weight: 100;
+	color: #384759;
+	margin-bottom: 10px;
+}
+div#content h3 {
+	font-size: 22px;
+	margin-bottom: 10px;
+	color: #384759;
+}
+div#content h4 {
+	font-size: 18px;
+	margin-bottom: 10px;
+	color: #384759;
+}
+div#content p {
+	margin: 0 0 10px 0;
+}
+div#content ol, div#content ul {
+	list-style: disc;
+	margin: 0 0 0 40px;
+	font-size: 14px;
+}
+img.photo {
+	border: 10px solid #fff;
+	-moz-box-shadow: 0 0 8px #323232;
+	-webkit-box-shadow: 0 0 8px #323232;
+	box-shadow: 0 0 8px #323232;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=8, Direction=0, Color='#323232')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=8, Direction=0, Color='#323232');
+}
+img.photo.mini {
+	border: 2px solid #fff;
+	-moz-box-shadow: 0 0 8px #323232;
+	-webkit-box-shadow: 0 0 8px #323232;
+	box-shadow: 0 0 8px #323232;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=8, Direction=0, Color='#323232')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=8, Direction=0, Color='#323232');	
+}
+img.preview {
+	cursor: pointer;
+}
+/* @end */
+
+/* @group Slideshow */
+/* @end */

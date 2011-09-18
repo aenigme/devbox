@@ -1,0 +1,39 @@
+/* 
+ * JavaScript (jQuery) implementation of the CSS Template Layout Module
+ * Aims at providing web designers with a way to use the W3's 
+ * CSS Template Layout Module today. As a jQuery plug-in, the script parses 
+ * a given set of CSS rules and displays the content as indicated in the 
+ * specification. 
+ * 
+ * Project Home: http://code.google.com/p/css-template-layout/
+ * Demos: http://a.deveria.com/csstpl/
+ * Library: /js/jquery.tpl_layout-1.1.5.min.js
+*/
+
+/* Column Layout 
+ * Type - Fixed
+ * Grid - 3 x 5
+----------------------------------------*/
+body {
+	margin: 50px auto;
+	padding: 0;
+	display:"hhh"
+			"nnn"
+			"ccs"
+			"dds" 
+			"fff"
+			0 800px 160px;
+	width: 960px;
+}
+
+/* Column Backgrounds & Positions
+----------------------------------------*/
+body::slot(s) 	{background: #FDD}
+
+#header 		{position: h;}
+#content 	 	{position: c;}
+#navigation 	{position: n;}
+#sidebar 		{position: s;}
+#disqus_thread 	{position: d;}
+#footer 		{position: f;}
+

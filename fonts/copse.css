@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "CopseRegular";
+    font-style: normal;
+    font-weight: normal;
+    src: url("/fonts/Copse-Regular-webfont.eot#") format("eot"), 
+		 url("/fonts/Copse-Regular-webfont.woff") format("woff"), 
+		 url("/fonts/Copse-Regular-webfont.ttf") format("truetype"), 
+		 url("/fonts/Copse-Regular-webfont.svg#webfontWKqJmDgH") format("svg");
+}
+
+h1.copse {
+    font-family: 'CopseRegular',Georgia,Serif;
+    text-shadow: 1px 1px 0 #FFFFFF;
+    font-size: 36px;
+}
+
+.copse {
+    font-family: 'CopseRegular',Georgia,Serif;
+    text-shadow: 1px 1px 0 #FFFFFF;
+}

@@ -1,0 +1,51 @@
+/* 2009 - 2010 (c) | ez-css.org
+ * ez-start-2A ::  version 1.0 (03142010)
+ *
+ * Two columns with header and footer, sidebar on the right hand side, main content comes first. 
+ *
+ *
+ * You should replace the following rule with your own reset or base styles sheet
+ * visit: http://carsonified.com/blog/design/setting-rather-than-resetting-default-styling
+ */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/*
+ * To set the width of the main wrapper
+ */
+ 
+#wrapper {width: 750px;}
+
+/*
+ * You can use this wrapper for the faux-column technique
+ * Check http://www.alistapart.com/articles/fauxcolumns/
+ */
+
+#body {
+	margin-top: 15px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #555;
+	border-top:1px solid #555;
+}
+
+/*
+ * This element needs a width
+ */
+
+#article {
+	width: 70%; 
+	padding: 15px 15px 15px 0;
+	border-right: 1px solid #555;
+}
+
+/*
+ * Unlike the first first column, this element does *not* need a width
+ */
+
+#aside {
+	padding: 15px 0 15px 15px;
+	border-left:1px solid #555;
+}

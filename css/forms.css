@@ -1,0 +1,413 @@
+/* @group General */
+
+.column-fixed .form-container {
+	margin:0 1em 1em 0;
+}
+
+.form-container {
+	background:#f8f8f8!important;
+	margin:0;
+}
+
+/*form ul{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	width:100%;
+}
+form li{
+	display:block;
+	margin:0;
+	padding:6px 0 9px;
+	clear:both;
+}*/
+
+form li:after, form li div:after{
+	content:"."; 
+	display:block;
+	height:0; 
+	clear:both; 
+	visibility:hidden;
+}
+
+/* @end */
+
+
+
+/* @group Buttons */
+
+.button-submit {
+	font-size:15px;
+	height:1.85em;
+	vertical-align:bottom;
+}
+
+.button-primary, .button-secondary {
+	text-decoration: none;
+	font-size: 11px !important;
+	line-height: 16px;
+	padding: 2px 8px;
+	cursor: pointer;
+	border-width: 1px;
+	border-style: solid;
+	-moz-border-radius: 11px;
+	-khtml-border-radius: 11px;
+	-webkit-border-radius: 11px;
+	border-radius: 11px;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	-khtml-box-sizing: content-box;
+	box-sizing: content-box;	
+	font-family: Lucida Grande, Verdana, Arial, sans-serif !important;
+	font-weight: 700;
+}
+
+.button-primary {
+	color: #FFF !important;
+	border-color: #298cba !important;
+	text-shadow: rgba(255,255,255,1) 0 1px 0;
+	text-shadow: rgba(0,0,0,0.3) 0 -1px 0;
+	background-color: #21759B;
+}
+.button-primary:active {
+	background-color: #21759b !important;
+}
+
+.button-primary:hover {
+	border-color: #13455b !important;
+	color: #EAF2FA !important;
+}
+
+.button-secondary {
+	border-color: #bbb;
+	color: #464646;
+	text-shadow: rgba(255,255,255,1) 0 1px 0;
+	background-color: #f2f2f2;
+}
+
+.button-secondary:hover {
+	color: #000;
+	border-color: #666;
+}
+
+.button-secondary:active {
+	background-color: #f2f2f2;
+}
+
+input.big {
+	font-size: 18px !important;
+	line-height: 26px;
+	padding: 4px 16px;
+}
+
+/* @end */
+
+
+/* @group Size */
+
+input.small, select.small, label.small {
+	width:30%!important;
+}
+
+input.medium, select.medium, textarea.medium, label.medium {
+	width:65%;
+}
+
+input.large, select.large, textarea.large, label.large {
+	width: 500px !important;
+	font-size: 20px;
+}
+
+input.full, label.full, textarea.full {
+	width: 93%!important;
+}
+
+input.wide, label.wide, select.wide {
+	width: 445px !important;
+}
+
+select.full {
+	width: 97%!important;
+}
+
+select.wide {
+	width: 93%!important;
+}
+
+textarea.small {
+	height:5em;
+}
+
+textarea.medium {
+	height:7em;
+}
+
+textarea.large {
+	height:  10em;
+	width: 95%;
+}
+
+textarea.full {
+	height: 10em;
+}
+
+textarea.wide {
+	height:  7em;
+	width: 91% !important;
+}
+
+textarea.rte, textarea.wysiwyg {
+	height: 30em;
+}
+
+/* @end */
+
+
+/* @group Labels */
+
+ form label, .portlet-content label, .form-container form label {
+	font:14px Arial, Helvetica, sans-serif;
+	font-weight:700;
+	clear: both;
+	display:block;
+	padding:3px 0;
+	margin:10px 0;
+	width: 120px !important;
+	float: left;
+} 
+
+
+form label.large {
+	width: 220px;
+}
+
+.thru {
+	margin: 20px 10px 0 10px; 
+	font-weight: 700; 
+	float: left;
+}
+
+/* @group Mobile ME Experiment */
+/* Immitate Mobile ME login form input hints. Experimental. */
+
+label.inlined + .input, label.inlined + .select, label.inlined + .textarea {
+	position: relative; 
+	z-index: 2;
+	background: transparent !important;	
+}
+
+label.inlined {
+	position: relative; 
+	z-index: 1;
+	margin-bottom: -39px;
+	padding: 8px 0 8px 8px;
+	background: transparent;
+	color: #bbb;
+	float: none !important;
+	width: 200px;
+}
+
+label.inlined + .textarea {
+	margin-top: 0px;
+}
+
+label.large{
+	margin-bottom: -43px;
+}
+
+label.has-text {
+	visibility: hidden;
+}
+
+/* @end */
+
+/* @end */
+
+
+/* @group Forms */
+
+
+
+form{
+	margin:0;
+	padding:0;
+}
+
+
+form p{
+	padding:0;
+	margin:5px 0;
+	clear:both;
+}
+
+form strong	{
+	font-weight: 700;
+}
+
+
+form .fieldlist li input, form .fieldlist li label{
+	display:inline;
+	float:none;
+}
+
+.input, .filevalue, #docvalue, .textarea, .select {
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 5px;
+	margin-top: 8px;
+	margin-bottom: 5px;
+	margin-right: 2px;
+	width: 380px;
+	font-size: 14px;
+	font-weight: 700;
+	color: #bbb;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	height: 22px;
+}
+
+input.bold, select.bold, textarea.bold {
+	color: #000;
+}
+.checkbox, .radio{
+	margin: 10px 0 0 0;
+}
+
+.select{
+	width: 390px;
+	height: 34px;
+}
+
+.select_skin {
+	background: url('/images/uniform/select_btn.png') no-repeat scroll right 0 transparent;
+	height: 32px;
+	width: 36px;
+	float: left;
+	margin-left: -40px;
+	margin-top: 9px;
+	pointer-events: none;
+	z-index: 99;
+}
+
+#webmenu_msdd + .select_skin{
+	position: relative;
+	z-index: 1;
+	top: -8px;
+	left: 393px;
+}
+
+.textarea{
+	float: left;
+	height: 200px;
+	width: 385px;
+	margin-top: 15px;
+	overflow: auto;
+	font-family: inherit;
+}
+
+.search {
+	margin-top:10px;
+}
+
+/* @group Upload File */
+
+.file {
+	position: relative;
+	text-align: right;
+	-moz-opacity:0 ;
+	filter:alpha(opacity: 0);
+	opacity: 0;
+	z-index: 2;
+	width:150px;
+}
+
+.filevalue, #docvalue{
+	float:none;
+	width:195px;
+}
+#fakefile {
+	position:absolute;
+	border:0px solid #ddd;
+	background-color:#f2f2f2;
+	text-decoration:underline;
+	font-weight:700;
+	margin-top: 10px;
+	color:#005083;
+	width:125px;
+	background:url(../images/icons/image_add.png) no-repeat;
+	background-position:right
+}
+
+#fakefile_doc {
+	position:absolute;
+	border:0px solid #ddd;
+	background-color:#f2f2f2;
+	text-decoration:underline;
+	font-weight:700;
+	margin-top: 10px;
+	color:#005083;
+	width:125px;
+	background:url(../images/icons/page_add.png) no-repeat;
+	background-position:right
+}
+
+/* @end */
+/* @end */
+
+/* @group Custom */
+
+
+input#exp {
+	width: 155px !important;
+	float: left;
+}
+
+input#csv {
+	width: 110px !important;
+	float: left;
+	position: relative;
+	top: -34px;
+	left: 54px;
+}
+
+input#exp + span.tooltip, input#exp + span.tooltip_x, input#exp + span.required {
+	width: 15px !important;
+	float: left;
+	margin-left: 12px;
+	display: inline;
+	position: relative;
+}
+
+input#csv + span.tooltip, input#csv + span.tooltip_x, input#csv + span.required {
+	width: 15px !important;
+	float: left;
+	margin-left: -6px;
+	position: relative;
+	top: -80px;
+	left: 193px;
+}
+
+input#city {
+	width: 205px !important;
+	float: left;
+}
+
+label#csv_label {
+	clear: none;
+	margin-left: 35px;
+	padding-top: 7px;
+	width: 45px;
+	position: absolute;
+	left: 510px;
+}
+
+.shoppingcart_column input.small {
+	width: 20px !important;
+}
+
+.shoppingcart_column .button-secondary {
+	margin-top: 15px;
+	margin-left: 10px;
+}
+
+/* @end */
