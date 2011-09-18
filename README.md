@@ -10,7 +10,8 @@ Features
 --------
 
 * reset CSS
-* messages and alert elements
+* bootstrap CSS (@twitter)
+* form validation & alert elements
 * colorbox
 * jquery
 * cufon
