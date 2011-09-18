@@ -92,6 +92,73 @@ var Home = {
 	init: function() {
 		jQuery(function($) {
 			
+			$('#background').zlayer({mass: 6, canvas:'#target'});
+			
+			$('#tile_01').scrollingParallax({
+		        staticSpeed : 1,
+		        loopIt : false, 
+				staticScrollLimit: false
+		    });
+			
+			$('#tile_02').scrollingParallax({
+		        staticSpeed : 1.3,
+		        loopIt : false, 
+				staticScrollLimit: false
+		    });
+			
+			$('#tile_03').scrollingParallax({
+		        staticSpeed : 1.9,
+		        loopIt : false, 
+				staticScrollLimit: false
+		    });
+			
+			$('#tile_04').scrollingParallax({
+		        staticSpeed : 2.7,
+		        loopIt : false, 
+				staticScrollLimit: false
+		    });
+			
+			$('#tile_05').scrollingParallax({
+		        staticSpeed : 3.6,
+		        loopIt : false, 
+				staticScrollLimit: false
+		    });
+			
+			$('#tile_06').scrollingParallax({
+		        staticSpeed : 4.0,
+		        loopIt : false, 
+				staticScrollLimit: false
+		    });
+					
+			$('#tile_07').scrollingParallax({
+		        staticSpeed : 4.4,
+		        loopIt : false, 
+				staticScrollLimit: false
+		    });
+					
+			$('#tile_08').scrollingParallax({
+		        staticSpeed : 6.0,
+		        loopIt : false, 
+				staticScrollLimit: false
+		    });
+					
+			$('#tile_09').scrollingParallax({
+		        staticSpeed : 7.2,
+		        loopIt : false, 
+				staticScrollLimit: false
+		    });
+					
+			$('#tile_10').scrollingParallax({
+		        staticSpeed : 3,
+		        loopIt : false, 
+				staticScrollLimit: false
+		    });
+					
+			$('#tile_11').scrollingParallax({
+		        staticSpeed : 3,
+		        loopIt : false, 
+				staticScrollLimit: false
+		    });
 		});
 	}
 };
