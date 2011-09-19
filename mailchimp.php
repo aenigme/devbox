@@ -50,9 +50,9 @@
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-	<link rel="stylesheet" type="text/css" href="/public/css/reset.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/public/css/contact.css" media="screen" />
-	<script type="text/javascript" src="/public/js/contact.js"></script>
+	<link rel="stylesheet" type="text/css" href="/lib/css/reset.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/lib/css/contact.css" media="screen" />
+	<script type="text/javascript" src="/lib/js/contact.js"></script>
 		
 	<!-- www.phpied.com/conditional-comments-block-downloads/ -->
 	<!--[if IE]><![endif]-->
