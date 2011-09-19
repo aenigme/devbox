@@ -13,22 +13,22 @@
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-	<link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="css/screen.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="css/alerts.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="css/forms.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="css/lightbox.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="css/messages.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
+	<link rel="stylesheet" type="text/css" href="/lib/css/reset.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/lib/css/screen.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/lib/css/alerts.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/lib/css/forms.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/lib/css/lightbox.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/lib/css/messages.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/lib/css/print.css" media="print" />
 	
-	<script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
-	<script type="text/javascript" src="js/jquery.colorbox.js"></script>
-	<script type="text/javascript" src="js/jquery.bt.min.js"></script>
-	<script type="text/javascript" src="js/jquery.form.js"></script>
-	<script type="text/javascript" src="js/cufon-1.09.js"></script>
-	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="/lib/js/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript" src="/lib/js/jquery.colorbox.js"></script>
+	<script type="text/javascript" src="/lib/js/jquery.bt.min.js"></script>
+	<script type="text/javascript" src="/lib/js/jquery.form.js"></script>
+	<script type="text/javascript" src="/lib/js/cufon.js"></script>
+	<script type="text/javascript" src="/lib/js/common.js"></script>
 	
-	<script src="/fonts/Ideal_Sans_300.font.js" type="text/javascript"></script>
+	<script src="/lib/fonts/Ideal_Sans_300.font.js" type="text/javascript"></script>
 	
 	<script type="text/javascript" charset="utf-8"> Home.init(); </script>
 	
