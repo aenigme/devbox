@@ -2,7 +2,7 @@
     $apikey = 'f7e1fc013b75e1a110fa03d42d1f5162-us2';
     $listID = 'c6458cce9a';
 	
-	include '_functions.php';
+	require_once realpath(dirname(__FILE__)) . '/classes/master.inc.php';
 	
     if (isset($_POST['subscribe'])) :
 		if (preg_match("(\w[-._\w]*\w@\w[-._\w]*\w\.\w{2,})", $_POST['email'])) :
@@ -50,9 +50,9 @@
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-	<link rel="stylesheet" type="text/css" href="/public/css/reset.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/public/css/contact.css" media="screen" />
-	<script type="text/javascript" src="/public/js/contact.js"></script>
+	<link rel="stylesheet" type="text/css" href="/lib/css/reset.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/lib/css/contact.css" media="screen" />
+	<script type="text/javascript" src="/lib/js/contact.js"></script>
 		
 	<!-- www.phpied.com/conditional-comments-block-downloads/ -->
 	<!--[if IE]><![endif]-->
@@ -121,7 +121,7 @@
 					</div>
 					<div class="buttonGroup">
 						<p class="terms">
-							I have read and agree to the <a href="http://en.wikipedia.org/wiki/Terms_of_service" class="external" target="_blank">terms of service</a> and <a href="http://en.wikipedia.org/wiki/Privacy_policy" class="external" target="_blank">privacy policy</a>. <input id="user_terms_accepted" name="user[terms_accepted]" value="1" type="hidden"> <button type="submit" class="button" tabindex="23"><strong>Sign Up</strong></button>
+							I have read and agree to the <a href="http://en.wikipedia.org/wiki/Terms_of_service" target="_blank">terms of service</a> and <a href="http://en.wikipedia.org/wiki/Privacy_policy" target="_blank">privacy policy</a>. <input id="user_terms_accepted" name="user[terms_accepted]" value="1" type="hidden"> <button type="submit" class="button" tabindex="23"><strong>Sign Up</strong></button>
 						</p>
 					</div>
 				</form>

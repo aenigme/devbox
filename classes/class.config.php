@@ -16,7 +16,7 @@
         // of server names if needed. Otherwise, you can simply detect a single server like '/^servername\.com$/'
         private $productionServers = array('/^your-domain\.com$/');
         private $stagingServers    = array();
-        private $localServers      = array();
+        private $localServers      = array('/^devbox\.dev$/');
 
         // Standard Config Options...
 
@@ -132,11 +132,11 @@
 
             $this->dbReadHost      = 'localhost';
             $this->dbWriteHost     = 'localhost';
-            $this->dbName          = '';
-            $this->dbReadUsername  = '';
-            $this->dbWriteUsername = '';
-            $this->dbReadPassword  = '';
-            $this->dbWritePassword = '';
+            $this->dbName          = 'simple_db';
+            $this->dbReadUsername  = 'j4kp07';
+            $this->dbWriteUsername = 'j4kp07';
+            $this->dbReadPassword  = 'china+wall';
+            $this->dbWritePassword = 'china+wall';
             $this->dbOnError       = 'die';
             $this->dbEmailOnError  = false;
         }

@@ -1,5 +1,21 @@
 <?php
 
+	// This is easier than typing 'echo WEB_ROOT'
+	function WEBROOT()
+	{
+	    echo WEB_ROOT;
+	}
+
+	// Class Autloader
+	spl_autoload_register('framework_autoload');
+
+	function framework_autoload($class_name)
+	{
+	    $filename = DOC_ROOT . '/classes/class.' . strtolower($class_name) . '.php';
+	    if(file_exists($filename))
+	        require $filename;
+	}
+
 	// SET DEFAULT FOR A GIVEN VARIABLE
 	function set_default(&$var, $default="") 
 	{
@@ -795,22 +811,6 @@
             header('Status: 401 Unauthorized');
             exit();
         }
-    }
-
-    // This is easier than typing 'echo WEB_ROOT'
-    function WEBROOT()
-    {
-        echo WEB_ROOT;
-    }
-
-    // Class Autloader
-    spl_autoload_register('framework_autoload');
-
-    function framework_autoload($class_name)
-    {
-        $filename = DOC_ROOT . '/includes/class.' . strtolower($class_name) . '.php';
-        if(file_exists($filename))
-            require $filename;
     }
 
     // Returns a file's mimetype based on its extension
