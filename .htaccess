@@ -34,9 +34,9 @@ RedirectMatch 404 /js/(/|$)
 RedirectMatch 404 /temp/(/|$)
 
 # Kohana bootstrap
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /index.php/$1 [QSA,L]
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteRule ^(.*)$ /index.php/$1 [QSA,L]
 
 # devbox bootstrap
 # RewriteCond %{REQUEST_FILENAME} !-f # If not a file...
@@ -59,5 +59,5 @@ RewriteRule ^(.*)$ /index.php/$1 [QSA,L]
   Header set Content-Disposition attachment
 </FilesMatch>
 
-# redirect 301 /index.php /mailchimp.php
+redirect 301 /index.php /mailchimp.php
 # redirect 301 /search /therapists/search
