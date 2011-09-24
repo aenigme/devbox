@@ -16,6 +16,10 @@ Features
 * colorbox (http://colorpowered.com/colorbox/)
 * jquery (multiple version)
 * cufon (http://cufon.shoqolate.com/generate/)
-* reset CSS
+* reset CSS (inspired by http://meyerweb.com/eric/tools/css/reset/)
 * bingbong CMS assests included (private repo found on Github @ j4kp07)
 
+License
+-------
+
+bingbong is released under the General Public License (GPL) scheme. It is an Open Source project, so everybody is welcome to contribute with plugins, patches, bug reports, tutorials, documentation, and artwork.
