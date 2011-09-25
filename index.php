@@ -1,4 +1,4 @@
-<?php require_once realpath(dirname(__FILE__)) . '/classes/master.inc.php'; ?>
+<?php require_once realpath(dirname(__FILE__)) . '/lib/core/master.inc.php'; ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
@@ -15,22 +15,22 @@
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-	<link rel="stylesheet" type="text/css" href="/lib/css/reset.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/lib/css/screen.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/lib/css/alerts.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/lib/css/forms.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/lib/css/lightbox.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/lib/css/messages.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/lib/css/print.css" media="print" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/reset.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/screen.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/alerts.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/forms.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/lightbox.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/messages.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print" />
 	
-	<script type="text/javascript" src="/lib/js/jquery-1.6.2.min.js"></script>
-	<script type="text/javascript" src="/lib/js/jquery.colorbox.js"></script>
-	<script type="text/javascript" src="/lib/js/jquery.bt.min.js"></script>
-	<script type="text/javascript" src="/lib/js/jquery.form.js"></script>
-	<script type="text/javascript" src="/lib/js/cufon.js"></script>
-	<script type="text/javascript" src="/lib/js/common.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.colorbox.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.bt.min.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.form.js"></script>
+	<script type="text/javascript" src="/assets/js/cufon.js"></script>
+	<script type="text/javascript" src="/assets/js/common.js"></script>
 	
-	<script src="/lib/fonts/Ideal_Sans_300.font.js" type="text/javascript"></script>
+	<script src="/assets/fonts/Ideal_Sans_300.font.js" type="text/javascript"></script>
 	
 	<script type="text/javascript" charset="utf-8"> Home.init(); </script>
 	

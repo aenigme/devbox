@@ -13,24 +13,24 @@
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-	<link rel="stylesheet" type="text/css" href="/lib/css/reset.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/lib/css/screen.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/lib/css/alerts.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/lib/css/forms.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/lib/css/lightbox.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/lib/css/messages.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/lib/css/print.css" media="print" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/reset.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/screen.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/alerts.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/forms.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/lightbox.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/messages.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print" />
 
-	<script type="text/javascript" src="/lib/js/jquery-1.6.2.min.js"></script>
-	<script type="text/javascript" src="/lib/js/jquery.colorbox.js"></script>
-	<script type="text/javascript" src="/lib/js/jquery.bt.min.js"></script>
-	<script type="text/javascript" src="/lib/js/jquery.form.js"></script>
-	<script type="text/javascript" src="/lib/js/jquery.scrolling-parallax.js" ></script>
-	<script type="text/javascript" src="/lib/js/jquery.zlayer.js"></script>
-	<script type="text/javascript" src="/lib/js/cufon.js"></script>
-	<script type="text/javascript" src="/lib/js/common.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.colorbox.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.bt.min.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.form.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.scrolling-parallax.js" ></script>
+	<script type="text/javascript" src="/assets/js/jquery.zlayer.js"></script>
+	<script type="text/javascript" src="/assets/js/cufon.js"></script>
+	<script type="text/javascript" src="/assets/js/common.js"></script>
 	
-	<script src="/lib/fonts/Ideal_Sans_300.font.js" type="text/javascript"></script>
+	<script src="/assets/fonts/Ideal_Sans_300.font.js" type="text/javascript"></script>
 	
 	<script type="text/javascript" charset="utf-8"> Home.init(); </script>
 	
@@ -50,27 +50,27 @@
 	
 <body>
 	
-	<img src="/lib/images/insomniax/infographic/tile_01.png" id="tile_01" class="" alt="" />
-	<img src="/lib/images/insomniax/infographic/tile_02.png" id="tile_02" class="" alt="" />
-	<img src="/lib/images/insomniax/infographic/tile_03.png" id="tile_03" class="" alt="" />
-	<img src="/lib/images/insomniax/infographic/tile_04.png" id="tile_04" class="" alt="" />
-	<img src="/lib/images/insomniax/infographic/tile_05.png" id="tile_05" class="" alt="" />
-	<img src="/lib/images/insomniax/infographic/tile_06.png" id="tile_06" class="" alt="" />
-	<img src="/lib/images/insomniax/infographic/tile_07.png" id="tile_07" class="" alt="" />
-	<img src="/lib/images/insomniax/infographic/tile_08.png" id="tile_08" class="" alt="" />
-	<img src="/lib/images/insomniax/infographic/tile_09.png" id="tile_09" class="" alt="" />
-	<img src="/lib/images/insomniax/infographic/tile_09.png" id="tile_10" class="visuallyhidden" alt="" />
-	<img src="/lib/images/insomniax/infographic/tile_11.png" id="tile_11" class="visuallyhidden" alt="" />
+	<img src="/assets/images/insomniax/infographic/tile_01.png" id="tile_01" class="" alt="" />
+	<img src="/assets/images/insomniax/infographic/tile_02.png" id="tile_02" class="" alt="" />
+	<img src="/assets/images/insomniax/infographic/tile_03.png" id="tile_03" class="" alt="" />
+	<img src="/assets/images/insomniax/infographic/tile_04.png" id="tile_04" class="" alt="" />
+	<img src="/assets/images/insomniax/infographic/tile_05.png" id="tile_05" class="" alt="" />
+	<img src="/assets/images/insomniax/infographic/tile_06.png" id="tile_06" class="" alt="" />
+	<img src="/assets/images/insomniax/infographic/tile_07.png" id="tile_07" class="" alt="" />
+	<img src="/assets/images/insomniax/infographic/tile_08.png" id="tile_08" class="" alt="" />
+	<img src="/assets/images/insomniax/infographic/tile_09.png" id="tile_09" class="" alt="" />
+	<img src="/assets/images/insomniax/infographic/tile_09.png" id="tile_10" class="visuallyhidden" alt="" />
+	<img src="/assets/images/insomniax/infographic/tile_11.png" id="tile_11" class="visuallyhidden" alt="" />
 	
 	<div style="position: relative; height: 2560px;" class="clearfix"></div>
 	
 	<div id="window">
-		<img src="/lib/images/insomniax/_background_v1.jpg" id="background" />
+		<img src="/assets/images/insomniax/_background_v1.jpg" id="background" />
     </div>
 	
 	<div id="wrapper">
 		<div id="target">
-			<img src="/lib/images/insomniax/insomniax_tagline.png" id="tagline" />
+			<img src="/assets/images/insomniax/insomniax_tagline.png" id="tagline" />
 		</div>
 	</div>
 	
