@@ -1,61 +1,8 @@
 /* @group General Settings */
 
 body {
-	font-family: helvetica, arial, sans-serif;
+	padding-top: 40px;
 }
-
-/* @end */
-
-/* @group Parallax Settings */
-
-#window {
-	width: 100%; height: 100%;
-	margin: 0; padding 0; 
-	top: 0; left: 0;
-	overflow: hidden; 
-	position: fixed; 
-}
-
-#background {
-	z-index:1;  
-	margin-left: -188px;
-	margin-top: -200px;
-	position: absolute;
-}
-#wrapper { 
-	position: fixed; 
-	bottom: 0;
-}
-#tagline {
-	margin: 20px; padding: 0;
-	position: absolute; 
-	bottom: 0;
-	z-index: 99;
-}
-#target	{
-	position: fixed; 
-	top: 0; bottom: 0; 
-	left: 0; right: 0;
-	height: 100%;
-	width: 100%;
-	z-index: 20;
-}
-#tile_01, #tile_02, #tile_03, #tile_04, #tile_05, #tile_06, #tile_07, #tile_08, #tile_09, #tile_10, #tile_11 {
-	position: fixed;
-    display: block;
-	z-index: 10;
-}
-#tile_01 { top:  440px; left: 600px; }
-#tile_02 { top:  820px; left: 750px; }
-#tile_03 { top: 1260px; left: 600px; }
-#tile_04 { top: 2060px; left: 730px; }
-#tile_05 { top: 3000px; left: 1010px; }
-#tile_06 { top: 3400px; left: 785px; }
-#tile_07 { top: 3800px; left: 600px; }
-#tile_08 { top: 5460px; left: 680px; }
-#tile_09 { top: 7000px; left: 1010px; }
-#tile_10 { top: 3000px; left: 1010px; }
-#tile_11 { top: 3080px; left: 600px; }
 
 /* @end */
 
