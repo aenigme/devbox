@@ -5,7 +5,7 @@
 
 	function framework_autoload($class_name)
 	{
-	    $filename = DOC_ROOT . '/lib/core/class.' . strtolower($class_name) . '.php';
+	    $filename = DOC_ROOT . '/core/class.' . strtolower($class_name) . '.php';
 	    if(file_exists($filename))
 	        require $filename;
 	}
@@ -21,7 +21,14 @@
 	{
 		$var = (!isset($var) || (($var == "" || $var == "0000-00-00 00:00:00" || $var == "0000-00-00"))) ? $default : $var;
 	}
-
+	
+	function shuffle_assoc($array)
+	{
+	   $keys = array_keys($array);
+	   shuffle($keys);
+	   return array_merge(array_flip($keys) , $array);
+	}
+	
 	function set_option($key, $val)
 	{
 	    $db = Database::getDatabase();

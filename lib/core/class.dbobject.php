@@ -8,7 +8,7 @@
         protected $className;
 		protected static $autoColumns;
 
-        protected function __construct($table_name, $columns_or_id = null, $id = null)
+        protected function __construct($table_name, $columns_or_id = null, $id = null, $idColumnName = 'id')
         {
             $this->className    = get_class($this);
             $this->tableName    = $table_name;
@@ -18,7 +18,7 @@
             // a different id name exactly once - so I've decided to
             // drop the option from the constructor. You can overload
             // the constructor yourself if you have the need.
-            $this->idColumnName = 'id';
+            $this->idColumnName = $idColumnName;
 
 			// In production, you should always pass in an array of column names
 			// for performance reasons. But, while testing, the database schema can
@@ -177,15 +177,12 @@
             }
         }
 
-		// Since PHP 5.3 supports late static binding, we can use ClassName::fetch()
-		// as a convenience wrapper around glob().
-		public static function fetch($sql = null, $extra_columns = array())
+		public static function fetch($sql = null, $extra_columns = array(), $class_name = null)
 		{
-			$class_name = get_called_class();
+			$class_name = (function_exists('get_called_class')) ? get_called_class() : $class_name; // KLUDGE: 5.2 does not support late static binding
 			return DBObject::glob($class_name, $sql, $extra_columns);
 		}
 
-		// Use DBObject::glob() for PHP < 5.3
         public static function glob($class_name, $sql = null, $extra_columns = array())
         {
             $db = Database::getDatabase();

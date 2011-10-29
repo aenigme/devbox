@@ -9,10 +9,10 @@
     define('DOC_ROOT', realpath(dirname(__FILE__) . '/../'));
 
     // Global include files
-    require DOC_ROOT . '/classes/class.debug.php'; 	  // debug...
-	require DOC_ROOT . '/classes/functions.inc.php';  // spl_autoload_register() is contained in this file
-    require DOC_ROOT . '/classes/class.dbobject.php'; // DBOBject...
-	require DOC_ROOT . '/classes/class.objects.php';  // and its subclasses
+    require DOC_ROOT . '/core/class.debug.php';    // debug...
+	require DOC_ROOT . '/core/functions.inc.php';  // spl_autoload_register() is contained in this file
+    require DOC_ROOT . '/core/class.dbobject.php'; // DBOBject...
+	require DOC_ROOT . '/core/class.objects.php';  // and its subclasses
 	
     // Fix magic quotes
     if(get_magic_quotes_gpc())

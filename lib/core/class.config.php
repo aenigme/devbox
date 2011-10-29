@@ -14,7 +14,7 @@
         // Add your server hostnames to the appropriate arrays. ($_SERVER['HTTP_HOST'])
         // Each array item should be a regular expression. This gives you the option to detect a whole range
         // of server names if needed. Otherwise, you can simply detect a single server like '/^servername\.com$/'
-        private $productionServers = array('/^your-domain\.com$/');
+        private $productionServers = array('/^applicant.eworksinc\.com$/');
         private $stagingServers    = array();
         private $localServers      = array('/^devbox\.dev$/');
 
@@ -88,17 +88,17 @@
         // Add code/variables to be run only on production servers
         private function production()
         {
-            ini_set('display_errors', '0');
+            ini_set('display_errors', '1');
 
             define('WEB_ROOT', '/');
 
             $this->dbReadHost      = 'localhost';
             $this->dbWriteHost     = 'localhost';
-            $this->dbName          = '';
-            $this->dbReadUsername  = '';
-            $this->dbWriteUsername = '';
-            $this->dbReadPassword  = '';
-            $this->dbWritePassword = '';
+            $this->dbName          = 'patrick';
+            $this->dbReadUsername  = 'patrickthomas';
+            $this->dbWriteUsername = 'patrickthomas';
+            $this->dbReadPassword  = 'thomas';
+            $this->dbWritePassword = 'thomas';
             $this->dbOnError       = '';
             $this->dbEmailOnError  = false;
         }
