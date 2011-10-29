@@ -11,7 +11,22 @@
 		 'q1_a7' => 'The Prestige',
 		 'q1_a8' => 'The Shawshank Redemption',
 	);
-	$movie = shuffle_assoc($movie);
+	
+	$answer = $_GET['answer'];
+	shuffle($answer);
+	
+	$db = Database::getDatabase();
+
+	if(isset($_GET['action']))
+	{
+		if($Error->ok())
+		{
+			$s = new Survey();
+			foreach ($answer as $k => $v) $s->$v = 1;
+			$s->timestamp = time();
+			$_id = $s->insert();
+		}
+	}
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -51,34 +66,50 @@
 <body>
 	
 	<div class="container">
-		<h1>What are your favorite three films from this list?</h1>
-		
-		<form id="q1Form" action="step2.php" method="get" accept-charset="utf-8">
+		<h1>How would you rank the three films you selected as your favorites?</h1>
+		<!-- action="step2.php" method="get" accept-charset="utf-8" -->
+		<form id="q2Form" action="complete.php" method="get" accept-charset="utf-8">
+			<input type="hidden" name="id" value="<?= $_id ?>">
 			<input type="hidden" name="action" value="true">
 			<div class="clearfix">
-				<label id="optionsCheckboxes">Please choose 3 movies or "None of the above"</label>
-				<div class="input">
-					<ul class="inputs-list">
-						<?php foreach ($movie as $k => $v): ?>
-							<li>
-								<label>
-									<input type="checkbox" name="answer[]" value="<?= $k ?>"> 
-									<span><?= $v ?></span>
-								</label>
-							</li>
-						<?php endforeach ?>
-						<li>
-							<label>
-								<input type="checkbox" name="none" value="1"> 
-								<span>None of the above</span>
-							</label>
-						</li>
-					</ul>
-				</div>
+				<table class="myTable">
+					<thead>
+						<tr>
+							<th>First Choice</th>
+							<th>Second Choice</th>
+							<th>Third Choice</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>							
+							<td>
+								<select name="q2_first" id="q2" size="1">
+									<?php foreach ($answer as $k => $v): ?>
+										<option value="<?= $v ?>"><?= $movie[$v] ?></option>
+									<?php endforeach ?>
+								</select>
+							</td>
+							<td>
+								<select name="q2_second" id="q2" size="1">
+									<?php foreach ($answer as $k => $v): ?>
+										<option value="<?= $v ?>"><?= $movie[$v] ?></option>
+									<?php endforeach ?>
+								</select>
+							</td>
+							<td>
+								<select name="q2_third" id="q2" size="1">
+									<?php foreach ($answer as $k => $v): ?>
+										<option value="<?= $v ?>"><?= $movie[$v] ?></option>
+									<?php endforeach ?>
+								</select>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 			
 			<div class="actions">
-				<button class="btn" type="reset">Reset</button>
+				<button class="btn" type="reset" onclick="history.back()">Start Over</button>
 				<input type="submit" value="Next &raquo;" class="btn primary"> 
 			</div>
 		</form>

@@ -1,18 +1,18 @@
 <?php 
 	require_once realpath(dirname(__FILE__)) . '/lib/core/master.inc.php'; 
 
-	$movie = array(
-		 'q1_a1' => 'Memento',
-		 'q1_a2' => 'Requiem for a Dream',
-		 'q1_a3' => 'Star Wars: Episode V ‐ The Empire Strikes Back',
-		 'q1_a4' => 'Terminator 2: Judgment Day',
-		 'q1_a5' => 'The Matrix',
-		 'q1_a6' => 'The Pianist',
-		 'q1_a7' => 'The Prestige',
-		 'q1_a8' => 'The Shawshank Redemption',
-	);
-	$movie = shuffle_assoc($movie);
+	$db = Database::getDatabase();
+	
+	$punch = Punch::fetch("SELECT *, MAX(timestamp) FROM punches WHERE punch = 'out' GROUP BY username", array(), 'punch');
+	
+	foreach ($punch as $row) $db->query("UPDATE employees SET timestamp = '{$row->timestamp}' WHERE username = '{$row->username}'");
+	
+	$employee = Employee::fetch("SELECT *,
+		RIGHT(displayname, LENGTH(displayname)-LOCATE(' ',displayname)) as fname,
+		LEFT(displayname, LOCATE(',',displayname)-1) as lname
+		FROM employees", array(), 'employee');
 ?>
+
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
@@ -51,50 +51,26 @@
 <body>
 	
 	<div class="container">
-		<h1>What are your favorite three films from this list?</h1>
-		
-		<form id="q1Form" action="step2.php" method="get" accept-charset="utf-8">
-			<input type="hidden" name="action" value="true">
-			<div class="clearfix">
-				<label id="optionsCheckboxes">Please choose 3 movies or "None of the above"</label>
-				<div class="input">
-					<ul class="inputs-list">
-						<?php foreach ($movie as $k => $v): ?>
-							<li>
-								<label>
-									<input type="checkbox" name="answer[]" value="<?= $k ?>"> 
-									<span><?= $v ?></span>
-								</label>
-							</li>
-						<?php endforeach ?>
-						<li>
-							<label>
-								<input type="checkbox" name="none" value="1"> 
-								<span>None of the above</span>
-							</label>
-						</li>
-					</ul>
-				</div>
-			</div>
-			
-			<div class="actions">
-				<button class="btn" type="reset">Reset</button>
-				<input type="submit" value="Next &raquo;" class="btn primary"> 
-			</div>
-		</form>
-	
-		<div class="modal hide fade" id="my-modal">
-            <div class="modal-header">
-              <h3>Please try again</h3>
-            </div>
-            <div class="modal-body">
-		    	<h4 id="modal-msg"></h4>
-            </div>
-            <div class="modal-footer">
-              <a class="btn primary hide" href="#">Close</a>
-            </div>
+		<h1>Employee Timesheets</h1>
+		<div class="clearfix">
+			<table class="myTable">
+				<thead>
+					<tr>
+						<th>Employee Name</th>
+						<th>Most Recent Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php foreach ($employee as $row): ?>
+						<tr>
+							<td><?= (strpos($row->fname, ' ') > 3) ? substr($row->fname, 0, strpos($row->fname, ' ')) : $row->fname; ?> <?= $row->lname ?> </td>
+							<td><?= ($row->timestamp) ? date('M d, Y H:i', $row->timestamp) : NULL ?></td>
+						</tr>
+					<?php endforeach ?>
+				</tbody>
+			</table>
 		</div>
 	</div>
-	
+
 </body>
 </html>

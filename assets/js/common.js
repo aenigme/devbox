@@ -1,3 +1,18 @@
+function isUnique( tableSelector ) {
+    // Collect all values in an array
+    var values = [] ;
+    $( tableSelector + ' select#q2' ).each( function(idx,val){ values.push($(val).val()); } );
+
+    // Sort it
+    values.sort();
+
+    // Check whether there are two equal values next to each other
+    for( var k = 1; k < values.length; ++k ) {
+        if( values[k] == values[k-1] ) return false ;
+    }
+    return true ;
+}
+
 jQuery.fn.simplehints = function() {
 	return this.each(function() {
 		var $this = $(this);
@@ -92,73 +107,6 @@ var Home = {
 	init: function() {
 		jQuery(function($) {
 			
-			$('#background').zlayer({mass: 6, canvas:'#target'});
-			
-			$('#tile_01').scrollingParallax({
-		        staticSpeed : 1,
-		        loopIt : false, 
-				staticScrollLimit: false
-		    });
-			
-			$('#tile_02').scrollingParallax({
-		        staticSpeed : 1.3,
-		        loopIt : false, 
-				staticScrollLimit: false
-		    });
-			
-			$('#tile_03').scrollingParallax({
-		        staticSpeed : 1.9,
-		        loopIt : false, 
-				staticScrollLimit: false
-		    });
-			
-			$('#tile_04').scrollingParallax({
-		        staticSpeed : 2.7,
-		        loopIt : false, 
-				staticScrollLimit: false
-		    });
-			
-			$('#tile_05').scrollingParallax({
-		        staticSpeed : 3.6,
-		        loopIt : false, 
-				staticScrollLimit: false
-		    });
-			
-			$('#tile_06').scrollingParallax({
-		        staticSpeed : 4.0,
-		        loopIt : false, 
-				staticScrollLimit: false
-		    });
-					
-			$('#tile_07').scrollingParallax({
-		        staticSpeed : 4.4,
-		        loopIt : false, 
-				staticScrollLimit: false
-		    });
-					
-			$('#tile_08').scrollingParallax({
-		        staticSpeed : 6.0,
-		        loopIt : false, 
-				staticScrollLimit: false
-		    });
-					
-			$('#tile_09').scrollingParallax({
-		        staticSpeed : 7.2,
-		        loopIt : false, 
-				staticScrollLimit: false
-		    });
-					
-			$('#tile_10').scrollingParallax({
-		        staticSpeed : 3,
-		        loopIt : false, 
-				staticScrollLimit: false
-		    });
-					
-			$('#tile_11').scrollingParallax({
-		        staticSpeed : 3,
-		        loopIt : false, 
-				staticScrollLimit: false
-		    });
 		});
 	}
 };
@@ -202,7 +150,6 @@ var Site = {
 				});
 			});
 			
-			
 			$('input[type=button]').click(function() {
 				var el = $(this);
 				location.href = el.attr('rel');
@@ -232,13 +179,43 @@ var Site = {
 			$('.lightbox').open_colorbox();
 			$('.select').after('<div class="select_skin"></div>');
 			
-			Cufon.replace('h2, nav ul li, .info-box b', { fontFamily: 'GeosansLight', hover: 'true' });
-			Cufon.replace('#head-list li, .info-box strong', { fontFamily: 'Myriad Pro', hover: 'true' });
-			Cufon.replace('#banners li#ban-1 a', { fontFamily: 'Myriad Pro', hover: 'true' });
-			Cufon.replace('#banners li#ban-2 a', { fontFamily: 'Myriad Pro', hover: 'true' });
-			Cufon.replace('#banners li#ban-3 a', { fontFamily: 'Myriad Pro', hover: 'true' });
+			$('a.hide').click(function() {
+				$('#my-modal').modal('hide');
+			});
 			
-			Cufon.now();
+			$('#q1Form').submit(function() {
+				var fields = $("input[name='answer[]']").serializeArray();
+				var n = $("input[name='none']:checked").length;
+				
+				if (fields.length == 0 && n == 0) {
+					$("h4#modal-msg").html("Please select three movies from the list or \"None of the above\".");
+					$('#my-modal').modal('toggle');
+				}
+				else if (fields.length > 0 && n == 1) {
+					$("h4#modal-msg").html("Did you mean to select \"None of the above\"?");
+					$('#my-modal').modal('toggle');
+				}
+				else if (fields.length > 3 || fields.length < 3) {
+					$("h4#modal-msg").html("Please select three movies from the list or \"None of the above\".");
+					$('#my-modal').modal('toggle');
+				}
+				else {
+					return true;
+				} 
+				return false;
+			});
+			
+			$('#q2Form').submit(function() {
+				if (isUnique( ".myTable" )) {
+					return true;
+				}
+				else {
+					$("h4#modal-msg").html("Please select unique first, second and third choices.");
+					$('#my-modal').modal('toggle');
+					return false;
+				}
+				return false;
+			});
 		});
 	}
 };
