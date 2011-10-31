@@ -109,7 +109,7 @@
             ini_set('display_errors', '1');
             ini_set('error_reporting', E_ALL);
 
-            define('WEB_ROOT', '');
+            define('WEB_ROOT', '/');
 
             $this->dbReadHost      = 'localhost';
             $this->dbWriteHost     = 'localhost';
@@ -128,7 +128,7 @@
             ini_set('display_errors', '1');
             ini_set('error_reporting', E_ALL);
 
-            define('WEB_ROOT', '');
+            define('WEB_ROOT', '/');
 
             $this->dbReadHost      = 'localhost';
             $this->dbWriteHost     = 'localhost';
