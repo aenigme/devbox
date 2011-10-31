@@ -1,3 +1,7 @@
+function Link(url)  {
+  document.location.href = url;
+}
+
 function isUnique( tableSelector ) {
     // Collect all values in an array
     var values = [] ;
@@ -12,6 +16,11 @@ function isUnique( tableSelector ) {
     }
     return true ;
 }
+
+jQuery.fn.log = function (msg) {
+  console.log("%s: %o", msg, this);
+  return this;
+};
 
 jQuery.fn.simplehints = function() {
 	return this.each(function() {

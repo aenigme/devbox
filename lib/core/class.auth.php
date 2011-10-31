@@ -47,7 +47,7 @@
 
             $db = Database::getDatabase();
             $hashed_password = self::hashedPassword($password);
-            $row = $db->getRow("SELECT * FROM users WHERE username = " . $db->quote($username) . " AND password = " . $db->quote($hashed_password));
+            $row = $db->getRow("SELECT * FROM user WHERE username = " . $db->quote($username) . " AND password = " . $db->quote($hashed_password));
 
             if($row === false)
                 return false;
@@ -157,7 +157,7 @@
         {
 	    $db = Database::getDatabase();
 
-            $user_exists = $db->getValue("SELECT COUNT(*) FROM users WHERE username = " . $db->quote($username));
+            $user_exists = $db->getValue("SELECT COUNT(*) FROM user WHERE username = " . $db->quote($username));
             if($user_exists > 0)
                 return false;
 
@@ -271,7 +271,7 @@
             $db = Database::getDatabase();
 
             // We SELECT * so we can load the full user record into the user DBObject later
-            $row = $db->getRow('SELECT * FROM users WHERE nid = ' . $db->quote($nid));
+            $row = $db->getRow('SELECT * FROM user WHERE nid = ' . $db->quote($nid));
             if($row === false)
                 return false;
 

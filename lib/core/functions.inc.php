@@ -20,6 +20,7 @@
 	function set_default(&$var, $default="") 
 	{
 		$var = (!isset($var) || (($var == "" || $var == "0000-00-00 00:00:00" || $var == "0000-00-00"))) ? $default : $var;
+		return $var;
 	}
 	
 	function shuffle_assoc($array)
