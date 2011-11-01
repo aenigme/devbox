@@ -159,9 +159,9 @@ var Site = {
 				});
 			});
 			
-			$('input[type=button]').click(function() {
-				var el = $(this);
-				location.href = el.attr('rel');
+			$('input[type=button].link').click(function(e) {
+				e.preventDefault();
+				location.href = $(this).attr('rel');
 			});
 			
 			$("#jump_menu").change(function(e) {
@@ -188,43 +188,30 @@ var Site = {
 			$('.lightbox').open_colorbox();
 			$('.select').after('<div class="select_skin"></div>');
 			
-			$('a.hide').click(function() {
-				$('#my-modal').modal('hide');
-			});
-			
-			$('#q1Form').submit(function() {
-				var fields = $("input[name='answer[]']").serializeArray();
-				var n = $("input[name='none']:checked").length;
+			$('input[type=button]#addOption').click(function(e) {
+				e.preventDefault();
+				var input = document.createElement("input");
+				var option = document.getElementById("option");
 				
-				if (fields.length == 0 && n == 0) {
-					$("h4#modal-msg").html("Please select three movies from the list or \"None of the above\".");
-					$('#my-modal').modal('toggle');
+				if (option.value == '') {
+					$('div#rowOption').addClass('error');
+				} else {
+					$('div#rowOption').removeClass('error');
+					$('ol#viewOptions').append('<li>' + option.value + '</li>'); // Update preview
+					
+					input.setAttribute("type", "hidden");
+					input.setAttribute("name", "option[]");
+					input.setAttribute("value", option.value); // Update hidden fields
+					
+					$('input#option').val('').focus(); // Reset option field
+					
+					document.getElementById("moreOptions").appendChild(input);
+					$("#btnContinue").css('visibility', 'visible');
 				}
-				else if (fields.length > 0 && n == 1) {
-					$("h4#modal-msg").html("Did you mean to select \"None of the above\"?");
-					$('#my-modal').modal('toggle');
-				}
-				else if (fields.length > 3 || fields.length < 3) {
-					$("h4#modal-msg").html("Please select three movies from the list or \"None of the above\".");
-					$('#my-modal').modal('toggle');
-				}
-				else {
-					return true;
-				} 
+				
 				return false;
 			});
-			
-			$('#q2Form').submit(function() {
-				if (isUnique( ".myTable" )) {
-					return true;
-				}
-				else {
-					$("h4#modal-msg").html("Please select unique first, second and third choices.");
-					$('#my-modal').modal('toggle');
-					return false;
-				}
-				return false;
-			});
+
 		});
 	}
 };

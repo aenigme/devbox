@@ -51,49 +51,57 @@
 <body>
 	
 	<div class="container">
-		<h1>What are your favorite three films from this list?</h1>
-		
-		<form id="q1Form" action="step2.php" method="get" accept-charset="utf-8">
-			<input type="hidden" name="action" value="true">
-			<div class="clearfix">
-				<label id="optionsCheckboxes">Please choose 3 movies or "None of the above"</label>
-				<div class="input">
-					<ul class="inputs-list">
-						<?php foreach ($movie as $k => $v): ?>
-							<li>
-								<label>
-									<input type="checkbox" name="answer[]" value="<?= $k ?>"> 
-									<span><?= $v ?></span>
-								</label>
-							</li>
-						<?php endforeach ?>
-						<li>
-							<label>
-								<input type="checkbox" name="none" value="1"> 
-								<span>None of the above</span>
-							</label>
-						</li>
-					</ul>
-				</div>
+		<div class="row">
+			<div class="span4">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+				Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
 			</div>
-			
-			<div class="actions">
-				<button class="btn" type="reset">Reset</button>
-				<input type="submit" value="Next &raquo;" class="btn primary"> 
+			<div class="span12">
+				<h1>What are your favorite three films from this list?</h1>
+
+				<form id="q1Form" action="step2.php" method="get" accept-charset="utf-8">
+					<input type="hidden" name="action" value="true">
+					<div class="clearfix">
+						<label id="optionsCheckboxes">Please choose 3 movies or "None of the above"</label>
+						<div class="input">
+							<ul class="inputs-list">
+								<?php foreach ($movie as $k => $v): ?>
+									<li>
+										<label>
+											<input type="checkbox" name="answer[]" value="<?= $k ?>"> 
+											<span><?= $v ?></span>
+										</label>
+									</li>
+								<?php endforeach ?>
+								<li>
+									<label>
+										<input type="checkbox" name="none" value="1"> 
+										<span>None of the above</span>
+									</label>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="actions">
+						<button class="btn" type="reset">Reset</button>
+						<input type="submit" value="Next &raquo;" class="btn primary"> 
+					</div>
+				</form>
 			</div>
-		</form>
-	
-		<div class="modal hide fade" id="my-modal">
-            <div class="modal-header">
-              <h3>Please try again</h3>
-            </div>
-            <div class="modal-body">
-		    	<h4 id="modal-msg"></h4>
-            </div>
-            <div class="modal-footer">
-              <a class="btn primary hide" href="#">Close</a>
-            </div>
 		</div>
+	</div>
+	
+	<div class="modal hide fade" id="my-modal">
+        <div class="modal-header">
+          <h3>Please try again</h3>
+        </div>
+        <div class="modal-body">
+	    	<h4 id="modal-msg"></h4>
+        </div>
+        <div class="modal-footer">
+          <a class="btn primary hide" href="#">Close</a>
+        </div>
 	</div>
 	
 </body>
