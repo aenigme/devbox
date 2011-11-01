@@ -1,8 +1,5 @@
 /* @group General Settings */
 
-body {
-	
-}
 div.wrapper {
 	min-width: 940px;
 	padding-top: 40px;
@@ -22,5 +19,8 @@ div.wrapper {
     margin-right: 0;
 }
 
+div#moreOptions {
+	margin-top: 20px;
+}
 /* @end */
 
