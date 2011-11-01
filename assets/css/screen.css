@@ -3,9 +3,23 @@
 body {
 	
 }
-
-.container {
+div.wrapper {
+	min-width: 940px;
 	padding-top: 40px;
+}
+.topbar {
+    height: 40px;
+    left: 0;
+    overflow: visible;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10000;
+}
+.topbar div > ul.secondary-nav, .nav.secondary-nav {
+    float: right;
+    margin-left: 10px;
+    margin-right: 0;
 }
 
 /* @end */

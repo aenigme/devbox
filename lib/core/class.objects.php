@@ -5,30 +5,46 @@
     {
         public function __construct($id = null)
         {
-            parent::__construct('users', array('nid', 'username', 'password', 'level'), $id);
+            parent::__construct('user', array('nid', 'username', 'password', 'level'), $id);
         }
     }
 
-    class Survey extends DBObject
+    class Matrix extends DBObject
     {
         public function __construct($id = null)
         {
-            parent::__construct('survey', array('timestamp', 'ip', 'q1_a1', 'q1_a2', 'q1_a3', 'q1_a4', 'q1_a5', 'q1_a5', 'q1_a6', 'q1_a7', 'q1_a8', 'q1_noa', 'q2_first', 'q2_second', 'q2_third', 'complete', 'endtime'), $id);
+            parent::__construct('matrix', array('label', 'brief', 'main', 'weight'), $id);
         }
     }
 
-    class Employee extends DBObject
+    class Document extends DBObject
     {
         public function __construct($id = null)
         {
-            parent::__construct('employees', array('username', 'displayname', 'department', 'timestamp', 'fname', 'lname'), $id, 'username');
+            parent::__construct('document', array('user_id'), $id);
         }
     }
 
-    class Punch extends DBObject
+    class DocumentQuestions extends DBObject
     {
         public function __construct($id = null)
         {
-            parent::__construct('punches', array('username', 'punch', 'timestamp'), $id);
+            parent::__construct('document_questions', array('document_id', 'question_id'), $id);
+        }
+    }
+
+    class Question extends DBObject
+    {
+        public function __construct($id = null)
+        {
+            parent::__construct('question', array('matrix_id', 'question'), $id);
+        }
+    }
+
+    class QuestionOptions extends DBObject
+    {
+        public function __construct($id = null)
+        {
+            parent::__construct('question_options', array('question_id', 'label', 'value', 'answer'), $id);
         }
     }

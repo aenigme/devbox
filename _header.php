@@ -5,7 +5,7 @@
     	if (top !== self) top.location.href = self.location.href;
     </script>
     
-	<title>My App &raquo; <?= $page_title ?></title>
+	<title>Surv.ly <?= set_default($page_title) ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
@@ -31,5 +31,3 @@
 	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
 
 </head>
-
-<body>

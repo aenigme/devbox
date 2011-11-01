@@ -1,4 +1,5 @@
 <?php 
+	$page_title = '&raquo; Login';
 	require_once realpath(dirname(__FILE__)) . '/lib/core/master.inc.php'; 
 
     if($Auth->loggedIn()) redirect('/new.php');
@@ -16,39 +17,51 @@
 
 <body>
 	
-	<div class="container">
-		<div class="row">
-			<div class="span16">
+	<? require_once realpath(dirname(__FILE__)) . '/_navigation.php'; ?>
+	
+	<div class="wrapper">
+		<div class="container">
+			<div class="row">
+				<div class="span16">
 				
-				<?php if (strlen($Error)): ?>
-					<div class="row">
-						<div style="width: 562px; margin: 0 auto;">
-							<div class="alert-message error">
-						    <p><?= $Error; ?></p>
-						    </div>
+					<?php if (strlen($Error)): ?>
+						<div class="row">
+							<div style="width: 562px; margin: 0 auto;">
+								<div class="alert-message error">
+							    <p><?= $Error; ?></p>
+							    </div>
+							</div>
 						</div>
-					</div>
-				<?php endif ?>
+					<?php endif ?>
 						
-				<div class="row">
-					<div style="background-image: url('/assets/images/account/background_login.jpg'); width: 562px; height: 246px; margin: 20px auto;">
-						<div class="span5" style="padding: 20px 0 0 10px;">
-							<div class="page-header">
-								<h4>Sign-in to your account</h4>
+					<div class="row">
+						<div style="background-image: url('/assets/images/account/background_login.jpg'); width: 562px; height: 246px; margin: 20px auto;">
+							<div class="span5" style="padding: 20px 0 0 10px;">
+								<div class="page-header">
+									<h4>Sign-in to your account</h4>
+								</div>
+								<form action="<?PHP echo $_SERVER['PHP_SELF']; ?>" method="post" class="form-stacked" style="margin-left: -20px;"> 
+									<div id="clearfix">
+										<label for="username">Username:</label> 
+										<input type="text" name="username" value="<?= set_default($username) ?>" id="username" />
+									</div>
+									<div id="clearfix">
+										<label for="password">Password:</label> 
+										<input type="password" name="password" value="" id="password" />
+									</div>
+									<div id="clearfix">
+										<input type="submit" name="btnlogin" value="Login" id="btnlogin" class="btn primary"/>
+									</div>
+									<input type="hidden" name="r" value="<?PHP echo htmlspecialchars(@$_REQUEST['r']); ?>" id="r">
+								</form>
 							</div>
-							<form action="<?PHP echo $_SERVER['PHP_SELF']; ?>" method="post" class="form-stacked" style="margin-left: -20px;"> 
-								<p><label for="username">Username:</label> <input type="text" name="username" value="<?PHP echo $username;?>" id="username" /></p>
-								<p><label for="password">Password:</label> <input type="password" name="password" value="" id="password" /></p>
-								<p><input type="submit" name="btnlogin" value="Login" id="btnlogin" class="btn primary"/></p>
-								<input type="hidden" name="r" value="<?PHP echo htmlspecialchars(@$_REQUEST['r']); ?>" id="r">
-							</form>
-						</div>
-						<div class="span3" style="padding: 20px 0 0 30px;">
-							<div class="page-header">
-								<h4>Create an account</h4>
+							<div class="span3" style="padding: 20px 0 0 30px;">
+								<div class="page-header">
+									<h4>Create an account</h4>
+								</div>
+								<p style="margin-bottom: 45px;">Don't have an account? You can create one for FREE and in one-simple step!</p>
+								<input type="button" name="btnlogin" value="Create Account" id="btnlogin" class="btn link success" rel="/acct.php" />
 							</div>
-							<p style="margin-bottom: 45px;">Don't have an account? You can create one for FREE and in one-simple step!</p>
-							<input type="submit" name="btnlogin" value="Create Account" id="btnlogin" class="btn success" onclick="Link('acct.php');" />
 						</div>
 					</div>
 				</div>
