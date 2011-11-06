@@ -19,9 +19,9 @@ RewriteCond %{HTTP_HOST} ^www.example.com$ [NC]
 RewriteRule ^(.*)$ http://example.com/$1 [R=301,L]
 
 # Trailing slash
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_URI} !(.*)/$
-RewriteRule ^(.*)$ $1/ [R=301,NC,L]
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_URI} !(.*)/$
+# RewriteRule ^(.*)$ $1/ [R=301,NC,L]
 
 # Secure directories
 RewriteRule ^(application|system) index.php/$1 [L]
