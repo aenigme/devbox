@@ -9,8 +9,12 @@
 				<li class=""><a href="#overview">Privacy Policy</a></li>
 			</ul>
 			<ul class="nav secondary-nav">
-				<li><a href="/login.php">Login</a></li>
-				<li><a href="/acct.php">Sign up for free!</a></li>
+				<?php if ($Auth->loggedIn()): ?>
+					<li><a href="/logout.php">Logout</a></li>
+				<?php else: ?>
+					<li><a href="/login.php">Login</a></li>
+					<li><a href="/acct.php">Sign up for free!</a></li>
+				<?php endif ?>				
 			</ul>
 		</div>
 	</div>

@@ -47,20 +47,29 @@
 								<div class="page-header">
 									<h4>Create a new account</h4>
 								</div>
-								<form action="<?PHP echo $_SERVER['PHP_SELF']; ?>" method="post" class="form-stacked" style="margin-left: -20px;"> 
-									<p><label for="username">Choose a username:</label> <input type="text" name="username" value="<?= set_default($_POST['username']) ?>" id="username" /></p>
-									<p>
+								<form action="<?= $_SERVER['PHP_SELF']; ?>" method="post" class="form-stacked" style="margin-left: -20px;"> 
+									<div class="clearfix">
+										<label for="focus">Choose a username:</label> 
+										<input type="text" name="username" value="<?= set_default($_POST['username']) ?>" id="focus" />
+									</div>
+									<div class="clearfix">
 										<label for="password">Choose a password:</label> 
 										<input type="password" name="password" value="" id="password" /><br />
 										<span class="help-inline">Alphanumeric and must be at least 8 characters.</span>
-									</p>
-									<p><label for="confirm">Retype password:</label> <input type="password" name="confirm" value="" id="confirm" /></p>
-									<p>
+									</div>
+									<div class="clearfix">
+										<label for="confirm">Retype password:</label> 
+										<input type="password" name="confirm" value="" id="confirm" />
+									</div>
+									<div class="clearfix">
 										<label for="email">Contact email:</label> 
 										<input type="text" name="email" value="<?= set_default($_POST['email']) ?>" id="email" /><br />
 										<span class="help-inline">Up to 50 characters.</span>
-									</p>
-									<p><input type="submit" name="btnlogin" value="Sign up" id="btnlogin" class="btn success"/></p>
+									</div>
+									<div class="clearfix">
+										<input type="submit" name="btnlogin" value="Sign up" id="btnlogin" class="btn success"/>
+									</div>
+									
 									<input type="hidden" name="r" value="<?PHP echo htmlspecialchars(@$_REQUEST['r']); ?>" id="r">
 								</form>
 							</div>

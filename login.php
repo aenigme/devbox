@@ -40,16 +40,16 @@
 								<div class="page-header">
 									<h4>Sign-in to your account</h4>
 								</div>
-								<form action="<?PHP echo $_SERVER['PHP_SELF']; ?>" method="post" class="form-stacked" style="margin-left: -20px;"> 
-									<div id="clearfix">
-										<label for="username">Username:</label> 
-										<input type="text" name="username" value="<?= set_default($username) ?>" id="username" />
+								<form action="<?PHP echo $_SERVER['PHP_SELF']; ?>" method="post" class="form-stacked" style="margin-left: -20px;" autocomplete="off"> 
+									<div class="clearfix">
+										<label for="focus">Username:</label> 
+										<input type="text" name="username" value="<?= set_default($username) ?>" id="focus" />
 									</div>
-									<div id="clearfix">
+									<div class="clearfix">
 										<label for="password">Password:</label> 
 										<input type="password" name="password" value="" id="password" />
 									</div>
-									<div id="clearfix">
+									<div class="clearfix">
 										<input type="submit" name="btnlogin" value="Login" id="btnlogin" class="btn primary"/>
 									</div>
 									<input type="hidden" name="r" value="<?PHP echo htmlspecialchars(@$_REQUEST['r']); ?>" id="r">
@@ -59,7 +59,7 @@
 								<div class="page-header">
 									<h4>Create an account</h4>
 								</div>
-								<p style="margin-bottom: 45px;">Don't have an account? You can create one for FREE and in one-simple step!</p>
+								<p style="margin-bottom: 40px;">Don't have an account? You can create one for FREE and in one-simple step!</p>
 								<input type="button" name="btnlogin" value="Create Account" id="btnlogin" class="btn link success" rel="/acct.php" />
 							</div>
 						</div>
