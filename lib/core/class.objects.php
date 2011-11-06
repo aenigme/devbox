@@ -37,7 +37,7 @@
     {
         public function __construct($id = null)
         {
-            parent::__construct('question', array('matrix_id', 'question'), $id);
+            parent::__construct('question', array('matrix_id', 'question', 'description', 'min', 'max', 'required'), $id);
         }
     }
 

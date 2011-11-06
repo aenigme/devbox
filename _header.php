@@ -16,12 +16,15 @@
 	<link rel="stylesheet" type="text/css" href="/assets/css/reset.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="/assets/css/screen.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/rangeslider.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/smoothness/jquery-ui-1.8.10.custom.css" media="screen" />
 	
 	<script type="text/javascript" src="/assets/js/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery-ui-1.8.10.custom.min.js"></script>
 	<script type="text/javascript" src="/assets/js/jquery.colorbox.js"></script>
 	<script type="text/javascript" src="/assets/js/jquery.bt.min.js"></script>
 	<script type="text/javascript" src="/assets/js/jquery.form.js"></script>
-	<script type="text/javascript" src="/assets/js/bootstrap/bootstrap-modal.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.rangeslider.js"></script>
 	<script type="text/javascript" src="/assets/js/common.js"></script>
 	
 	<!-- www.phpied.com/conditional-comments-block-downloads/ -->

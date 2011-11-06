@@ -17,6 +17,61 @@ function isUnique( tableSelector ) {
     return true ;
 }
 
+var changing = false;
+var changed = true
+var dateChanging = true;
+
+function updateValuesChanged(event, ui, changing){
+	if (!changing)
+	displayValues(ui.label, ui.values)	
+}
+
+function updateValuesChanging(event, ui, changing){
+	if (changing)
+	displayValues(ui.label, ui.values)
+}
+
+function displayValues(slider, values){
+	if (values.min instanceof Date) {
+		slider.parents("form").find("input[name=min]").val($.datepicker.formatDate("yy-mm-dd", values.min));
+		slider.parents("form").find("input[name=max]").val($.datepicker.formatDate("yy-mm-dd", values.max));
+	}
+	else {
+		slider.parents("form").find("input[name=min]").val(values.min);
+		slider.parents("form").find("input[name=max]").val(values.max);
+	}
+}
+
+function makeSlider(selector, options){
+	var slider = $(selector)
+	.rangeSlider(options)
+	// .bind("valuesChanging", function(event, ui){updateValuesChanging(event, ui, changing);})
+	.bind("valuesChanged", function(event, ui){updateValuesChanged(event, ui, changing);})
+	.addClass("ui-rangeSlider-dev");
+	displayValues(slider, slider.rangeSlider("values"));
+}
+
+function makeDateSlider(selector, options){
+	var slider = $(selector)
+	.dateRangeSlider(options)
+	.bind("valuesChanging", function(event, ui){updateValuesChanging(event, ui, dateChanging);})
+	.bind("valuesChanged", function(event, ui){updateValuesChanged(event, ui, dateChanging);})
+	.addClass("ui-rangeSlider-dev");
+	displayValues(slider, slider.rangeSlider("values"));
+}
+
+function setOption(element, option, value){
+	if (value == "null") {
+		value = null
+	}
+	$(element).parents(".example").find(".slider").rangeSlider("option", option, value);
+	$(element).parents(".example").find(".dateSlider").dateRangeSlider("option", option, value);
+}
+
+function getOption(element, option){
+	return $(element).parents(".example").find(".slider").rangeSlider("options")[option];
+}
+
 jQuery.fn.log = function (msg) {
   console.log("%s: %o", msg, this);
   return this;
@@ -181,12 +236,21 @@ var Site = {
 			];
 			
 			// $.preloadImages(preload);
-			
 			$(this).find('form .hint').simplehints();
+			$('#focus').focus();
 			$('#contactForm').sendmail();
 			$('.tooltip').bt();
 			$('.lightbox').open_colorbox();
 			$('.select').after('<div class="select_skin"></div>');
+			
+			// Surv.ly functions
+			$(document).delegate("a.removeOption", "click", function(e){ 
+				e.preventDefault();
+				var el = $(this);
+				var str = el.parent('li').attr('rel');
+				$('input[name="option[]"][value="' + str + '"]').remove();
+				el.parent('li').remove();
+			});
 			
 			$('input[type=button]#addOption').click(function(e) {
 				e.preventDefault();
@@ -197,7 +261,7 @@ var Site = {
 					$('div#rowOption').addClass('error');
 				} else {
 					$('div#rowOption').removeClass('error');
-					$('ol#viewOptions').append('<li>' + option.value + '</li>'); // Update preview
+					$('ol#viewOptions').append('<li rel="' + option.value + '">' + option.value + '<a href="javascript:;" class="label important removeOption">remove</a></li>'); // Update preview
 					
 					input.setAttribute("type", "hidden");
 					input.setAttribute("name", "option[]");
@@ -208,10 +272,14 @@ var Site = {
 					document.getElementById("moreOptions").appendChild(input);
 					$("#btnContinue").css('visibility', 'visible');
 				}
-				
 				return false;
 			});
-
+			
+			$("#matrix").change(function(e) {
+				var el = $(this).children(':selected').attr('rel');
+				$('.optionChoice').css('visibility', 'hidden');
+				$(el).css('visibility', 'visible');
+	        });
 		});
 	}
 };
