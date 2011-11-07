@@ -14,8 +14,8 @@
         // Add your server hostnames to the appropriate arrays. ($_SERVER['HTTP_HOST'])
         // Each array item should be a regular expression. This gives you the option to detect a whole range
         // of server names if needed. Otherwise, you can simply detect a single server like '/^servername\.com$/'
-        private $productionServers = array('/^applicant.eworksinc\.com$/');
-        private $stagingServers    = array();
+        private $productionServers = array('/^example\.com$/','/www.example\.com$/');
+        private $stagingServers    = array('/^stage.example\.com$/');
         private $localServers      = array('/^devbox\.dev$/');
 
         // Standard Config Options...
@@ -38,21 +38,23 @@
 
         // Add your config options here...
         public $useDBSessions; // Set to true to store sessions in the database
-
+		
+		public $whereAmI;
+		
         // Singleton constructor
-        private function __construct()
+        public function __construct()
         {
             $this->everywhere();
 
-            $i_am_here = $this->whereAmI();
-
-            if('production' == $i_am_here)
+            $this->whereAmI = $this->whereAmI();
+			
+            if('production' == $this->whereAmI)
                 $this->production();
-            elseif('staging' == $i_am_here)
+            elseif('staging' == $this->whereAmI)
                 $this->staging();
-            elseif('local' == $i_am_here)
+            elseif('local' == $this->whereAmI)
                 $this->local();
-            elseif('shell' == $i_am_here)
+            elseif('shell' == $this->whereAmI)
                 $this->shell();
             else
                 die('<h1>Where am I?</h1> <p>You need to setup your server names in <code>class.config.php</code></p>
@@ -88,18 +90,18 @@
         // Add code/variables to be run only on production servers
         private function production()
         {
-            ini_set('display_errors', '1');
+            ini_set('display_errors', '0');
 
             define('WEB_ROOT', '/');
 
             $this->dbReadHost      = 'localhost';
             $this->dbWriteHost     = 'localhost';
-            $this->dbName          = 'patrick';
-            $this->dbReadUsername  = 'patrickthomas';
-            $this->dbWriteUsername = 'patrickthomas';
-            $this->dbReadPassword  = 'thomas';
-            $this->dbWritePassword = 'thomas';
-            $this->dbOnError       = '';
+            $this->dbName          = '';
+            $this->dbReadUsername  = '';
+            $this->dbWriteUsername = '';
+            $this->dbReadPassword  = '';
+            $this->dbWritePassword = '';
+            $this->dbOnError       = 'die';
             $this->dbEmailOnError  = false;
         }
 
@@ -109,7 +111,7 @@
             ini_set('display_errors', '1');
             ini_set('error_reporting', E_ALL);
 
-            define('WEB_ROOT', '/');
+            define('WEB_ROOT', '');
 
             $this->dbReadHost      = 'localhost';
             $this->dbWriteHost     = 'localhost';
@@ -128,7 +130,7 @@
             ini_set('display_errors', '1');
             ini_set('error_reporting', E_ALL);
 
-            define('WEB_ROOT', '/');
+            define('WEB_ROOT', '');
 
             $this->dbReadHost      = 'localhost';
             $this->dbWriteHost     = 'localhost';
