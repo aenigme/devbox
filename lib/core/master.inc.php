@@ -26,7 +26,7 @@
     // Load our config settings
 	$config = Config::getConfig();
 	
-	// Store session info in the database?
+    // Store session info in the database?
     if(Config::get('useDBSessions') === true)
         DBSession::register();
 

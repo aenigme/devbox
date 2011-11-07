@@ -38,7 +38,6 @@
 
         // Add your config options here...
         public $useDBSessions; // Set to true to store sessions in the database
-		
 		public $whereAmI;
 		
         // Singleton constructor
@@ -47,7 +46,6 @@
             $this->everywhere();
 
             $this->whereAmI = $this->whereAmI();
-			
             if('production' == $this->whereAmI)
                 $this->production();
             elseif('staging' == $this->whereAmI)
