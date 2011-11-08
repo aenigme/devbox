@@ -1,5 +1,5 @@
 <?php 
-	require_once realpath(dirname(__FILE__)) . '/lib/core/master.inc.php'; 
+	require_once realpath(dirname(__FILE__)) . '/../lib/core/master.inc.php'; 
 
 	if (isset($_FILES['fileInput']) && isset($_POST['action'])) 
 	{
@@ -29,16 +29,16 @@
 	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="assets/css/screen.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/reset.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css" media="screen" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/screen.css" media="screen" />
 	
-	<script type="text/javascript" src="assets/js/jquery-1.6.2.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.colorbox.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.bt.min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.form.js"></script>
-	<script type="text/javascript" src="assets/js/bootstrap/bootstrap-modal.js"></script>
-	<script type="text/javascript" src="assets/js/common.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery-1.6.2.min.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.colorbox.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.bt.min.js"></script>
+	<script type="text/javascript" src="/assets/js/jquery.form.js"></script>
+	<script type="text/javascript" src="/assets/js/bootstrap/bootstrap-modal.js"></script>
+	<script type="text/javascript" src="/assets/js/common.js"></script>
 	
 	<!-- www.phpied.com/conditional-comments-block-downloads/ -->
 	<!--[if IE]><![endif]-->

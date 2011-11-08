@@ -5,7 +5,7 @@
 
 	function framework_autoload($class_name)
 	{
-	    $filename = DOC_ROOT . '/core/class.' . strtolower($class_name) . '.php';
+	    $filename = LIBRARY . '/class.' . strtolower($class_name) . '.php';
 	    if(file_exists($filename))
 	        require $filename;
 	}

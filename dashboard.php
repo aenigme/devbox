@@ -1,8 +1,8 @@
-<?php 
+<?php defined('LIBRARY') or die('No direct script access.'); 
+
 	$page_title = '&raquo; New Survey';
-	require_once realpath(dirname(__FILE__)) . '/lib/core/master.inc.php'; 
 	
-    if(!$Auth->loggedIn()) redirect('/login.php');
+    if(!$Auth->loggedIn()) redirect('/login');
 
 	require_once realpath(dirname(__FILE__)) . '/_header.php'; 
 	echo '<body>';
@@ -28,7 +28,7 @@
 			</div>
 			<div class="row" style="margin-top: 40px;">
 				<div class="span-one-third">
-					<a href="/survery/new.php">
+					<a href="/survey/new">
 					<img alt="" src="/assets/images/icons/dashboard/icon_10.png" class="thumbnail floatleft" style="margin-top: 10px;">
 					<h3>EZee Survey</h3></a>
 					<p>Build a survey with unlimited questions and download final results.</p>

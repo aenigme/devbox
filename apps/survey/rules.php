@@ -1,8 +1,8 @@
-<?php 
+<?php defined('LIBRARY') or die('No direct script access.'); 
+
 	$page_title ='&raquo; Set Rules &amp; Options';
-	require_once realpath(dirname(__FILE__)) . '/lib/core/master.inc.php'; 
 	
-    if(!$Auth->loggedIn()) redirect('/login.php');
+    if(!$Auth->loggedIn()) redirect('/login');
 	
 	if(!empty($_POST['action']))
     {

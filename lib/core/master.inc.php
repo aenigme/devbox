@@ -2,17 +2,18 @@
     // Application flag
     define('SPF', true);
 
-    // https://twitter.com/#!/marcoarment/status/59089853433921537
-    date_default_timezone_set('America/Los_Angeles');
-
     // Determine our absolute document root
-    define('DOC_ROOT', realpath(dirname(__FILE__) . '/../'));
+    define('DOC_ROOT', realpath(dirname(__FILE__)));
+	define('LIBRARY', DOC_ROOT);
+	
+	// https://twitter.com/#!/marcoarment/status/59089853433921537
+	date_default_timezone_set('America/Los_Angeles');
 
-    // Global include files
-    require DOC_ROOT . '/core/class.debug.php';    // debug...
-	require DOC_ROOT . '/core/functions.inc.php';  // spl_autoload_register() is contained in this file
-    require DOC_ROOT . '/core/class.dbobject.php'; // DBOBject...
-	require DOC_ROOT . '/core/class.objects.php';  // and its subclasses
+	// Global include files
+	require LIBRARY . '/class.debug.php';    // debug...
+	require LIBRARY . '/functions.inc.php';  // spl_autoload_register() is contained in this file
+	require LIBRARY . '/class.dbobject.php'; // DBOBject...
+	require LIBRARY . '/class.objects.php';  // and its subclasses
 	
     // Fix magic quotes
     if(get_magic_quotes_gpc())

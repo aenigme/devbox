@@ -1,5 +1,4 @@
-<?php 
-	require_once realpath(dirname(__FILE__)) . '/lib/core/master.inc.php'; 
+<?php defined('LIBRARY') or die('No direct script access.'); 
 
 	$db = Database::getDatabase();
 	

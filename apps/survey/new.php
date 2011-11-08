@@ -1,8 +1,8 @@
-<?php 
+<?php defined('LIBRARY') or die('No direct script access.'); 
+
 	$page_title = '&raquo; New Survey';
-	require_once realpath(dirname(__FILE__)) . '/lib/core/master.inc.php'; 
 	
-    if(!$Auth->loggedIn()) redirect('/login.php');
+    if(!$Auth->loggedIn()) redirect('/login');
 
 	$type = Matrix::fetch("SELECT * FROM matrix WHERE main = 1 ORDER BY weight");
 	
@@ -44,9 +44,9 @@
 		}
     }
     
-	require_once realpath(dirname(__FILE__)) . '/_header.php'; 
+	require_once DOC_ROOT . '/_header.php'; 
 	echo '<body>';
-	require_once realpath(dirname(__FILE__)) . '/_navigation.php';
+	require_once DOC_ROOT . '/_navigation.php';
 ?>
 
 	<div class="wrapper">		

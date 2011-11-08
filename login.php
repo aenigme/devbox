@@ -1,8 +1,8 @@
-<?php 
-	$page_title = '&raquo; Login';
-	require_once realpath(dirname(__FILE__)) . '/lib/core/master.inc.php'; 
+<?php defined('LIBRARY') or die('No direct script access.'); 
 
-    if($Auth->loggedIn()) redirect('/new.php');
+	$page_title = '&raquo; Login';
+
+    if($Auth->loggedIn()) redirect('/dashboard');
 
     if(!empty($_POST['username']))
     {
