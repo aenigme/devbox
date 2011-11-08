@@ -1,4 +1,4 @@
-<?php defined('LIBRARY') or die('No direct script access.'); 
+<?php defined('LIBRARY') or die(require_once realpath(dirname(__FILE__)) . '/../404.php');
 
 	if (isset($_FILES['fileInput']) && isset($_POST['action'])) 
 	{

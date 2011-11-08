@@ -1,4 +1,4 @@
-<?php defined('LIBRARY') or die('No direct script access.'); 
+<?php defined('LIBRARY') or die(require_once realpath(dirname(__FILE__)) . '/../404.php');
 
     $apikey = 'f7e1fc013b75e1a110fa03d42d1f5162-us2';
     $listID = 'c6458cce9a';

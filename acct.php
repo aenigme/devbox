@@ -1,6 +1,6 @@
-<?php 
+<?php defined('LIBRARY') or die(require_once realpath(dirname(__FILE__)) . '/404.php');
+
 	$page_title = '&raquo; New Account';
-	require_once realpath(dirname(__FILE__)) . '/lib/core/master.inc.php'; 
 	
     if($Auth->loggedIn()) redirect('/new.php');
 

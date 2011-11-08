@@ -2,53 +2,25 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 
-	<title></title>
+	<title>We're sorry. Elvis has left the building.</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
 	
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
-
 	<link rel="stylesheet" type="text/css" href="/assets/css/reset.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/assets/css/screen.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/assets/css/alerts.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/assets/css/forms.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/assets/css/lightbox.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/assets/css/messages.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="/assets/css/print.css" media="print" />
+	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css" media="screen" />
 	
-	<script type="text/javascript" src="/assets/js/jquery-1.6.2.min.js"></script>
-	<script type="text/javascript" src="/jassets/s/jquery.colorbox.js"></script>
-	<script type="text/javascript" src="/assets/js/jquery.bt.min.js"></script>
-	<script type="text/javascript" src="/assets/js/jquery.form.js"></script>
-	<script type="text/javascript" src="/assets/js/cufon.js"></script>
-	<script type="text/javascript" src="/assets/js/common.js"></script>
-	
-	<script src="/assets/fonts/Ideal_Sans_300.font.js" type="text/javascript"></script>
-	
-	<script type="text/javascript" charset="utf-8"> Home.init(); </script>
-	
-	<!-- www.phpied.com/conditional-comments-block-downloads/ -->
-	<!--[if IE]><![endif]-->
-
-	<!--[if (gte IE 6)&(lte IE 8)]>
-		<link rel="stylesheet" type="text/css" href="/css/ie.css" />
-		<script type="text/javascript" src="/js/selectivizr.js"></script>
-	<![endif]-->
-	
-	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
-	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
-
+	<style type="text/css" media="screen">
+		body { background-color: #ffffff;  }
+	</style>
 </head>
-
 <body>
 	
-	<?php include(DIRNAME . 'templates/header.php') ?>
-	
-	<!-- INSERT WRAPPER AND CONTENT HERE -->
-	
-	<?php include(DIRNAME . 'templates/footer.php') ?>
+	<center>
+		<img src="/assets/images/404elvis.png">
+		<h1>We're sorry. Elvis has left the building.</h1>
+		<h1><small>And we can't find that page</small></h1>
+	</center>
 	
 </body>
 </html>
