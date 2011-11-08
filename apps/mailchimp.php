@@ -1,8 +1,7 @@
-<?php
+<?php defined('LIBRARY') or die('No direct script access.'); 
+
     $apikey = 'f7e1fc013b75e1a110fa03d42d1f5162-us2';
     $listID = 'c6458cce9a';
-	
-	require_once realpath(dirname(__FILE__)) . '/classes/master.inc.php';
 	
     if (isset($_POST['subscribe'])) :
 		if (preg_match("(\w[-._\w]*\w@\w[-._\w]*\w\.\w{2,})", $_POST['email'])) :

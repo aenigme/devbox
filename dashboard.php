@@ -1,6 +1,6 @@
 <?php defined('LIBRARY') or die('No direct script access.'); 
 
-	$page_title = '&raquo; New Survey';
+	$page_title = '&raquo; Dashboard';
 	
     if(!$Auth->loggedIn()) redirect('/login');
 
@@ -25,7 +25,7 @@
 					<?php endif ?>
 				</div>
 			</div>
-			<div class="row" style="margin-top: 40px;">
+			<div class="row">
 				<div class="span-one-third">
 					<a href="/survey/new">
 					<img alt="" src="/assets/images/icons/dashboard/icon_10.png" class="thumbnail floatleft" style="margin-top: 10px;">
