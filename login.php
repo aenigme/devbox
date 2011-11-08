@@ -7,7 +7,7 @@
     if(!empty($_POST['username']))
     {
 		if($Auth->login($_POST['username'], $_POST['password']))
-			redirect('/new.php');
+			redirect('/dashboard.php');
 		else
 			$Error->add('username', "We're sorry, you have entered an incorrect username and password. Please try again.");
     }

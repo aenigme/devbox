@@ -1,7 +1,7 @@
 <div class="topbar">
 	<div class="topbar-inner">
 		<div class="container">
-			<a href="#" class="brand">Surv.ly</a>
+			<a href="#" class="brand">EZee.ly</a>
 			<ul class="nav">
 				<li class=""><a href="#overview">About</a></li>
 				<li class=""><a href="#overview">What's New</a></li>
