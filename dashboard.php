@@ -50,7 +50,22 @@
 					<p>Build a Frequently Asked Questions list.</p>
 				</div>
 				<div class="span-one-third">
+					<img alt="" src="/assets/images/origami/save.png" class="thumbnail floatleft" style="margin: 10px 10px 0 0; width: 55px;">
+					<h3>EZee Backups</h3>
+					<p>Backup your website and database with <a href="http://www.dropbox.com" target="_blank">Dropbox</a> support.</p>
 					
+					<img alt="" src="/assets/images/icons/dashboard/icon_18.png" class="thumbnail floatleft" style="margin-top: 10px;">
+					<h3>EZee Settings</h3>
+					<p>Setup Admin access, email and database settings, and more.</p>
+					
+					<img alt="" src="/assets/images/origami/discussion.png" class="thumbnail floatleft" style="margin: 10px 10px 0 0; width: 55px;">
+					<h3>EZee Testimonials</h3>
+					<p>Manage and approve customer testimonials.</p>
+					
+					<img alt="" src="/assets/images/milky/78.png" class="thumbnail floatleft" style="margin: 10px 10px 0 0; width: 55px;">
+					<h3>EZee Shopping Cart</h3>
+					<p>Create a simple shopping cart with <a href="http://www.authorize.net" target="_blank">Authorize.net</a> and 
+					<a href="http://www.paypal.com" target="_blank">Paypal</a> support.</p>
 				</div>
 				<div class="span-one-third">
 					
