@@ -19,9 +19,8 @@
 	
 	$question = new Question($_GET['id']);
 	
-	require_once realpath(dirname(__FILE__)) . '/_header.php'; 
-	echo '<body>';
-	require_once realpath(dirname(__FILE__)) . '/_navigation.php';
+	require_once DOC_ROOT . '/_header.php'; 
+	require_once DOC_ROOT . '/_navigation.php';
 ?>
 
 	<div class="wrapper">

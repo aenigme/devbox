@@ -12,13 +12,10 @@
 			$Error->add('username', "We're sorry, you have entered an incorrect username and password. Please try again.");
     }
 
-    require_once realpath(dirname(__FILE__)) . '/_header.php'; 
+	require_once DOC_ROOT . '/_header.php'; 
+	require_once DOC_ROOT . '/_navigation.php';
 ?>
 
-<body>
-	
-	<? require_once realpath(dirname(__FILE__)) . '/_navigation.php'; ?>
-	
 	<div class="wrapper">
 		<div class="container">
 			<div class="row">

@@ -45,7 +45,6 @@
     }
     
 	require_once DOC_ROOT . '/_header.php'; 
-	echo '<body>';
 	require_once DOC_ROOT . '/_navigation.php';
 ?>
 
