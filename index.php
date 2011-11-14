@@ -84,7 +84,23 @@
 		include_once DIR_SYS . '/markdown.php';
 		$str = file_get_contents($pagename);
 		$my_html = Markdown($str);
-		echo $my_html;
+
+		include DIR_VIEW . '/_header.php';
+		include DIR_VIEW . '/_navigation.php';
+		
+		echo <<<HTML
+		<div class="wrapper">		
+			<div class="container">
+				<div class="row">
+					<div class="span16">
+						{$my_html}
+					</div>
+				</div>
+			</div>
+		</div>
+HTML;
+		
+		include DIR_VIEW . '/_footer.php';
 		exit();
 	}
 	else if(file_exists($filename))

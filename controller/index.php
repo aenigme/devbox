@@ -33,7 +33,7 @@
 					<p>Build a survey with unlimited questions and download final results.</p>
 					
 					<img alt="" src="/assets/images/icons/dashboard/icon_06.png" class="thumbnail floatleft" style="margin-top: 10px;">
-					<h3>EZee Contact From</h3>
+					<h3>EZee Contact Form</h3>
 					<p>Supports direct email, <a href="http://www.mailchimp.com" target="_blank">Mailchimp</a> and 
 					<a href="http://www.constantcontact.com" target="_blank">Constant Contact</a>.</p>
 					
