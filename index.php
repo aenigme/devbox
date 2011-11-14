@@ -1,4 +1,7 @@
 <?php 
+	ini_set('error_reporting', E_ALL);
+	ini_set('display_errors', 1);	
+
 	// Application flag
 	define('SPF', true);
 
@@ -63,7 +66,7 @@
 		
 	$appname =  DIR_CTRL . '/'; // Symbolic application links
 	$filename = DOC_ROOT . $_SERVER['REQUEST_URI'] . '.php'; // Load filename directly
-	$pagename = DIR_PAGE . $_SERVER['REQUEST_URI'] . '.md'; // MARKDOWN templates, for future use
+	$pagename = DIR_PAGE . rtrim($_SERVER['REQUEST_URI'], '/') . '.md'; // MARKDOWN templates, for future use
 	$requestURI = explode('/', $_SERVER['REQUEST_URI']);
 		
 	for($i= 1; $i < sizeof($requestURI) - 1; $i++)	
@@ -78,7 +81,10 @@
 	
 	if(file_exists($pagename))
 	{
-		require $pagename; // Load MARKDOWN page
+		include_once DIR_SYS . '/markdown.php';
+		$str = file_get_contents($pagename);
+		$my_html = Markdown($str);
+		echo $my_html;
 		exit();
 	}
 	else if(file_exists($filename))
