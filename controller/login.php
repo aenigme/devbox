@@ -1,19 +1,19 @@
-<?php defined('LIBRARY') or die(require_once realpath(dirname(__FILE__)) . '/404.php');
+<?php defined('LIBRARY') or die('No direct script access allowed');
 
 	$page_title = '&raquo; Login';
 
-    if($Auth->loggedIn()) redirect('/dashboard');
+    if($Auth->loggedIn()) redirect('/');
 
     if(!empty($_POST['username']))
     {
 		if($Auth->login($_POST['username'], $_POST['password']))
-			redirect('/dashboard.php');
+			redirect('/');
 		else
 			$Error->add('username', "We're sorry, you have entered an incorrect username and password. Please try again.");
     }
 
-	require_once DOC_ROOT . '/_header.php'; 
-	require_once DOC_ROOT . '/_navigation.php';
+	require_once DIR_VIEW . '/_header.php'; 
+	require_once DIR_VIEW . '/_navigation.php';
 ?>
 
 	<div class="wrapper">
@@ -37,7 +37,7 @@
 								<div class="page-header">
 									<h4>Sign-in to your account</h4>
 								</div>
-								<form action="<?PHP echo $_SERVER['PHP_SELF']; ?>" method="post" class="form-stacked" style="margin-left: -20px;" autocomplete="off"> 
+								<form action="/login/" method="post" class="form-stacked" style="margin-left: -20px;" autocomplete="off"> 
 									<div class="clearfix">
 										<label for="focus">Username:</label> 
 										<input type="text" name="username" value="<?= set_default($username) ?>" id="focus" />

@@ -1,4 +1,4 @@
-<?php defined('LIBRARY') or die(require_once realpath(dirname(__FILE__)) . '/404.php');
+<?php defined('LIBRARY') or die('No direct script access allowed');
 
 	$page_title = '&raquo; New Account';
 	
@@ -19,8 +19,8 @@
 			$Error->add('username', "We're sorry, that username already exists. Please try again.");
     }
 
-	require_once DOC_ROOT . '/_header.php'; 
-	require_once DOC_ROOT . '/_navigation.php';
+	require_once DIR_VIEW . '/_header.php'; 
+	require_once DIR_VIEW . '/_navigation.php';
 ?>
 	
 	<div class="wrapper">

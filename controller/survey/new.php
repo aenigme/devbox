@@ -1,4 +1,4 @@
-<?php defined('LIBRARY') or die(require_once realpath(dirname(__FILE__)) . '/../../404.php');
+<?php defined('LIBRARY') or die('No direct script access allowed');
 
 	$page_title = '&raquo; New Survey';
 	
@@ -40,12 +40,12 @@
 				}
 			}
 			
-			redirect('/rules.php?&id=' . $q_id);
+			redirect('/survey/rules/' . $q_id);
 		}
     }
     
-	require_once DOC_ROOT . '/_header.php'; 
-	require_once DOC_ROOT . '/_navigation.php';
+	require_once DIR_VIEW . '/_header.php'; 
+	require_once DIR_VIEW . '/_navigation.php';
 ?>
 
 	<div class="wrapper">		
@@ -71,7 +71,7 @@
 								<div class="page-header">
 									<h4>Start with your first question</h4>
 								</div>
-								<form action="<?= $_SERVER['PHP_SELF']; ?>" method="post" class="form-stacked" style="margin-left: -20px;"> 
+								<form action="/survey/new/" method="post" class="form-stacked" style="margin-left: -20px;"> 
 									<div class="clearfix">
 										<label for="matrix">Choose a question type:</label> 
 										<select id="matrix" name="matrix_id">

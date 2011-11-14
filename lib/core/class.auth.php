@@ -9,7 +9,7 @@
         public $username;
         public $user;
         public $expiryDate;
-        public $loginUrl = '/login.php'; // Where to direct users to login
+        public $loginUrl = '/login'; // Where to direct users to login
 
         private $nid;
         private $loggedIn;
@@ -70,7 +70,7 @@
         {
             $this->loggedIn = false;
             $this->clearCookies();
-            $this->sendToLoginPage();
+			$this->sendToLoginPage();
         }
 
         public function loggedIn()

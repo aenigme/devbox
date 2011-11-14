@@ -1,5 +1,5 @@
-<?php defined('LIBRARY') or die(require_once realpath(dirname(__FILE__)) . '/../../404.php');
-
+<?php defined('LIBRARY') or die('No direct script access allowed');
+	
 	$page_title ='&raquo; Set Rules &amp; Options';
 	
     if(!$Auth->loggedIn()) redirect('/login');
@@ -13,14 +13,15 @@
 			$q->required = set_default($_POST['required'], 0);
 			$q->update();
 
-			redirect('/rules.php?&id=' . $_POST['question_id']);
+			redirect('/survey/preview/' . $_POST['question_id']);
 		}
     }
 	
+	$type = Matrix::fetch("SELECT * FROM matrix WHERE main = 1 ORDER BY weight");
 	$question = new Question($_GET['id']);
 	
-	require_once DOC_ROOT . '/_header.php'; 
-	require_once DOC_ROOT . '/_navigation.php';
+	require_once DIR_VIEW . '/_header.php'; 
+	require_once DIR_VIEW . '/_navigation.php';
 ?>
 
 	<div class="wrapper">
@@ -42,36 +43,39 @@
 						<div style="background-image: url('/assets/images/account/background_acct.jpg'); width: 562px; height: 482px; margin: 20px auto;">
 							<div class="span5" style="padding: 20px 0 0 10px;">
 								<div class="page-header">
-									<h2>Preview Question</h2>
+									<h4>Rules &amp; Options</h4>
 								</div>
-								
-								<strong style="font-size: 18px;"><?= $question->question ?></strong>
-								<?php if ($question->matrix_id == 14): ?>
-									<script type="text/javascript" charset="utf-8">
-										$(document).ready(function(){
-											makeSlider("#defaultSlider", {
-												defaultValues:{min:20, max:50},
-												bounds:{min:20, max:50}, 
-												arrows: false,
-											});
-										});
-									</script>
-									
-									<div class="sliderZone">
-										<form action="#">
-											<input type="hidden" name="min" />
-											<input type="hidden" name="max" />
-											<div id="defaultSlider" class="slider"></div>
-										</form>
-									</div>
-									
-								<?php endif ?>
-								<form action="<?= $_SERVER['PHP_SELF']; ?>" method="post" class="form-stacked" style="margin-left: -20px;"> 
-									<input type="hidden" name="question_id" value="<?= set_default($_GET['id']) ?>">
+								<form action="/survey/rules/" method="post" class="form-stacked" style="margin-left: -20px;"> 
+									<input type="hidden" name="question_id" value="<?= set_default($requestURI[3]) ?>">
 									<input type="hidden" name="action" value="true">
 									
-									<input type="button" value="Add More &raquo;" id="addOption" class="btn primary" onclick="addOption" />
-									<input type="submit" value="Done" class="btn success" />
+									<div class="clearfix">
+										<label for="description">Brief description of this question:</label> 
+										<textarea rows="3" name="description" id="description" class=""></textarea><br />
+										<span class="help-inline">For internal use only</span>
+									</div>
+									
+									<div class="clearfix">
+										<label id="optionsCheckboxes">Other options</label>
+										<div class="input">
+											<ul class="inputs-list">
+												<li>
+													<label>
+														<input type="checkbox" value="1" name="required">
+														<span>Required &mdash; user must choose one option</span>
+													</label>
+												</li>
+												<li>
+													<label>
+														<input type="checkbox" value="1" name="optionsCheckboxes">
+														<span>Include an option for "None of the above"</span>
+													</label>
+												</li>
+											</ul>
+										</div>
+									</div>
+									
+									<input type="submit" value="Next &raquo;" class="btn primary" />
 									
 									<input type="hidden" name="r" value="<?PHP echo htmlspecialchars(@$_REQUEST['r']); ?>" id="r">
 									

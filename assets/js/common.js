@@ -1,22 +1,3 @@
-function Link(url)  {
-  document.location.href = url;
-}
-
-function isUnique( tableSelector ) {
-    // Collect all values in an array
-    var values = [] ;
-    $( tableSelector + ' select#q2' ).each( function(idx,val){ values.push($(val).val()); } );
-
-    // Sort it
-    values.sort();
-
-    // Check whether there are two equal values next to each other
-    for( var k = 1; k < values.length; ++k ) {
-        if( values[k] == values[k-1] ) return false ;
-    }
-    return true ;
-}
-
 var changing = false;
 var changed = true
 var dateChanging = true;
@@ -40,6 +21,25 @@ function displayValues(slider, values){
 		slider.parents("form").find("input[name=min]").val(values.min);
 		slider.parents("form").find("input[name=max]").val(values.max);
 	}
+}
+
+function getLink(url)  {
+  document.location.href = url;
+}
+
+function isUnique( tableSelector ) {
+    // Collect all values in an array
+    var values = [] ;
+    $( tableSelector + ' select#q2' ).each( function(idx,val){ values.push($(val).val()); } );
+
+    // Sort it
+    values.sort();
+
+    // Check whether there are two equal values next to each other
+    for( var k = 1; k < values.length; ++k ) {
+        if( values[k] == values[k-1] ) return false ;
+    }
+    return true ;
 }
 
 function makeSlider(selector, options){

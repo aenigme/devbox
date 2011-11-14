@@ -19,24 +19,29 @@ RewriteCond %{HTTP_HOST} ^www.example.com$ [NC]
 RewriteRule ^(.*)$ http://example.com/$1 [R=301,L]
 
 # Trailing slash
-# RewriteCond %{REQUEST_FILENAME} !-f
-# RewriteCond %{REQUEST_URI} !(.*)/$
-# RewriteRule ^(.*)$ $1/ [R=301,NC,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ $1/ [R=301,NC,L]
 
 # Secure directories
 RewriteRule ^(application|system) index.php/$1 [L]
 RedirectMatch 404 /\.git(/|$)
 RedirectMatch 404 /\.svn(/|$)
-RedirectMatch 404 /css/(/|$)
-RedirectMatch 404 /fonts/(/|$)
-RedirectMatch 404 /images/(/|$)
-RedirectMatch 404 /js/(/|$)
+RedirectMatch 404 /assets/(/|$)
+RedirectMatch 404 /controller/(/|$)
+RedirectMatch 404 /docs/(/|$)
+RedirectMatch 404 /lib/(/|$)
+RedirectMatch 404 /logs/(/|$)
+RedirectMatch 404 /pages/(/|$)
+RedirectMatch 404 /system/(/|$)
 RedirectMatch 404 /temp/(/|$)
+RedirectMatch 404 /views/(/|$)
 
 # devbox bootstrap
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /index.php/$1 [QSA,L]
+# RewriteRule ^(.*)$ /index.php [L,QSA]
 
 # gzip compression.
 <IfModule mod_deflate.c>
