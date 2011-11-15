@@ -2,7 +2,7 @@
 
 	$page_title = '&raquo; New Account';
 	
-    if($Auth->loggedIn()) redirect('/new.php');
+    if($Auth->loggedIn()) redirect(WEB_ROOT);
 
     if(!empty($_POST['username']))
     {

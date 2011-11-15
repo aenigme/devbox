@@ -1,4 +1,4 @@
-<?php defined('LIBRARY') or die(require_once realpath(dirname(__FILE__)) . '/../404.php');
+<?php defined('LIBRARY') or die('No direct script access allowed');
 
     $apikey = 'f7e1fc013b75e1a110fa03d42d1f5162-us2';
     $listID = 'c6458cce9a';
@@ -46,8 +46,8 @@
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
 	
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon" />
 
 	<link rel="stylesheet" type="text/css" href="/assets/css/reset.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="/assets/css/contact.css" media="screen" />
@@ -80,15 +80,6 @@
 						<label class="title">Email <span>We will send your videos to this address.</span></label>
 						<div class="doubleCol">
 							<label class="secondaryLabel"><input class="field_2col required email" id="user_email" name="user[email]" size="30" tabindex="11" type="text"></label>
-						</div>
-					</div>
-					<div class="fieldGroup visuallyhidden">
-						<label class="title">Password </label><br>
-						<div>
-							<label class="secondaryLabel"><input class="required" id="user_password" minlength="4" name="user[password]" size="30" tabindex="12" type="password"> Password</label>
-						</div>
-						<div>
-							<label class="secondaryLabel"><input class="required" equalto="#user_password" id="user_password_confirmation" minlength="4" name="user[password_confirmation]" size="30" tabindex="13" type="password"> Confirm Password</label>
 						</div>
 					</div>
 					<div class="fieldGroup">

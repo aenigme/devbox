@@ -74,7 +74,7 @@
 		$appname .= $requestURI[$i] . '/'; 
 		if (file_exists(rtrim($appname, '/') . '.php')) 
 		{
-			require rtrim($appname, '/') . '.php'; // Load controller
+			include rtrim($appname, '/') . '.php'; // Load controller
 			exit();
 		}
 	}
@@ -92,15 +92,15 @@
 		<div class="wrapper">		
 			<div class="container">
 				<div class="row">
-					<div class="span16">
+					<div class="span12 offset2">
 						{$my_html}
 					</div>
 				</div>
 			</div>
 		</div>
+		</body>
+		</html>
 HTML;
-		
-		include DIR_VIEW . '/_footer.php';
 		exit();
 	}
 	else if(file_exists($filename))

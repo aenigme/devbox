@@ -10,8 +10,8 @@
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
 	
-	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-	<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon" />
 
 	<link rel="stylesheet" type="text/css" href="/assets/css/reset.css" media="screen" />
 	<link rel="stylesheet" type="text/css" href="/assets/css/bootstrap.css" media="screen" />

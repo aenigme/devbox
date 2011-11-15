@@ -2,7 +2,7 @@
 
 	$page_title = '&raquo; Login';
 
-    if($Auth->loggedIn()) redirect('/');
+    if($Auth->loggedIn()) redirect(WEB_ROOT);
 
     if(!empty($_POST['username']))
     {
@@ -57,7 +57,7 @@
 									<h4>Create an account</h4>
 								</div>
 								<p style="margin-bottom: 40px;">Don't have an account? You can create one for FREE and in one-simple step!</p>
-								<input type="button" name="btnlogin" value="Create Account" id="btnlogin" class="btn link success" rel="/acct.php" />
+								<input type="button" name="btnlogin" value="Create Account" id="btnlogin" class="btn link success" rel="/acct/" />
 							</div>
 						</div>
 					</div>
