@@ -64,7 +64,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	
-</body>
-</html>
+
+<?php require_once DIR_VIEW . '/_footer.php'; ?>

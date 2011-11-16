@@ -59,6 +59,19 @@ ol#viewOptions li a.removeOption {
 /* @end */
 
 /* @group Tables */
+div.tbl_header { 
+	height: 30px;
+	padding: 5px 10px 20px;
+	background-color: #f7f7f7; 
+	background: url('/assets/images/misc/linear_bg.jpg');
+	background-repeat: repeat-x; 
+	box-shadow: 0 0 5px 2px #aaa;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	z-index: 10;
+	/*-moz-box-shadow: 0 0 5px 5px #888;*/
+	/*-webkit-box-shadow: 0 0 5px 5px#888;*/
+}	
 table.light {
     border-collapse: collapse;
     font-size: 13px;
@@ -74,6 +87,17 @@ table.light td,
 table.light th {
 	border-left: 0 !important;
 	border-right: 0 !important;
+}
+table.shadow {
+	background-color: #ffffff;
+	box-shadow: 0px 10px 5px 2px #aaa;
+	margin-top: -20px;
+	z-index: 20; 
+}
+table.shadow th {
+	background-color: #f7f7f7;
+	font-size: 12px;
+	font-weight: 800;
 }
 /* @end */
 

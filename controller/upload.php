@@ -1,4 +1,4 @@
-<?php defined('LIBRARY') or die(require_once realpath(dirname(__FILE__)) . '/../404.php');
+<?php defined('LIBRARY') or die('No direct script access allowed');
 
 	if (isset($_FILES['fileInput']) && isset($_POST['action'])) 
 	{
@@ -12,8 +12,8 @@
 		if (empty($file)) exit('error');
 	}
 
-	require_once DOC_ROOT . '/_header.php'; 
-	require_once DOC_ROOT . '/_navigation.php';	
+	require_once DIR_VIEW . '/_header.php'; 
+	require_once DIR_VIEW . '/_navigation.php';	
 ?>
 	
 	<div class="wrapper">
@@ -34,7 +34,7 @@
 		
 			<h1>Please choose an image to upload <small>(JPEG only and less than 25kb)</small></h1>
 		
-			<form action="upload.php" method="post" enctype="multipart/form-data" accept-charset="utf-8">
+			<form action="/upload/" method="post" enctype="multipart/form-data" accept-charset="utf-8">
 				<input type="hidden" name="action" value="true">
 				<div class="clearfix">
 					<label for="fileInput">File input</label>
@@ -57,6 +57,5 @@
 			<?php endif ?>
 		
 		</div>
-	</div>
-</body>
-</html>
+
+<?php require_once DIR_VIEW . '/_footer.php'; ?>

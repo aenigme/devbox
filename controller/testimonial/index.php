@@ -19,7 +19,7 @@
 						<div class="row">
 							<div style="width: 562px; margin: 0 auto;">
 								<div class="alert-message error">
-									<?php foreach ($Error as $k => $v): ?>
+									<?php foreach ($Error->errors as $k => $v): ?>
 										<p><?= $v; ?></p>
 									<?php endforeach ?>
 							    </div>
@@ -28,33 +28,6 @@
 					<?php endif ?>
 						
 					<div class="row">
-						<style type="text/css" media="screen">
-							div.tbl_header { 
-								height: 30px;
-								padding: 5px 10px 20px;
-								background-color: #f7f7f7; 
-								background: url('/assets/images/misc/linear_bg.jpg');
-								background-repeat: repeat-x; 
-								box-shadow: 0 0 5px 2px #aaa;
-								-moz-border-radius: 10px;
-								border-radius: 10px;
-								z-index: 10;
-								/*-moz-box-shadow: 0 0 5px 5px #888;*/
-								/*-webkit-box-shadow: 0 0 5px 5px#888;*/
-							}	
-							table.shadow {
-								background-color: #ffffff;
-								box-shadow: 0px 10px 5px 2px #aaa;
-								margin-top: -20px;
-								z-index: 20; 
-							}
-							table.shadow th {
-								background-color: #f7f7f7;
-								font-size: 12px;
-								font-weight: 800;
-							}
-						</style>
-						
 						<div class="tbl_header">
 							<h2>
 								<img src="/assets/images/icons/pico/testimonial.png" width="24" />
@@ -82,12 +55,9 @@
 								<?php endforeach ?>
 							</tbody>
 						</table>
-						
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-	
-</body>
-</html>
+
+<?php require_once DIR_VIEW . '/_footer.php'; ?>

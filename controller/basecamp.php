@@ -22,9 +22,8 @@
 	
 	if(!$Auth->loggedIn()) redirect('/login.php');
 
-	require_once realpath(dirname(__FILE__)) . '/_header.php'; 
-	echo '<body>';
-	require_once realpath(dirname(__FILE__)) . '/_navigation.php';
+	require DIR_VIEW . '/_header.php'; 
+	require DIR_VIEW . '/_navigation.php';
 ?>
 
 	<div class="wrapper">		
@@ -60,7 +59,7 @@
 						<div class="span10">
 							<dl>
 								<?php foreach ($project->{'todo-list'} as $list): ?>
-									<dt><?= $list->name ?></dt>
+									<dt><?= $list->name ?> <?= $list->id ?></dt>
 									<dd>
 										<?php $response = $bc->getTodoItemsForList($list->id); ?>
 										<?php $todo = $response['body'];?>
