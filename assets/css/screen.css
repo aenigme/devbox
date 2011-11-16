@@ -62,6 +62,7 @@ ol#viewOptions li a.removeOption {
 div.tbl_header { 
 	height: 30px;
 	padding: 5px 10px 20px;
+	margin-top: 10px;
 	background-color: #f7f7f7; 
 	background: url('/assets/images/misc/linear_bg.jpg');
 	background-repeat: repeat-x; 
@@ -109,5 +110,47 @@ span.tooltip {
 }
 span.tooltip:hover {
 	cursor: pointer;
+}
+/* @end */
+
+/* @group Buttons */
+a.button {
+    border: 1px solid #ffffff;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 16px;
+    padding: 4px 10px;
+    text-decoration: none;
+}
+.button-blue {
+    background: -moz-linear-gradient(center top , #00ADEE, #0078A5) repeat scroll 0 0 transparent;
+    border: 1px solid #034462;
+    color: #FFFFFF;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+.button {
+    -moz-box-sizing: border-box !important;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3) inset;
+    cursor: pointer;
+    display: inline-block;
+    font: 12px/16px 'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif;
+    outline: medium none !important;
+    padding: 4px 10px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+}
+.button span.add {
+    background: url("/assets/images/icons/add.png") no-repeat scroll center center transparent;
+}
+.button span {
+    display: inline-block;
+    float: left;
+    height: 16px;
+    margin-right: 5px;
+    position: relative;
+    width: 16px;
 }
 /* @end */

@@ -13,7 +13,7 @@
 	<div class="wrapper">		
 		<div class="container">
 			<div class="row">
-				<div class="span12 offset2">
+				<div class="span12">
 				
 					<?php if (!$Error->ok()): ?>
 						<div class="row">
@@ -28,6 +28,8 @@
 					<?php endif ?>
 						
 					<div class="row">
+						<a class="button button-blue" href="/testimonial/new/"><span class="add"></span>New Testimonial</a>
+						
 						<div class="tbl_header">
 							<h2>
 								<img src="/assets/images/icons/pico/testimonial.png" width="24" />
