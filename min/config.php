@@ -40,7 +40,7 @@ $min_enableBuilder = true;
  * will have to load extra code to guess. Some examples below:
  */
 //$min_cachePath = 'c:\\WINDOWS\\Temp';
-//$min_cachePath = '/tmp';
+$min_cachePath = '/cache';
 //$min_cachePath = preg_replace('/^\\d+;/', '', session_save_path());
 
 
@@ -97,7 +97,7 @@ $min_serveOptions['maxAge'] = 1800;
  * 
  * // = shortcut for DOCUMENT_ROOT 
  */
-$min_serveOptions['minApp']['allowDirs'] = array('//js', '//css');
+$min_serveOptions['minApp']['allowDirs'] = array('//assets');
 
 /**
  * Set to true to disable the "f" GET parameter for specifying files.

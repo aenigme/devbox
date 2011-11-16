@@ -1,5 +1,5 @@
 <?php 
-	class html 
+	class HTML 
 	{
 	 	/**
 	 	 * Minify URI Builder
@@ -70,7 +70,7 @@
 			
 				if (strpos($href, '://') === FALSE)
 				{
-					$href = url::base($index).$href; // Make the URL absolute
+					$href = WEB_ROOT . $href; // Make the URL absolute
 				}
 
 				$length = strlen($suffix);
@@ -80,7 +80,7 @@
 					$href .= $suffix; // Add the defined suffix
 					$_href .= $suffix;
 				
-					$filename = DOCROOT . trim($_href, '/'); // Add version
+					$filename = DOC_ROOT . trim($_href, '/'); // Add version
 					if (file_exists($filename)) 
 					{
 						$version = date("mdYHis", filemtime($filename));
@@ -136,7 +136,7 @@
 			
 				if (strpos($script, '://') === FALSE)
 				{
-					$script = url::base((bool) $index).$script; // Add the suffix only when it's not already present
+					$script = WEB_ROOT . $script; // Add the suffix only when it's not already present
 				}
 
 				if (substr_compare($script, '.js', -3, 3, FALSE) !== 0)
@@ -144,7 +144,7 @@
 					$script .= '.js'; // Add the javascript suffix
 					$_script .= '.js';
 				
-					$filename = DOCROOT . trim($_script, '/'); // Add version
+					$filename = DOC_ROOT . trim($_script, '/'); // Add version
 					if (file_exists($filename)) 
 					{
 						$version = date("mdYHis", filemtime($filename));
@@ -169,13 +169,13 @@
 		 */
 		public static function specialchars_or(&$mixed , $default = '', $quote_style = ENT_QUOTES)
 		{
-			$mixed = common::set_default($mixed, $default);
+			$mixed = set_default($mixed, $default);
 			return is_array($mixed) ? array_map('htmlspecialchars_or',$mixed, array_fill(0,count($mixed),$quote_style)) : htmlspecialchars(htmlspecialchars_decode($mixed, $quote_style ),$quote_style);
 		}
 
 		public static function specialchars_decode(&$mixed, $default = '', $quote_style = ENT_QUOTES) 
 		{
-		    $mixed = common::set_default($mixed, $default);
+		    $mixed = set_default($mixed, $default);
 			if(is_array($mixed))
 			{				    
 		      return array_map('htmlspecialchars_decode',$mixed, array_fill(0,count($mixed),$quote_style));
@@ -188,13 +188,13 @@
 
 		public static function entities_or(&$mixed, $default = '', $quote_style = ENT_QUOTES)
 		{
-			$mixed = common::set_default($mixed, $default);
+			$mixed = set_default($mixed, $default);
 		    return is_array($mixed) ? array_map('htmlentities_or',$mixed, array_fill(0,count($mixed),$quote_style)) : htmlentities(html_entity_decode($mixed, $quote_style ),$quote_style);
 		}
 
 		public static function entities_decode(&$mixed, $default = '', $quote_style = ENT_QUOTES) 
 		{
-			$mixed = common::set_default($mixed, $default);		
+			$mixed = set_default($mixed, $default);		
 			if(is_array($mixed))
 			{
 				return array_map('htmlentities_decode',$mixed, array_fill(0,count($mixed),$quote_style));
@@ -203,5 +203,28 @@
 			$trans_table = get_html_translation_table(HTML_ENTITIES, $quote_style );
 	    
 		    return (strtr($mixed, array_flip($trans_table)));
+		}
+
+		/**
+		 * Compiles an array of HTML attributes into an attribute string.
+		 *
+		 * @param   string|array  array of attributes
+		 * @return  string
+		 */
+		public static function attributes($attrs)
+		{
+			if (empty($attrs))
+				return '';
+
+			if (is_string($attrs))
+				return ' '.$attrs;
+
+			$compiled = '';
+			foreach ($attrs as $key => $val)
+			{
+				$compiled .= ' ' . $key . '="' . self::specialchars_or($val) . '"';
+			}
+
+			return $compiled;
 		}
 	}
