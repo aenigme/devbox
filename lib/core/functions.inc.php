@@ -10,12 +10,6 @@
 	        require $filename;
 	}
 
-	// This is easier than typing 'echo WEB_ROOT'
-	function WEBROOT()
-	{
-	    echo WEB_ROOT;
-	}
-
 	// SET DEFAULT FOR A GIVEN VARIABLE
 	function set_default(&$var, $default="") 
 	{
@@ -28,6 +22,207 @@
 	   $keys = array_keys($array);
 	   shuffle($keys);
 	   return array_merge(array_flip($keys) , $array);
+	}
+	
+	/**
+	 * Convert UTF-8 characters to their equivalent ISO map
+	 *
+	 * @param string $str 
+	 * @return string
+	 * @author j4kp07
+	 */
+	function utf82iso($str)
+	{
+		$output = str_replace('™', ' (TM)', $str);
+		$output = str_replace('None', '', $output);
+		return iconv("UTF-8", "ISO-8859-1//TRANSLIT", $output);
+	}
+	
+	/**
+	 * Searches the array (recursively) for a given value and returns the corresponding key if successful
+	 *
+	 * @param string $needle 
+	 * @param array $haystack 
+	 * @param boolean $partial_matches 
+	 * @param boolean $search_keys 
+	 * @author j4kp07
+	 */
+	function array_find_r($needle, $haystack, $partial_matches = false, $search_keys = false) 
+	{
+		if(!is_array($haystack)) return false;
+		
+		foreach($haystack as $key=>$value) 
+		{
+			$what = ($search_keys) ? $key : $value;
+			if($needle===$what) return $key;
+			else if($partial_matches && @strpos($what, $needle)!==false) return $key;
+			else if(is_array($value) && self::array_find_r($needle, $value, $partial_matches, $search_keys)!==false) return $key;
+		}
+		return false;
+	}
+	
+	/**
+	 * Convert an object to an array
+	 *
+	 * @param string $object 
+	 * @return array
+	 * @author j4kp07
+	 */
+	function object2array($object) 
+	{
+		$array = array();
+	   	if (is_object($object)) 
+		{
+			$array = $object->result_array();
+		}
+	   	return $array;
+	}
+	
+	/**
+	 * Convert an array to a comma delimited list
+	 *
+	 * @param string $array 
+	 * @return string 
+	 * @author j4kp07
+	 */
+	function array2list($array = '')
+	{
+		$output = '';
+		
+		if(is_array($array)) 
+		{
+			foreach ($array as $key => $value) 
+			{
+				$output .= "{$value},";
+			}
+
+			$output = trim($output, ',');
+		}
+		
+		return $output;
+	}
+	
+	/**
+	 * Convert an array to an object
+	 *
+	 * @param string $array 
+	 * @return object
+	 * @author j4kp07
+	 */
+	function array2object($array) 
+	{
+		$object = new stdClass();
+	   	if (is_array($array) && count($array) > 0) 
+		{
+	    	foreach ($array as $name=>$value) 
+			{
+	        	$name = strtolower(trim($name));
+	         	if (!empty($name)) 
+				{
+	            	$object->$name = $value;
+	         	}
+	      	}
+	   	}
+	   	return $object;
+	}
+	
+	/**
+	 * Sort and array of objects by its properties
+	 *
+	 * @param object $object 
+	 * @param object $property
+	 * @return object
+	 * @author j4kp07
+	 */
+	function osort(&$object, $property) 
+	{
+	    usort($object, create_function('$a,$b', 'if ($a->' . $property . '== $b->' . $property .') return 0; return ($a->' . $property . '< $b->' . $property .') ? -1 : 1;'));
+	}
+	
+	/**
+	 * Applies the callback to the elements of the given arrays (recursively)
+	 *
+	 * @param callback $func 
+	 * @param array $arr 
+	 * @return void
+	 * @author j4kp07
+	 */
+	function array_map_recursive($func, $arr)
+	{
+		$result = array();
+		do
+		{
+			$key = key($arr);
+			if (is_array(current($arr))) 
+			{
+				$result[$key] = self::array_map_recursive($func, $arr[$key]);
+			} 
+			else 
+			{
+				$result[$key] = self::$func(current($arr));
+			}     
+		} 
+		while (next($arr) !== false);
+		return $result;
+	}
+	
+	/**
+	 * Quote string with slashes (recursively)
+	 *
+	 * @param array $arr 
+	 * @return array
+	 * @author j4kp07
+	 */
+	function addslashes_array($arr)
+	{
+	    if(is_array($arr))
+		{
+	        $tmp = array();
+	        foreach ($arr as $key1 => $val)
+			{
+	            $tmp[$key1] = self::addslashes_array($val);
+	        }
+	        return $tmp;
+	    }
+		else
+		{
+	        return addslashes(stripslashes($arr));
+	    }
+	}	
+	
+	/**
+	 * Un-quotes a quoted string (recursively)
+	 *
+	 * @param array $arr 
+	 * @return array
+	 * @author j4kp07
+	 */
+	function stripslashes_array($arr)
+	{
+	    if(is_array($arr))
+		{
+	        $tmp = array();
+	        foreach ($arr as $key1 => $val)
+			{
+	            $tmp[$key1] = self::stripslashes_array($val);
+	        }
+	        return $tmp;
+	    }
+		else
+		{
+	        return stripslashes($arr);
+	    }
+	}
+	
+	/**
+	 * Tests if the current request is an AJAX request by checking the X-Requested-With HTTP
+	 * request header that most popular JS frameworks now set for AJAX calls.
+	 *
+	 * @return  boolean
+	 */
+	function is_ajax()
+	{
+		return (isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest');
 	}
 	
 	function set_option($key, $val)
@@ -85,61 +280,6 @@
             return implode(' ', array_slice($words, 0, $num)) . $suffix;
 		endif;
     }
-
-	// ESCAPES SPECIAL CHARACTERS IN A STRING FOR USE IN A SQL STATEMENT
-	function sql_quote($str) 
-	{
-		if (is_array($str)) :
-			foreach($input as $var=>$val) :
-				$output[$var] = xss_clean($val);
-			endforeach;
-		else :
-			$output = (get_magic_quotes_gpc()) ? stripslashes($str) : $str;
-			$output = xss_clean($output);
-			$output = (function_exists("mysql_real_escape_string")) ?  mysql_real_escape_string($output) : addslashes($output);
-		endif;
-	
-		return $output;
-	}
-
-	// FETCH A RESULT ROW AS AN ASSOCIATIVE ARRAY, NUMERIC OR BOTH
-	function db_fetch_array($result) 
-	{
-		if($result && mysql_num_rows($result) > 0) :
-			return mysql_fetch_array($result);
-		else :
-			return FALSE;
-		endif;
-	}
-
-	// IMPORT VARIABLE INTO THE CURRENT SYMBOL TABLE (I.E. EXTRACT)
-	function db_extract(&$result) 
-	{
-		if($result && mysql_num_rows($result) > 0) :
-			foreach(db_fetch_array($result) as $key => $value) :
-				global ${$key};
-				${$key} = $value; 
-			endforeach;
-			mysql_data_seek($result,0);
-		else :
-			return FALSE;
-		endif;
-	}
-
-	// BUILD COMMA DELIMMITED LIST FROM QUERY RESULT SET
-	function db_build_list($result,$column=0) 
-	{
-		if($result && mysql_num_rows($result) > 0) :
-			while($row = db_fetch_array($result)) :
-				$output .= "{$row[$column]},";
-			endwhile;
-		
-			$output = trim($output,",");
-			return $output;
-		else :
-			return FALSE;
-		endif;
-	}
 
 	// GENERATE RANDOM HASH 
 	function get_hash($num)
@@ -259,61 +399,6 @@
 		return $fullyears;
 	}
 	
-	// VALIDATE A VARIABLE WITH A SPECIFIED RULE/EXPRESSION
-	function validate($rule,$value) 
-	{
-		global $web_path;
-		
-		$valid = TRUE;
-		$invalid = FALSE;
-		
-		switch($rule) {
-			case "required": 
-				$output = (strlen($value) > 0) ? $valid : $invalid;
-				break;
-				
-			case "username":
-				$pattern = '/^[a-z\d_]{5,20}$/i';
-				$output = (preg_match($pattern, $value)) ? $valid : $invalid;
-				break;
-				
-			case "url":
-				$output=(filter_var($value, FILTER_VALIDATE_URL)) ? $valid : $invalid;
-				break;
-				
-			case "email":
-				$pattern = '/^([a-z0-9])(([-a-z0-9._\+])*([a-z0-9]))*\@([a-z0-9])' . '(([a-z0-9-])*([a-z0-9]))+' . '(\.([a-z0-9])([-a-z0-9_-])?([a-z0-9])+)+$/i';
-				$output = (preg_match($pattern, $value)) ? $valid : $invalid;
-				break;
-			
-			case "ssn":
-				$pattern = '/^[\d]{3}-[\d]{2}-[\d]{4}$/';
-				$output = (preg_match($pattern, $value)) ? $valid : $invalid;
-				break;
-				
-			case "phone":
-				$pattern = '/[\(?\d{3}\)?]?	[-\s.]?\d{3}[-\s.]\d{4}/x';
-				$output = (preg_match($pattern, $value)) ? $valid : $invalid;
-				break;
-			
-			case "date":
-				$pattern = "^((18|19|20)\d\d)-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])$";
-				$output = (preg_match($pattern, $value)) ? $valid : $invalid;
-				break;
-			
-			case "zipcode":
-				$pattern = "/^([0-9]{5})(-[0-9]{4})?$/i";
-				$output = (preg_match($pattern, $value)) ? $valid : $invalid;
-				break;
-			
-			case "password":
-				$output = (strlen($value) >= 5) ? $valid : $invalid;
-				break;
-		}
-		
-		return $output;
-	}
-
     function printr($var)
     {
         $output = print_r($var, true);
