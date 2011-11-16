@@ -77,6 +77,73 @@ jQuery.fn.log = function (msg) {
   return this;
 };
 
+jQuery.fn.plupload_button = function() {
+	return this.each(function() {
+		var $this = $(this);
+		var params = Site.helpers.attr_params($this.attr('title'));
+
+    	var step = 0;
+	    var uploader = new plupload.Uploader({
+	        runtimes: 'flash,silverlight',
+	        browse_button: 'pick_files',
+			multipart: true, 
+	        multi_selection: false,
+	        max_file_size: '2mb',
+	        unique_names: true,
+	        url: '/ajax/' + $this.attr('rel'), 
+	        flash_swf_url: '/assets/js/plupload.flash.swf',
+	        silverlight_xap_url: '/assets/js/plupload.silverlight.xap',
+	        filters: [{ 
+				title: "Image files", extensions: "jpg,gif,png,JPG,GIF,PNG" 
+			}]
+	    });
+	
+	    uploader.bind('UploadFile', function(up, file) {
+	        up.settings.url = '/admin/ajax/' + $this.attr('rel')
+	    });
+
+	    uploader.bind('Error', function(uploader, error) {
+		    if (error.code == plupload.FILE_SIZE_ERROR) {
+				AttentionBox.showMessage('Your file is larger than the maximum size limit of 2mb.');
+		    }
+	    });
+
+	    uploader.bind('QueueChanged', function(up) {
+	        if (uploader.state != 2 & up.files.length > 0) {
+	            $('#uploadIcon').html('<img src="/assets/images/throbber.gif" />');
+	            uploader.start();
+	        }
+	    });
+
+	    uploader.bind('FileUploaded', function(Uploader, file, response) {
+			var result = response.response.split("|");
+			var id = result[0];
+			var msg = result[1];
+			
+			if(id == 'error') {
+				AttentionBox.showMessage(msg);
+			} else {
+				$this.parent().prev().children().html('<a href="#" class="delLink"></a><img src="' + Site.config.upload_dir + msg + '" width="' + $this.attr('width') + '" height="' + $this.attr('height') + '" data-index="1" data-admincode="undefined" >').parent().show().css("background", "none").next().hide();
+				$this.parent().prev().children('#imageCode').attr('value', id);
+			}
+			
+	        $(".delLink").click(function(e) {
+	            $(this).parent().parent().next().show();
+	            $(this).parent().parent().hide();
+				$('#imageCode').attr('value', '');
+	            uploader.refresh();
+	            e.preventDefault();
+	        });
+	    });
+
+	    uploader.bind('UploadProgress', function(up, file) {
+	        $('#' + file.id).find('.title').html(file.percent + '%');
+	    });
+	
+		uploader.init();
+	});
+};
+
 jQuery.fn.simplehints = function() {
 	return this.each(function() {
 		var $this = $(this);
@@ -176,6 +243,13 @@ var Home = {
 };
 
 var Site = {
+	
+	// this vars should be set in <head> server-side
+	config: {
+		base_url: '/',
+		site_url: '/', 
+		upload_dir: '/useruploads/images/'
+	},
 
 	init: function() {
 		
@@ -185,29 +259,20 @@ var Site = {
 				var el = $(this);
 				$.ajax({
 					type: 'POST',
-					url: '/admin/index/validate/',
+					url: '/ajax/validate/',
 					data: { action: 'validate', rule: el.attr('rel'), value: el.attr('value'), title: el.attr('title') },
 					async: false,
 					success: function(str) {
 						el.next('span').remove();
-						el.next('.select_skin').next('span').remove();
 
 						var result = str.split("|");
 						var valid = result[0];
 						var tip = result[1];
 
 						if(valid) {
-							if ($(el.next('.select_skin')).length == 0) {
-								el.after('<span class="tooltip_x"><img src="/images/icons/accept.png"></span>') ;
-							} else {
-								el.next('.select_skin').after('<span class="tooltip_x"><img src="/images/icons/accept.png"></span>') ;
-							}
+							el.after('<span class="tooltip"><img src="/assets/images/icons/accept.png"></span>') ;
 						} else if(str.length > 0) {
-							if ($(el.next('.select_skin')).length == 0) {
-								el.after('<span class="tooltip bt-active" title="' + tip + '"><img src="/images/icons/exclamation.png"></span>'); 
-							} else {
-								el.next('.select_skin').after('<span class="tooltip bt-active" title="' + tip + '"><img src="/images/icons/exclamation.png"></span>'); 
-							}
+							el.after('<span class="tooltip bt-active" title="' + tip + '"><img src="/assets/images/icons/exclamation.png"></span>'); 
 							$('.tooltip').bt();
 						}
 					}
@@ -216,6 +281,10 @@ var Site = {
 			
 			$('input[type=button].link').click(function(e) {
 				e.preventDefault();
+				location.href = $(this).attr('rel');
+			});
+			
+			$('.link').click(function(e) {
 				location.href = $(this).attr('rel');
 			});
 			
@@ -251,35 +320,6 @@ var Site = {
 				$('input[name="option[]"][value="' + str + '"]').remove();
 				el.parent('li').remove();
 			});
-			
-			$('input[type=button]#addOption').click(function(e) {
-				e.preventDefault();
-				var input = document.createElement("input");
-				var option = document.getElementById("option");
-				
-				if (option.value == '') {
-					$('div#rowOption').addClass('error');
-				} else {
-					$('div#rowOption').removeClass('error');
-					$('ol#viewOptions').append('<li rel="' + option.value + '">' + option.value + '<a href="javascript:;" class="label important removeOption">remove</a></li>'); // Update preview
-					
-					input.setAttribute("type", "hidden");
-					input.setAttribute("name", "option[]");
-					input.setAttribute("value", option.value); // Update hidden fields
-					
-					$('input#option').val('').focus(); // Reset option field
-					
-					document.getElementById("moreOptions").appendChild(input);
-					$("#btnContinue").css('visibility', 'visible');
-				}
-				return false;
-			});
-			
-			$("#matrix").change(function(e) {
-				var el = $(this).children(':selected').attr('rel');
-				$('.optionChoice').css('visibility', 'hidden');
-				$(el).css('visibility', 'visible');
-	        });
 		});
 	}
 };
