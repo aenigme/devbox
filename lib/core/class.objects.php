@@ -48,3 +48,11 @@
             parent::__construct('question_options', array('question_id', 'label', 'value', 'answer'), $id);
         }
     }
+
+    class Testimonial extends DBObject
+    {
+        public function __construct($id = null)
+        {
+            parent::__construct('testimonial', array('user_id', 'caption', 'quote', 'insert_date', 'update_date'), $id);
+        }
+    }

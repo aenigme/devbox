@@ -17,6 +17,19 @@ div.wrapper {
     margin-left: 10px;
     margin-right: 0;
 }
+.link {
+	cursor: pointer;
+}
+.link:hover {
+	background-color: lightyellow;
+}
+.link a {
+	z-index: 1;
+	
+}
+/* @end */
+
+/* @group Survey Options */
 div#moreOptions {
 	margin-top: 100px;
 }
@@ -35,6 +48,7 @@ ol#viewOptions li a.removeOption {
 }
 /* @end */
 
+
 /* @group Range Slider */
 .slider,
 .dateSlider{
@@ -44,3 +58,32 @@ ol#viewOptions li a.removeOption {
 }
 /* @end */
 
+/* @group Tables */
+table.light {
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 18px;
+    padding: 0;
+    width: 100%;
+	border-left: 0;
+	border-right: 0;
+	border-top: 0;
+}
+table.light tr, 
+table.light td, 
+table.light th {
+	border-left: 0 !important;
+	border-right: 0 !important;
+}
+/* @end */
+
+/* @group Form Validation */
+span.tooltip {
+	position: relative;
+	left: 4px;
+	top: 2px;
+}
+span.tooltip:hover {
+	cursor: pointer;
+}
+/* @end */
