@@ -25,14 +25,14 @@
 		$_COOKIE  = fix_slashes($_COOKIE);
 	}
 	
-	// // Set cache expiration for AJAX requests
-	// if (is_ajax())
-	// {
-	// 	header ("Expires: Thu, 17 May 2001 10:17:17 GMT"); // Date in the past
-	// 	header ("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); // always modified
-	// 	header ("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
-	// 	header ("Pragma: no-cache"); // HTTP/1.0
-	// }
+	// Set cache expiration for AJAX requests
+	if (is_ajax())
+	{
+		header ("Expires: Thu, 17 May 2001 10:17:17 GMT"); // Date in the past
+		header ("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT"); // always modified
+		header ("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
+		header ("Pragma: no-cache"); // HTTP/1.0
+	}
 	
 	// Load our config settings
 	$Config = Config::getConfig();
