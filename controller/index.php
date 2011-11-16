@@ -2,7 +2,7 @@
 
 	$page_title = '&raquo; Dashboard';
 	
-    if(!$Auth->loggedIn()) redirect('/login');
+    if(!$Auth->loggedIn()) redirect(WEB_ROOT);
 
 	require_once DIR_VIEW . '/_header.php'; 
 	require_once DIR_VIEW . '/_navigation.php';
@@ -27,7 +27,7 @@
 			</div>
 			<div class="row">
 				<div class="span-one-third">
-					<a href="/survey/new">
+					<a href="/survey/new/">
 					<img alt="" src="/assets/images/icons/dashboard/icon_10.png" class="thumbnail floatleft" style="margin-top: 10px;">
 					<h3>EZee Survey</h3></a>
 					<p>Build a survey with unlimited questions and download final results.</p>
@@ -58,8 +58,9 @@
 					<h3>EZee Settings</h3>
 					<p>Setup Admin access, email and database settings, and more.</p>
 					
+					<a href="/testimonial/">
 					<img alt="" src="/assets/images/origami/discussion.png" class="thumbnail floatleft" style="margin: 10px 10px 0 0; width: 55px;">
-					<h3>EZee Testimonials</h3>
+					<h3>EZee Testimonials</h3></a>
 					<p>Manage and approve customer testimonials.</p>
 					
 					<img alt="" src="/assets/images/milky/78.png" class="thumbnail floatleft" style="margin: 10px 10px 0 0; width: 55px;">
