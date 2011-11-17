@@ -5,19 +5,16 @@
  * @copyright  (c) 2007-2008 Kohana Team
  * @license    http://kohanaphp.com/license.html
  */
-class Input {
-	
+class Input 
+{
 	// Enable or disable automatic XSS cleaning
 	protected $use_xss_clean = FALSE;
 
 	// Are magic quotes enabled?
 	protected $magic_quotes_gpc = FALSE;
 
-	// IP address of current user
-	public $ip_address;
-
 	// Input singleton
-	protected static $instance;
+	public static $instance;
 
 	/**
 	 * Retrieve a singleton instance of Input. This will always be the first
@@ -28,10 +25,7 @@ class Input {
 	public static function instance()
 	{
 		if (Input::$instance === NULL)
-		{
-			// Create a new instance
 			return new Input;
-		}
 
 		return Input::$instance;
 	}
@@ -198,13 +192,10 @@ class Input {
 		if ($key === array())
 			return $array;
 
-		/*
-			TODO setup autofill for INPUT Class
-		*/
-		// if ( ! isset($array[$key]) && Kohana::config('common.autofill'))
-		// 	return data::autofill($default);
-		// else if ( ! isset($array[$key]) ) 
-		// 	return $default;
+		if ( ! isset($array[$key]) && Config::get('autofill') === TRUE)
+			return Data::autofill($default);
+		else if ( ! isset($array[$key]) ) 
+			return $default;
 		
 		// set default value
 		if ( ! isset($array[$key]) ) 
@@ -220,44 +211,6 @@ class Input {
 		}
 
 		return $value;
-	}
-
-	/**
-	 * Fetch the IP Address.
-	 *
-	 * @return string
-	 */
-	public function ip_address()
-	{
-		if (self::ip_address !== NULL)
-			return self::ip_address;
-
-		// Server keys that could contain the client IP address
-		$keys = array('HTTP_X_FORWARDED_FOR', 'HTTP_CLIENT_IP', 'REMOTE_ADDR');
-
-		foreach ($keys as $key)
-		{
-			if ($ip = self::server($key))
-			{
-				$ip_address = $ip;
-
-				// An IP address has been found
-				break;
-			}
-		}
-
-		if ($comma = strrpos(self::ip_address, ',') !== FALSE)
-		{
-			$ip_address = substr(self::ip_address, $comma + 1);
-		}
-
-		if ( ! valid::ip(self::ip_address))
-		{
-			// Use an empty IP
-			$ip_address = '0.0.0.0';
-		}
-
-		return $ip_address;
 	}
 
 	/**

@@ -225,29 +225,6 @@
 		return (isset($_SERVER['HTTP_X_REQUESTED_WITH']) AND strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest');
 	}
 	
-	function set_option($key, $val)
-	{
-	    $db = Database::getDatabase();
-	    $db->query('REPLACE INTO options (`key`, `value`) VALUES (:key:, :value:)', array('key' => $key, 'value' => $val));
-	}
-
-	function get_option($key, $default = null)
-	{
-	    $db = Database::getDatabase();
-	    $db->query('SELECT `value` FROM options WHERE `key` = :key:', array('key' => $key));
-	    if($db->hasRows())
-	        return $db->getValue();
-	    else
-	        return $default;
-	}
-
-	function delete_option($key)
-	{
-	    $db = Database::getDatabase();
-	    $db->query('DELETE FROM options WHERE `key` = :key:', array('key' => $key));
-	    return $db->affectedRows();
-	}
-	
 	// Returns the first $num characters of $strText with a trailing $strTrail
 	function max_chars ($str, $num, $trail)
 	{
@@ -520,33 +497,6 @@
         while(count($arr) > 0)
             $ret[array_shift($arr)] = array_shift($arr);
         return (count($ret) > 0) ? $ret : false;
-    }
-
-    // Creates a list of <option>s from the given database table.
-    // table name, column to use as value, column(s) to use as text, default value(s) to select (can accept an array of values), extra sql to limit results
-    function get_options($table, $val, $text, $default = null, $sql = '')
-    {
-        $db = Database::getDatabase(true);
-        $out = '';
-
-        $table = $db->escape($table);
-        $rows = $db->getRows("SELECT * FROM `$table` $sql");
-        foreach($rows as $row)
-        {
-            $the_text = '';
-            if(!is_array($text)) $text = array($text); // Allows you to concat multiple fields for display
-            foreach($text as $t)
-                $the_text .= $row[$t] . ' ';
-            $the_text = htmlspecialchars(trim($the_text));
-
-            if(!is_null($default) && $row[$val] == $default)
-                $out .= '<option value="' . htmlspecialchars($row[$val], ENT_QUOTES) . '" selected="selected">' . $the_text . '</option>';
-            elseif(is_array($default) && in_array($row[$val],$default))
-                $out .= '<option value="' . htmlspecialchars($row[$val], ENT_QUOTES) . '" selected="selected">' . $the_text . '</option>';
-            else
-                $out .= '<option value="' . htmlspecialchars($row[$val], ENT_QUOTES) . '">' . $the_text . '</option>';
-        }
-        return $out;
     }
 
     // More robust strict date checking for string representations

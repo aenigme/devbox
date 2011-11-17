@@ -24,6 +24,13 @@
         public $authDomain;         // Domain to set for the cookie
         public $authSalt;           // Can be any random string of characters
 
+		// ... For Cookies			
+		public $cookieDomain;
+		public $cookiePath;
+		public $cookieExpire;
+		public $cookieSecure;
+		public $cookieHttponly;
+
         // ...For Database Class
         public $dbReadHost;   // Database read-only server
         public $dbWriteHost;  // Database read/write server
@@ -32,13 +39,17 @@
         public $dbWriteUsername;
         public $dbReadPassword;
         public $dbWritePassword;
-
+		
+		// ... For Sessions
+		public $sessionName;
+		
         public $dbOnError; // What do do on a database error (see class.database.php for details)
         public $dbEmailOnError; // Email an error report on error?
 
         // Add your config options here...
         public $useDBSessions; // Set to true to store sessions in the database
 		public $whereAmI;
+		public $autofill;
 		
         // Singleton constructor
         public function __construct()
@@ -83,6 +94,16 @@
             // Settings for the Auth class
             $this->authDomain = $_SERVER['HTTP_HOST'];
             $this->authSalt   = '';
+
+			// Settings for cookies			
+			$this->cookieDomain = '';
+			$this->cookiePath = '/';
+			$this->cookieExpire = 0;
+			$this->cookieSecure = FALSE;
+			$this->cookieHttponly = FALSE;
+			
+			// Settings for sessions			
+			$this->sessionName = 'ezee';
         }
 
         // Add code/variables to be run only on production servers
@@ -139,6 +160,8 @@
             $this->dbWritePassword = 'china+wall';
             $this->dbOnError       = 'die';
             $this->dbEmailOnError  = false;
+			
+			$this->autofill		   = TRUE;
         }
 
         // Add code/variables to be run only on when script is launched from the shell

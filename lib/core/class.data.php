@@ -1,6 +1,6 @@
 <?php 
 
-class data
+class Data
 {
 	public static function autofill($type = 'text')
 	{

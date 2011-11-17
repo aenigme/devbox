@@ -4,7 +4,7 @@
 	
     if(!$Auth->loggedIn()) redirect('/login');
 	
-    $testimonial = Testimonial::fetch();
+	$testimonial = Testimonial::fetch();
 	
 	require_once DIR_VIEW . '/_header.php'; 
 	require_once DIR_VIEW . '/_navigation.php';

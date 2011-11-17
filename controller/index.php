@@ -12,17 +12,19 @@
 		<div class="container">
 			<div class="row">
 				<div class="span16">
+
 					<?php if (!$Error->ok()): ?>
 						<div class="row">
-							<div style="width: 562px; margin: 0 auto;">
-								<div class="alert-message error">
-									<?php foreach ($Error as $k => $v): ?>
+							<div style="">
+								<div class="alert-message warning">
+									<?php foreach ($Error->errors as $k => $v): ?>
 										<p><?= $v; ?></p>
 									<?php endforeach ?>
 							    </div>
 							</div>
 						</div>
 					<?php endif ?>
+
 				</div>
 			</div>
 			<div class="row">
