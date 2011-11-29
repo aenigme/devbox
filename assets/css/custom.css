@@ -1,0 +1,90 @@
+#message-note{
+	font-size:11px; 
+	font-style:italic; 
+	color:#ea3a3a;
+}
+#message-note ul {
+	margin-left:-10px;
+	background:none;
+	
+}
+#message-note ul li{
+	padding-bottom:5px;
+	background: none;
+	margin:0;
+	padding:0;
+}
+#message-note .notification_ok h4 {
+	color:#ea3a3a;
+	font-style:normal;
+}
+
+
+
+/* ---------------------------------------------
+	LASTFM.CSS
+-----------------------------------------------*/
+
+#lastfm dl{
+	position:relative;
+	float:left;
+	width:120px;
+	height:65px;
+	padding:0px 8px 8px 72px;
+	margin:0 20px 20px 0;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	/*border:solid 1px #333;*/
+	/*background:#1a1a1a;*/
+	}
+#lastfm dl:hover,
+#lastfm dl.hover{
+	/*padding:7px 7px 7px 79px;
+	border:solid 2px #444;*/
+	cursor:pointer;
+	}
+#lastfm dl:hover dt,
+#lastfm dl.hover dt{
+	/*left:7px;
+	top:7px;*/
+	}
+
+#lastfm dl dt{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:65px;
+	height:65px;
+	}
+#lastfm dl dt a{
+	position:absolute;
+	top:0;
+	left:0;
+	width:65px;
+	height:65px;
+	z-index:100;
+	}
+#lastfm dl dt a:hover{
+	background:none;
+	}
+
+#lastfm dl dd.lfm_song a{
+	/*font-weight:bold;
+	font-size:12px;*/
+	color:#000;
+	padding-bottom:6px;
+	white-space:nowrap;
+	overflow:hidden;
+	width:100px;
+	}
+p.songhref {
+	max-width:100px;
+	
+}
+#lastfm dl dd.lfm_song a:hover{
+	text-decoration:underline;
+}	
+/*#lastfm dl dd.lfm_artist,*/
+#lastfm dl dd.lfm_album{
+	color:#bbb;
+}

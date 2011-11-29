@@ -5,7 +5,7 @@
     	if (top !== self) top.location.href = self.location.href;
     </script>
     
-	<title>EZee.ly <?= set_default($page_title) ?></title>
+	<title>_devbox <?= set_default($page_title) ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />

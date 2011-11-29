@@ -1,66 +1,162 @@
 <?php defined('LIBRARY') or die('No direct script access allowed');
 
-	$page_title = '&raquo; Dashboard';
+	$page_title = '&raquo; Mimino';
 	
-    if(!$Auth->loggedIn()) redirect('/login/');
-
-	require_once DIR_VIEW . '/_header.php'; 
-	require_once DIR_VIEW . '/_navigation.php';
+	require_once DIR_VIEW . '/mimino/_header.php'; 
 ?>
 
-	<div class="wrapper">		
-		<div class="container">
-			<div class="row">
-				<div class="span16">
-
-					<?php if (!$Error->ok()): ?>
-						<div class="row">
-							<div style="">
-								<div class="alert-message warning">
-									<?php foreach ($Error->errors as $k => $v): ?>
-										<p><?= $v; ?></p>
-									<?php endforeach ?>
-							    </div>
+<div class="major-holder">
+	<div class="major-area">
+		<div class="major-frame">
+			<!-- main -->
+			<div id="main">
+				<!-- intro -->
+				<script type="text/javascript" charset="utf-8"> Home.init(); </script>
+				<article class="intro">
+					<h1>Hello!</h1>
+					<p>The Mimino Template is the ultimate minimal portfolio solution for artists, designers, photographers and animators. The template offers a unique and intuitive user experience capable of displaying large amounts of images or video.</p>
+				</article>
+				<!-- slider -->
+				<div class="slider-wrapper theme-default">
+					<div id="slider" class="nivoSlider">
+						<img src="/assets/images/mimino/portfolio/caravan.jpg" alt="" />
+						<img src="/assets/images/mimino/portfolio/bigassfans.jpg" alt="" title="#htmlcaption" />
+						<a href="/portfolio/billings/"><img src="/assets/images/mimino/portfolio/billings.jpg" alt="" /></a>
+						<img src="/assets/images/mimino/portfolio/thinagain.jpg" alt="" title="#htmlcaption" />
+						<img src="/assets/images/mimino/portfolio/trendsocial.jpg" alt="" />
+					</div>
+					<div id="htmlcaption" class="nivo-html-caption">
+						As in any profession, type designers have a <a href="#">specialized vocabulary</a> to talk about the different parts of letters.
+					</div>
+				</div>
+				<div class="columns">
+					<div class="holder">
+						<article class="column column-13">
+							<!-- about box -->
+							<div class="about-box">
+								<h6><a href="#">Clean and Professional design</a></h6>
+								<img class="icon" src="/assets/images/mimino/icon01.png" width="33" height="33" alt="image description">
+								<p>The clean design allows viewers to focus entirely on the work presented without any distractions.</p>
 							</div>
+						</article>
+						<article class="column-13">
+							<!-- about box -->
+							<div class="about-box">
+								<h6><a href="#">Designed to be easily customizable</a></h6>
+								<img class="icon" src="/assets/images/mimino/icon02.png" width="33" height="33" alt="image description">
+								<p>Developed to be easily customized and includes options for changing the background, colors, links, logo, etc.</p>
+							</div>
+						</article>
+						<article class="column-13">
+							<!-- about box -->
+							<div class="about-box">
+								<h6><a href="#">Clean and W3C valid code</a></h6>
+								<img class="icon" src="/assets/images/mimino/icon03.png" width="33" height="33" alt="image description">
+								<p>Professional-looking and provide W3C valid code and clean formatting for easy theme customization.</p>
+							</div>
+						</article>
+						<article class="column-13">
+							<!-- about box -->
+							<div class="about-box">
+								<h6><a href="#">Multiple display options</a></h6>
+								<img class="icon" src="/assets/images/mimino/icon04.png" width="33" height="33" alt="image description">
+								<p>The theme is designed with neutral colors and multiple display options for easy customization.</p>
+							</div>
+						</article>
+						<article class="column-13">
+							<!-- about box -->
+							<div class="about-box">
+								<h6><a href="#">Latest Dribbbles on your website</a></h6>
+								<img class="icon" src="/assets/images/mimino/icon05.png" width="33" height="33" alt="image description">
+								<p>Integrated widget for Dribbble, the show & tell social network for designers, developers and other.</p>
+							</div>
+						</article>
+						<article class="column-13">
+							<!-- about box -->
+							<div class="about-box">
+								<h6><a href="#">Integrated with video capabilities</a></h6>
+								<img class="icon" src="/assets/images/mimino/icon06.png" width="33" height="33" alt="image description">
+								<p>The template offers a unique & intuitive user experience capable of displaying large amounts of images or video.</p>
+							</div>
+						</article>
+					</div>
+				</div>
+
+				<!-- main heading -->
+				<div class="main-heading">
+					<a class="more" href="#">Meet The Team</a>
+					<h5>Our People</h5>
+				</div>
+				<div class="columns">
+					<div class="holder">
+						<div class="column-13">
+							<!-- team box -->
+							<article class="team-box">
+								<div class="visual">
+									<a href="#">
+										<img src="/assets/images/mimino/team/russell.jpg" width="230" height="170" alt="image description">
+									</a>
+								</div>
+								<h6><a href="#">Ryan Owens</a></h6>
+								<h6>The creative mind</h6>
+								<div class="personal-contact">
+									<p><a href="mailto:russell@sitename.com">ryan@mimino.com</a></p>
+									<p>+353 40 260 7589 777</p>
+								</div>
+								<ul>
+									<li><a href="#">Linkedin</a></li>
+									<li><a href="#">Facebook</a></li>
+									<li><a href="#">Twitter</a></li>
+									<li><a href="#">Website</a></li>
+								</ul>
+							</article>
 						</div>
-					<?php endif ?>
-
+						<div class="column-13">
+							<!-- team box -->
+							<article class="team-box">
+								<div class="visual">
+									<a href="#">
+										<img src="/assets/images/mimino/team/christine.jpg" width="230" height="170" alt="image description">
+									</a>
+								</div>
+								<h6><a href="#">Christine Clements</a></h6>
+								<h6>The poetic copy</h6>
+								<div class="personal-contact">
+									<p><a href="mailto:jemaine@sitename.com">christine@mimino.com</a></p>
+									<p>+353 40 260 7589 778</p>
+								</div>
+								<ul>
+									<li><a href="#">Linkedin</a></li>
+									<li><a href="#">Facebook</a></li>
+									<li><a href="#">Twitter</a></li>
+									<li><a href="#">Website</a></li>
+								</ul>
+							</article>
+						</div>
+						<div class="column-13">
+							<!-- team box -->
+							<article class="team-box">
+								<div class="visual">
+									<a href="#">
+										<img src="/assets/images/mimino/team/ed.jpg" width="230" height="170" alt="image description">
+									</a>
+								</div>
+								<h6><a href="#">Patrick Thomas</a></h6>
+								<h6>The user experince</h6>
+								<div class="personal-contact">
+									<p><a href="mailto:pharrell@sitename.com">patrick@mimino.com</a></p>
+									<p>+353 40 260 7589 779</p>
+								</div>
+								<ul>
+									<li><a href="#">Linkedin</a></li>
+									<li><a href="#">Facebook</a></li>
+									<li><a href="#">Twitter</a></li>
+									<li><a href="#">Website</a></li>
+								</ul>
+							</article>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="span-one-third">
-					<img alt="" src="/assets/images/origami/file.png" class="thumbnail floatleft" style="margin: 10px 10px 0 0; width: 55px;">
-					<h3>EZee Pages</h3>
-					<p>Easily add pages using your default template or start a new template.</p>
-					
-					<img alt="" src="/assets/images/icons/dashboard/icon_06.png" class="thumbnail floatleft" style="margin-top: 10px;">
-					<h3>EZee Contact Form</h3>
-					<p>Supports direct email, <a href="http://www.mailchimp.com" target="_blank">Mailchimp</a> and 
-					<a href="http://www.constantcontact.com" target="_blank">Constant Contact</a>.</p>
-					
-					<img alt="" src="/assets/images/icons/dashboard/icon_01.png" class="thumbnail floatleft" style="margin-top: 10px;">
-					<h3>EZee FAQ</h3>
-					<p>Build a Frequently Asked Questions list with jQuery UI support.</p>
 
-					<a href="/gallery/">
-					<img alt="" src="/assets/images/milky/27.png" class="thumbnail floatleft" style="margin: 10px 8px 0;">
-					<h3>EZee Gallery</h3></a>
-					<p>Upload your picture gallery. Crop, resize and apply popular filters.</p>
-					
-					<img alt="" src="/assets/images/origami/save.png" class="thumbnail floatleft" style="margin: 10px 5px 0; width: 55px;">
-					<h3>EZee Backups</h3>
-					<p>Backup your website and database with <a href="http://www.dropbox.com" target="_blank">Dropbox</a> support.</p>
-					
-					<img alt="" src="/assets/images/icons/dashboard/icon_18.png" class="thumbnail floatleft" style="margin-top: 10px;">
-					<h3>EZee Settings</h3>
-					<p>Setup Admin access, email contacts, database settings and more.</p>
-				</div>
-				<div class="span-one-third">
-				</div>
-				<div class="span-one-third">
-					
-				</div>
-			</div>
-		</div>
-
-<?php require_once DIR_VIEW . '/_footer.php'; ?>
+<?php require_once DIR_VIEW . '/mimino/_footer.php'; ?>

@@ -170,7 +170,67 @@ jQuery.preloadImages = function() {
 var Home = {
 	init: function() {
 		jQuery(function($) {
-			
+			$('#slider').nivoSlider({
+				effect: 'random',
+				slices: 10,
+				boxCols: 7,
+				boxRows: 5,
+				animSpeed: 700,
+				pauseTime: 3000,
+				startSlide: 0,
+				directionNav: true,
+				directionNavHide: true,
+				controlNav: true,
+				controlNavThumbs: false,
+				controlNavThumbsFromRel: false,
+				controlNavThumbsSearch: '.jpg',
+				controlNavThumbsReplace: '_thumb.jpg',
+				keyboardNav: true,
+				pauseOnHover: true,
+				manualAdvance: false,
+				captionOpacity: 0.8,
+				prevText: 'Prev',
+				nextText: 'Next',
+				beforeChange: function(){},
+				afterChange: function(){},
+				slideshowEnd: function(){},
+				lastSlide: function(){},
+				afterLoad: function(){}
+			});
+		});
+	}
+};
+
+var Portfolio = {
+	init: function() {
+		jQuery(function($) {
+			$('#slider').nivoSlider({
+				effect: 'random',
+				slices: 10,
+				boxCols: 7,
+				boxRows: 5,
+				animSpeed: 700,
+				pauseTime: 3000,
+				startSlide: 0,
+				directionNav: true,
+				directionNavHide: true,
+				controlNav: true,
+				controlNavThumbs: false,
+				controlNavThumbsFromRel: false,
+				controlNavThumbsSearch: '.jpg',
+				controlNavThumbsReplace: '_thumb.jpg',
+				keyboardNav: true,
+				pauseOnHover: true,
+				manualAdvance: false,
+				captionOpacity: 0.8,
+				prevText: 'Prev',
+				nextText: 'Next',
+				beforeChange: function(){},
+				afterChange: function(){},
+				slideshowEnd: function(){},
+				lastSlide: function(){},
+				afterLoad: function(){}
+			});
 		});
 	}
 };
