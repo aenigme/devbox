@@ -19,21 +19,23 @@
 			'assets/css/reset',
 			'assets/css/bootstrap',
 			'assets/css/screen',
+			'assets/css/plupload',
 			'assets/css/rangeslider', 
 			'assets/css/smoothness/jquery-ui-1.8.10.custom',
-		), FALSE, FALSE, FALSE);
+		), FALSE, FALSE, TRUE);
 		
 		echo HTML::script(array
 		(
-		    'assets/js/jquery-1.7.min',
+		    'assets/js/jquery-1.4.1.min',
 			'assets/js/jquery-ui-1.8.10.custom.min',
 			'assets/js/jquery.bt',
 			'assets/js/jquery.colorbox', 
 			'assets/js/jquery.form',
 			'assets/js/jquery.rangeslider',
+			'assets/js/plupload.full.min',
 			'assets/js/common',
 			'assets/js/ezee',
-		), FALSE, FALSE);		
+		), FALSE, TRUE);		
 	?>
 	
 	<!-- www.phpied.com/conditional-comments-block-downloads/ -->
@@ -44,5 +46,6 @@
 	
 	<!-- Make Microsoft Internet Explorer behave like a standards-compliant browser -->
 	<!--[if lt IE 8]><script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE8.js"></script><![endif]-->
+
 </head>
 <body>

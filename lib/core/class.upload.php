@@ -1,9 +1,9 @@
-<?php
+<?php defined('LIBRARY') or die('No direct script access allowed');
  
 class Upload
 {
     public static $remove_spaces = true;
-    public static $directory = 'upload';
+    public static $directory = 'useruploads';
     public static $size = '100M';
     public static $type = array('jpg', 'gif', 'png', 'jpeg');
 

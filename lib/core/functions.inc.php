@@ -13,6 +13,7 @@
 	// SET DEFAULT FOR A GIVEN VARIABLE
 	function set_default(&$var, $default="") 
 	{
+		if ($var === TRUE) return TRUE; 
 		$var = (!isset($var) || (($var == "" || $var == "0000-00-00 00:00:00" || $var == "0000-00-00"))) ? $default : $var;
 		return $var;
 	}

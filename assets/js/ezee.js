@@ -1,6 +1,72 @@
+jQuery.fn.plupload_button = function() {
+	return this.each(function() {
+		var $this = $(this);
+		var params = EZee.helpers.attr_params($this.attr('title'));
+
+    	var step = 0;
+	    var uploader = new plupload.Uploader({
+	        runtimes: 'flash,silverlight',
+	        browse_button: 'pick_files',
+			multipart: true, 
+	        multi_selection: false,
+	        max_file_size: '2mb',
+	        unique_names: true,
+	        url: '/ajax/' + $this.attr('rel'), 
+	        flash_swf_url: '/assets/js/plupload.flash.swf',
+	        silverlight_xap_url: '/assets/js/plupload.silverlight.xap',
+	        filters: [{ 
+				title: "Image files", extensions: "jpg,gif,png,JPG,GIF,PNG" 
+			}]
+	    });
+	
+	    uploader.bind('UploadFile', function(up, file) {
+	        up.settings.url = '/ajax/' + $this.attr('rel')
+	    });
+
+	    uploader.bind('Error', function(uploader, error) {
+		    if (error.code == plupload.FILE_SIZE_ERROR) {
+				AttentionBox.showMessage('Your file is larger than the maximum size limit of 2mb.');
+		    }
+	    });
+
+	    uploader.bind('QueueChanged', function(up) {
+	        if (uploader.state != 2 & up.files.length > 0) {
+	            $('#uploadIcon').html('<img src="/assets/images/ajax-loader.gif" />');
+	            uploader.start();
+	        }
+	    });
+
+	    uploader.bind('FileUploaded', function(Uploader, file, response) {
+			var result = response.response.split("|");
+			var id = result[0];
+			var msg = result[1];
+			
+			if(id == 'error') {
+				AttentionBox.showMessage(msg);
+			} else {
+				$this.parent().prev().children().html('<a href="#" class="delLink"></a><img src="' + Ezee.config.upload_dir + msg + '" width="' + $this.attr('width') + '" height="' + $this.attr('height') + '" data-index="1" data-admincode="undefined" >').parent().show().css("background", "none").next().hide();
+				$this.parent().prev().children('#imageCode').attr('value', id);
+			}
+			
+	        $(".delLink").click(function(e) {
+	            $(this).parent().parent().next().show();
+	            $(this).parent().parent().hide();
+				$('#imageCode').attr('value', '');
+	            uploader.refresh();
+	            e.preventDefault();
+	        });
+	    });
+
+	    uploader.bind('UploadProgress', function(up, file) {
+	        $('#' + file.id).find('.title').html(file.percent + '%');
+	    });
+	
+		uploader.init();
+	});
+};
+
 var EZee = {
 	
-	// this vars should be set in <head> server-side
 	config: {
 		base_url: '/',
 		site_url: '/', 
@@ -41,6 +107,13 @@ var EZee = {
 				$('.optionChoice').css('visibility', 'hidden');
 				$(el).css('visibility', 'visible');
 	        });
+			
+			$('#pick_files').plupload_button('pick_files');
+			
+			// Picmeleo Manager
+			// $('#pick_files').click(function() {
+			// 	picmeleoApi.open('http://www.nexersys.com/assets/images/nexersys/img-07.png');
+			// });
 		});
 		
 		// On Window Load
