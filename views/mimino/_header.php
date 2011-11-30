@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>Mimino - Portfolio Template</title>
+		<title>neverslee.ps</title>
 		
 		<?php
 			echo HTML::stylesheet(array
@@ -62,7 +62,7 @@
 				<!-- header -->
 				<header id="header">
 					<!-- logo -->
-					<strong class="logo"><a href="index.html">Mimino</a></strong>
+					<strong class="logo"><a href="index.html">neverslee.ps</a></strong>
 					<!-- main navigation -->
 					<nav>
 						<ul id="nav" class="accordion2">

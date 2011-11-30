@@ -100,7 +100,7 @@
 								<h6><a href="#">Ryan Owens</a></h6>
 								<h6>The creative mind</h6>
 								<div class="personal-contact">
-									<p><a href="mailto:russell@sitename.com">ryan@mimino.com</a></p>
+									<p><a href="mailto:russell@sitename.com">ryan@neverslee.ps</a></p>
 									<p>+353 40 260 7589 777</p>
 								</div>
 								<ul>
@@ -122,7 +122,7 @@
 								<h6><a href="#">Christine Clements</a></h6>
 								<h6>The poetic copy</h6>
 								<div class="personal-contact">
-									<p><a href="mailto:jemaine@sitename.com">christine@mimino.com</a></p>
+									<p><a href="mailto:jemaine@sitename.com">christine@neverslee.ps</a></p>
 									<p>+353 40 260 7589 778</p>
 								</div>
 								<ul>
@@ -142,9 +142,9 @@
 									</a>
 								</div>
 								<h6><a href="#">Patrick Thomas</a></h6>
-								<h6>The user experince</h6>
+								<h6>The user experience</h6>
 								<div class="personal-contact">
-									<p><a href="mailto:pharrell@sitename.com">patrick@mimino.com</a></p>
+									<p><a href="mailto:pharrell@sitename.com">patrick@neverslee.ps</a></p>
 									<p>+353 40 260 7589 779</p>
 								</div>
 								<ul>
