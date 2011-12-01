@@ -48,26 +48,21 @@
 	
 	if(file_exists($pagename)) // Load MARKDOWN page
 	{
-		include_once DIR_SYS . '/markdown.php';
+		require_once DIR_SYS . '/markdown.php';
 		$str = file_get_contents($pagename);
 		$my_html = Markdown($str);
 
-		include DIR_VIEW . '/_header.php';
-		include DIR_VIEW . '/_navigation.php';
+		require_once DIR_VIEW . '/mimino/_header.php';
 		
 		echo <<<HTML
-		<div class="wrapper">		
-			<div class="container">
-				<div class="row">
-					<div class="span12 offset2">
+		<div class="major-holder">
+			<div class="major-area">
+				<div class="major-frame">
+					<div id="main">
 						{$my_html}
 					</div>
-				</div>
-			</div>
-		</div>
-		</body>
-		</html>
 HTML;
+		require_once DIR_VIEW . '/mimino/_footer.php';
 		exit();
 	}
 	else if(file_exists($scriptname))

@@ -87,7 +87,7 @@
 									<ul class="bottom-nav">
 										<li><a href="#">Home</a></li>
 										<li><a href="#">Sitemap</a></li>
-										<li><a href="#">RSS</a></li>
+										<li><a href="/privacy/">Privacy Policy</a></li>
 									</ul>
 									<p>CompanyName Ltd. &copy; 2011. All Rights Reserved</p>
 								</div>
@@ -98,6 +98,6 @@
 				</div>
 			</div>
 		</div>
-		<div id="bg"><img src="/assets/images/mimino/bg-body.jpg" alt=""></div>
+		<div id="bg"><img src="/assets/images/mimino/bg-coffee.jpg" alt=""></div>
 	</body>
 </html>
