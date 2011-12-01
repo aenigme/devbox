@@ -64,6 +64,9 @@ a {
 	color: #777;
 }
 a:hover {color: #fff;}
+.white {
+	color: white !important;
+}
 form, fieldset {
 	margin: 0;
 	padding: 0;
