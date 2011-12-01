@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>neverslee.ps</title>
+		<title>neverslee.ps <?= set_default($page_title); ?></title>
 		
 		<?php
 			echo HTML::stylesheet(array
@@ -33,7 +33,7 @@
 		<script type="text/javascript">
 		  $(document).ready(function(){
 			$("a[rel^='prettyPhoto']").prettyPhoto({
-				animation_speed: 'fast', /* fast/slow/normal */
+				animation_speed: 'normal', /* fast/slow/normal */
 				slideshow: 5000, /* false OR interval time in ms */
 				autoplay_slideshow: false, /* true/false */
 				opacity: 0.70, /* Value between 0 and 1 */
@@ -57,8 +57,7 @@
 		<!-- page -->
 		<div id="wrapper">
 			<div class="top-line">&nbsp;</div>
-			<div id="slide-block" class="">
-				<a class="menu-opener" href="#">open</a>
+			<div id="slide-block" class="active">
 				<!-- header -->
 				<header id="header">
 					<!-- logo -->
@@ -66,38 +65,11 @@
 					<!-- main navigation -->
 					<nav>
 						<ul id="nav" class="accordion2">
-							<li><a class="active" href="index.html">Home</a></li>
-							<li class="has-drop">
-								<a class="opener" href="#">Blog</a>
-								<div class="slide">
-									<ul>
-										<li><a href="blog-layout-grid-1.html">Blog Layout Grid 1</a></li>
-										<li><a href="blog-layout-grid-2.html">Blog Layout Grid 2</a></li>
-										<li><a href="blog-layout-1.html">Blog Layout 1</a></li>
-										<li><a href="blog-layout-2.html">Blog Layout 2</a></li>
-										<li><a href="blog-layout-3.html">Blog Layout 3</a></li>
-										<li><a href="blog-layout-4.html">Blog Layout 4</a></li>
-										<li><a href="blog-layout-5.html">Blog Layout 5</a></li>	
-										<li><a href="single.html">Single page</a></li>
-									</ul>
-								</div>
-							</li>							
-							<li class="has-drop">
-								<a class="opener" href="#">Portfolio</a>
-								<div class="slide">
-									<ul>
-										<li><a href="portfolio-one-column.html">One Column</a></li>
-										<li><a href="portfolio-two-columns.html">Two Columns</a></li>
-										<li><a href="portfolio-three-columns.html">Three Columns</a></li>
-										<li><a href="portfolio-four-columns.html">Four Columns</a></li>
-										<li><a href="portfolio-single.html">Portfolio Info</a></li>										
-									</ul>
-								</div>
-							</li>
-							<li><a href="fullwidth.html">Full Width Page</a></li>
-							<li><a href="right-sidebar.html">Right Sidebar Page</a></li>
-							<li><a href="team.html">Meet the Team</a></li>
-							<li><a href="contact.html">Contact Us</a></li>
+							<li><a class="active" href="/">Home</a></li>
+							<li><a href="/portfolio/">Portfolio</a></li>
+							<li><a href="/team/">Meet the Team</a></li>
+							<li><a href="/details/">Hire Us</a></li>
+							<li><a href="/contact/">Contact Us</a></li>
 						</ul>
 					</nav>
 				</header>
