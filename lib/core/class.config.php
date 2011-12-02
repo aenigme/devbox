@@ -15,7 +15,7 @@
         // Each array item should be a regular expression. This gives you the option to detect a whole range
         // of server names if needed. Otherwise, you can simply detect a single server like '/^servername\.com$/'
         private $productionServers = array('/^example\.com$/','/www.example\.com$/');
-        private $stagingServers    = array('/^stage.example\.com$/');
+        private $stagingServers    = array('/^stage.neveranullmoment\.com$/');
         private $localServers      = array('/^devbox\.dev$/');
 
         // Standard Config Options...
@@ -134,11 +134,11 @@
 
             $this->dbReadHost      = 'localhost';
             $this->dbWriteHost     = 'localhost';
-            $this->dbName          = '';
-            $this->dbReadUsername  = '';
-            $this->dbWriteUsername = '';
-            $this->dbReadPassword  = '';
-            $this->dbWritePassword = '';
+            $this->dbName          = 'neveranu_simpledb';
+            $this->dbReadUsername  = 'neveranu_kcms';
+            $this->dbWriteUsername = 'neveranu_kcms';
+            $this->dbReadPassword  = 'hot-luck';
+            $this->dbWritePassword = 'hot-luck';
             $this->dbOnError       = 'die';
             $this->dbEmailOnError  = false;
         }
