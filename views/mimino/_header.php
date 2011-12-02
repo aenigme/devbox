@@ -54,15 +54,14 @@
 		<![endif]-->
 	</head>
 	<body>
-		<!-- page -->
+
 		<div id="wrapper">
 			<div class="top-line">&nbsp;</div>
 			<div id="slide-block" class="active">
-				<!-- header -->
+
 				<header id="header">
-					<!-- logo -->
-					<strong class="logo"><a href="index.html">neverslee.ps</a></strong>
-					<!-- main navigation -->
+					
+					<h1><a href="index.html" class="white">neverslee.ps</a></h1>
 					<nav>
 						<ul id="nav" class="accordion2">
 							<li><a class="active" href="/">Home</a></li>
@@ -74,18 +73,18 @@
 						</ul>
 					</nav>
 				</header>
-				<!-- contact box -->
+
 				<div class="contact-box">
 					<div class="area">
-						<!-- address -->
+
 						<address>
-							Mimino Template Demo,<br>
+							Never Sleeps LLC,<br>
 							344 Madison Avenue,<br>
 							New York 10027<br>
 							Tel: +1 416 777 8000
 						</address>
 						<p>Follow us:</p>
-						<!-- social nav -->
+
 						<ul class="social-nav">
 							<li><a class="facebook" href="#">Facebook</a></li>
 							<li><a class="twitter" href="#">Twitter</a></li>
