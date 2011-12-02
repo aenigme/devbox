@@ -8,28 +8,24 @@
 		<div class="major-frame">
 			<!-- main -->
 			<div id="main">
-				<!-- intro -->
+
 				<script type="text/javascript" charset="utf-8"> Home.init(); </script>
-				<article class="intro">
-					<h1 style="font-size: 40px;">neverslee.ps</h1>
-					<p></p>
-				</article>
-				<!-- slider -->
-				<div class="slider-wrapper theme-default">
-					<div id="slider" class="nivoSlider">
-						<a href="/portfolio/billings/"><img src="/assets/images/mimino/portfolio/pechauer.jpg" alt="" /></a>
-						<a href="/portfolio/billings/"><img src="/assets/images/mimino/portfolio/bigassfans.jpg" alt="" /></a>
-						<a href="/portfolio/billings/"><img src="/assets/images/mimino/portfolio/billings.jpg" alt="" /></a>
-						<a href="/portfolio/billings/"><img src="/assets/images/mimino/portfolio/thinagain.jpg" alt="" /></a>
-					</div>
-					<div id="htmlcaption" class="nivo-html-caption">
-						As in any profession, type designers have a <a href="#">specialized vocabulary</a> to talk about the different parts of letters.
-					</div>
+
+				<div class="page-heading">
+					<font style="font-size: 40px; font-weight: 800; line-height: 36px;" class="white">
+						The late night hour breeds thought.<br />
+						That's the advantage of insomnia.<br />
+						...You get a lot done.
+					</font>
+
+					<p style="margin-top: 20px;"><em>Lorem ipsum</em> dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
+					ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+					nisi ut <em>aliquip ex ea commodo</em> consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
+					cillum dolore eu fugiat nulla pariatur. <em>Excepteur sint</em> occaecat cupidatat non proident, sunt in culpa 
+					qui officia deserunt mollit anim id est laborum.
+					</p>
 				</div>
-				<!-- heading -->
-				<div class="content-heading">
-					<h4>Our Services</h4>
-				</div>
+				
 				<div class="columns">
 					<div class="holder">
 						<div class="column-13">

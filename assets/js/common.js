@@ -112,7 +112,7 @@ jQuery.fn.simplehints = function() {
 };
 
 jQuery.fn.sendmail = function() {
-	return this.each(function() {
+	return this.each(function(e) {
 		$(this).ajaxForm({
 			target: '#alert',
 			success: function(str) {

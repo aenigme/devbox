@@ -8,7 +8,7 @@
 			echo HTML::stylesheet(array
 			(
 				'assets/css/reset',
-				'assets/css/all',
+				'assets/css/screen',
 				'assets/fonts/copse',
 			), FALSE, FALSE, TRUE);
 
@@ -67,7 +67,8 @@
 						<ul id="nav" class="accordion2">
 							<li><a class="active" href="/">Home</a></li>
 							<li><a href="/portfolio/">Portfolio</a></li>
-							<li><a href="/team/">Meet the Team</a></li>
+							<li><a href="/team/">Meet Us</a></li>
+							<li><a href="/details/">Why Us</a></li>
 							<li><a href="/details/">Hire Us</a></li>
 							<li><a href="/contact/">Contact Us</a></li>
 						</ul>
