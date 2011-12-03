@@ -28,12 +28,12 @@
 						<p>J. Pechauer Custom Cues</p>
 						<h6>Services</h6>
 						<ul>
+							<li>Brand / Digital Strategy</li>
 							<li>Visual Design</li>
+							<li>Interaction Design</li>										
 							<li>Development</li>
-							<li>Interaction Design</li>
+							<li>User Needs Analysis</li>
 						</ul>
-						<h6>Visit Website</h6>
-						<a href="http://pechauer.com">http://pechauer.com/</a>
 					</div>
 				</article>
 
@@ -51,12 +51,13 @@
 						<p>Thin Again LLC</p>
 						<h6>Services</h6>
 						<ul>
+							<li>Visual Design</li>
+							<li>Interaction Design</li>
+							<li>Development</li>
 							<li>Solution Definition</li>											
 							<li>User Needs Analysis</li>
 							<li>Insight &amp; Research</li>
 						</ul>
-						<h6>Visit Website</h6>
-						<a href="#">http://thinagainworks.com</a>
 					</div>
 				</article>
 
@@ -76,10 +77,10 @@
 						<ul>
 							<li>Brand / Digital Strategy</li>
 							<li>Brand Creation</li>
-							<li>Information Architecture</li>
+							<li>Visual Design</li>
+							<li>Interaction Design</li>
+							<li>Development</li>
 						</ul>
-						<h6>Visit Website</h6>
-						<a href="#">http://55his.com</a>
 					</div>
 				</article>
 				
