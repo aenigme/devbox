@@ -4,6 +4,8 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<title>neverslee.ps <?= set_default($page_title); ?></title>
 		
+		<link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+		
 		<?php
 			echo HTML::stylesheet(array
 			(
@@ -147,10 +149,8 @@
 		<div id="wrapper">
 			<div class="top-line">&nbsp;</div>
 			<div id="slide-block" class="active">
-
 				<header id="header">
-					
-					<h1><a href="/" class="white">neverslee.ps</a></h1>
+					<strong class="logo"><a href="/">Never Sleeps Web Development Group</a></strong>
 					<nav>
 						<ul id="nav" class="accordion2 edit-text">
 							<li><a class="active" href="/">Home</a></li>
@@ -165,7 +165,6 @@
 
 				<div class="contact-box">
 					<div class="area">
-
 						<address>
 							Never Sleeps LLC,<br>
 							344 Madison Avenue,<br>

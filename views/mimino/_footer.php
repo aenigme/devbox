@@ -89,7 +89,7 @@
 										<li><a href="#">Sitemap</a></li>
 										<li><a href="/privacy/">Privacy Policy</a></li>
 									</ul>
-									<p>CompanyName Ltd. &copy; 2011. All Rights Reserved</p>
+									<p>Never Sleeps LLC. &copy; 2011. All Rights Reserved</p>
 								</div>
 							</footer>
 						</div>

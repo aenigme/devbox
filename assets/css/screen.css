@@ -184,11 +184,11 @@ input, textarea, select {
 .logo {
 	display: block;
 	overflow: hidden;
-	margin: 0 0 35px;
-	width: 95px;
-	height: 23px;
+	margin: 0;
+	width: 150px;
+	height: 33px;
 	text-indent: -9999px;
-	background: url(/assets/images/mimino/logo.png) no-repeat;
+	background: url(/assets/images/neversleeps/logo-150.png) no-repeat;
 }
 .logo a {
 	display: block;
@@ -313,7 +313,7 @@ input, textarea, select {
 	/*background: url(/assets/images/mimino/bg-major-area.gif) repeat-y;*/
 }
 /* main */
-#main {padding: 45px 0 10px;}
+#main {padding: 25px 0 10px;}
 /* intro */
 .intro {
 	padding: 16px 0 8px;
