@@ -1,14 +1,15 @@
 <div class="topbar">
 	<div class="topbar-inner">
 		<div class="container">
-			<a href="/" class="brand">_devbox</a>
+			<a href="/dashboard/" class="brand">_devbox</a>
 			<ul class="nav">
 				<li class=""><a href="#overview">About</a></li>
 				<li class=""><a href="#overview">What's New</a></li>
-				<li class=""><a href="#overview">Terms of Service</a></li>
+				<li class=""><a href="/dashboard/readme/">Read Me</a></li>
 				<li class=""><a href="#overview">Privacy Policy</a></li>
 			</ul>
 			<ul class="nav secondary-nav">
+					<li><a href="/">Home</a></li>
 				<?php if ($Auth->loggedIn()): ?>
 					<li><a href="/logout">Logout</a></li>
 				<?php else: ?>
