@@ -18,7 +18,7 @@
 		(
 			'assets/css/reset',
 			'assets/css/bootstrap',
-			'assets/css/screen',
+			'assets/css/devbox',
 			'assets/css/plupload',
 			'assets/css/rangeslider', 
 			'assets/css/smoothness/jquery-ui-1.8.10.custom',
@@ -34,7 +34,7 @@
 			'assets/js/jquery.rangeslider',
 			'assets/js/plupload.full.min',
 			'assets/js/common',
-			'assets/js/ezee',
+			'assets/js/devbox',
 		), FALSE, TRUE);		
 	?>
 	

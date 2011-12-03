@@ -6,7 +6,6 @@
 <div class="major-holder">
 	<div class="major-area">
 		<div class="major-frame">
-			<!-- main -->
 			<div id="main">
 
 				<div class="page-heading article" title="homepage_headline">

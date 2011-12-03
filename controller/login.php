@@ -1,17 +1,16 @@
 <?php defined('LIBRARY') or die('No direct script access allowed');
 
-	$page_title = '&raquo; Login';
-
-    if($Auth->loggedIn()) redirect(WEB_ROOT);
+	if($Auth->loggedIn()) redirect('/dashboard');
 
     if(!empty($_POST['username']))
     {
 		if($Auth->login($_POST['username'], $_POST['password']))
-			redirect('/');
+			redirect('/dashboard');
 		else
 			$Error->add('username', "We're sorry, you have entered an incorrect username and password. Please try again.");
     }
 
+	$page_title = '&raquo; Login';
 	require_once DIR_VIEW . '/_header.php'; 
 	require_once DIR_VIEW . '/_navigation.php';
 ?>

@@ -1,5 +1,7 @@
 <?php defined('LIBRARY') or die('No direct script access allowed');
-
+	
+	if(!$Auth->loggedIn()) redirect('/login');
+	
 	if (isset($_FILES['fileInput']) && isset($_POST['action'])) 
 	{
 	    $upload_dir = 'useruploads';
@@ -12,6 +14,7 @@
 		if (empty($file)) exit('error');
 	}
 
+	$page_title = '&raquo; Upload Image';
 	require_once DIR_VIEW . '/_header.php'; 
 	require_once DIR_VIEW . '/_navigation.php';	
 ?>
@@ -51,7 +54,7 @@
 			<?php if (isset($file)): ?>
 				<?php if ($file['status']): ?>
 					<ul class="media-grid">
-						<li><img class="thumbnail" src="/patrick/uploads/<?= $file['fileName'] ?>" alt=""></li>
+						<li><img class="thumbnail" src="/uploads/<?= $file['fileName'] ?>" alt=""></li>
 					</ul>
 				<?php endif ?>
 			<?php endif ?>

@@ -65,7 +65,7 @@ jQuery.fn.plupload_button = function() {
 	});
 };
 
-var EZee = {
+var Toolbox = {
 	
 	config: {
 		base_url: '/',
@@ -148,4 +148,4 @@ var EZee = {
 	}
 };
 
-EZee.init();
+Toolbox.init();

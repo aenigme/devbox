@@ -1,0 +1,156 @@
+/* @group General Settings */
+div.wrapper {
+	min-width: 940px;
+	padding-top: 80px;
+}
+.topbar {
+    height: 40px;
+    left: 0;
+    overflow: visible;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 10000;
+}
+.topbar div > ul.secondary-nav, .nav.secondary-nav {
+    float: right;
+    margin-left: 10px;
+    margin-right: 0;
+}
+.link {
+	cursor: pointer;
+}
+.link:hover {
+	background-color: lightyellow;
+}
+.link a {
+	z-index: 1;
+	
+}
+/* @end */
+
+/* @group Survey Options */
+div#moreOptions {
+	margin-top: 100px;
+}
+div#rowOption {
+	position: relative;
+	min-height: 44px;
+}
+div.optionChoice {
+	position: absolute;
+}
+ol#viewOptions li {
+	width: 220px;
+}
+ol#viewOptions li a.removeOption {
+	margin-left: 10px;
+}
+/* @end */
+
+
+/* @group Range Slider */
+.slider,
+.dateSlider{
+	width:100%;
+	margin:20px auto;
+	padding-top:20px;
+}
+/* @end */
+
+/* @group Tables */
+div.tbl_header { 
+	height: 30px;
+	padding: 5px 10px 20px;
+	margin-top: 10px;
+	background-color: #f7f7f7; 
+	background: url('/assets/images/misc/linear_bg.jpg');
+	background-repeat: repeat-x; 
+	box-shadow: 0 0 5px 2px #aaa;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	z-index: 10;
+	/*-moz-box-shadow: 0 0 5px 5px #888;*/
+	/*-webkit-box-shadow: 0 0 5px 5px#888;*/
+}	
+table.light {
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 18px;
+    padding: 0;
+    width: 100%;
+	border-left: 0;
+	border-right: 0;
+	border-top: 0;
+}
+table.light tr, 
+table.light td, 
+table.light th {
+	border-left: 0 !important;
+	border-right: 0 !important;
+}
+table.shadow {
+	background-color: #ffffff;
+	box-shadow: 0px 10px 5px 2px #aaa;
+	margin-top: -20px;
+	z-index: 20; 
+}
+table.shadow th {
+	background-color: #f7f7f7;
+	font-size: 12px;
+	font-weight: 800;
+}
+/* @end */
+
+/* @group Form Validation */
+span.tooltip {
+	position: relative;
+	left: 4px;
+	top: 2px;
+}
+span.tooltip:hover {
+	cursor: pointer;
+}
+/* @end */
+
+/* @group Buttons */
+a.button {
+    border: 1px solid #ffffff;
+    color: #FFFFFF;
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 16px;
+    padding: 4px 10px;
+    text-decoration: none;
+}
+.button-blue {
+    background: -moz-linear-gradient(center top , #00ADEE, #0078A5) repeat scroll 0 0 transparent;
+    border: 1px solid #034462;
+    color: #FFFFFF;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+}
+.button {
+    -moz-box-sizing: border-box !important;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 1px 1px 0 rgba(255, 255, 255, 0.3) inset;
+    cursor: pointer;
+    display: inline-block;
+    font: 12px/16px 'Helvetica Neue',Helvetica,Arial,Verdana,sans-serif;
+    outline: medium none !important;
+    padding: 4px 10px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+}
+.button span.add {
+    background: url("/assets/images/icons/add.png") no-repeat scroll center center transparent;
+}
+.button span {
+    display: inline-block;
+    float: left;
+    height: 16px;
+    margin-right: 5px;
+    position: relative;
+    width: 16px;
+}
+/* @end */
