@@ -15,14 +15,14 @@
 			echo HTML::script(array
 			(
 				'assets/js/aloha/aloha',
-				'assets/js/aloha/plugins/com.example.aloha.plugins.Save/plugin',
-				'assets/js/aloha/plugins/com.gentics.aloha.plugins.Format/plugin',
-				'assets/js/aloha/plugins/com.gentics.aloha.plugins.List/plugin',
-				'assets/js/aloha/plugins/com.gentics.aloha.plugins.Link/plugin',
-				'assets/js/aloha/plugins/com.gentics.aloha.plugins.HighlightEditables/plugin',
-				'assets/js/aloha/plugins/com.gentics.aloha.plugins.Link/LinkList',
-				'assets/js/aloha/plugins/com.gentics.aloha.plugins.Paste/plugin',
-				'assets/js/aloha/plugins/com.gentics.aloha.plugins.Paste/wordpastehandler',
+				'assets/js/aloha/plugins/save/plugin',
+				'assets/js/aloha/plugins/format/plugin',
+				'assets/js/aloha/plugins/list/plugin',
+				'assets/js/aloha/plugins/link/plugin',
+				'assets/js/aloha/plugins/highlight/plugin',
+				'assets/js/aloha/plugins/link/linklist',
+				'assets/js/aloha/plugins/paste/plugin',
+				'assets/js/aloha/plugins/paste/wordpastehandler',
 				
 				'assets/js/jquery.accordion',
 				'assets/js/jquery.bt',
