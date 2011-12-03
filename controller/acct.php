@@ -19,8 +19,8 @@
 			$Error->add('username', "We're sorry, that username already exists. Please try again.");
     }
 
-	require_once DIR_VIEW . '/_header.php'; 
-	require_once DIR_VIEW . '/_navigation.php';
+	require_once DIR_VIEW . '/devbox/_header.php'; 
+	require_once DIR_VIEW . '/devbox/_navigation.php'; 
 ?>
 	
 	<div class="wrapper">
@@ -82,4 +82,4 @@
 			</div>
 		</div>
 
-<?php require_once DIR_VIEW . '/_footer.php'; ?>
+<?php require_once DIR_VIEW . '/devbox/_footer.php'; ?>

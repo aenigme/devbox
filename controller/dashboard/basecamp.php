@@ -22,8 +22,8 @@
 	
 	if(!$Auth->loggedIn()) redirect('/login.php');
 
-	require DIR_VIEW . '/_header.php'; 
-	require DIR_VIEW . '/_navigation.php';
+	require DIR_VIEW . '/devbox/_header.php'; 
+	require DIR_VIEW . '/devbox/_navigation.php';
 ?>
 
 	<div class="wrapper">		

@@ -4,8 +4,8 @@
 	
     if(!$Auth->loggedIn()) redirect('/login/');
 
-	require_once DIR_VIEW . '/_header.php'; 
-	require_once DIR_VIEW . '/_navigation.php';
+	require_once DIR_VIEW . '/devbox/_header.php'; 
+	require_once DIR_VIEW . '/devbox/_navigation.php'; 
 	
 	require_once DIR_SYS . '/markdown.php';	
 	$str = file_get_contents(DOC_ROOT . '/readme.md');
