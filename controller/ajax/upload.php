@@ -19,10 +19,10 @@
 			
 		case 'page':
 			$filename = DIR_PAGE . '/html/' . $Input->post('filename') . '.html';
-			$fh = fopen($filename, 'w') or die("0|can't open file");
+			$fh = fopen($filename, 'w') or die("false|can't open file");
 			$str = $Input->post('content');
 			fwrite($fh, $str);
 			fclose($fh);
-			echo "1|file has been saved";
+			echo "true|file has been saved";
 			break;
 	}
