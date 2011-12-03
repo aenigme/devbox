@@ -6,5 +6,6 @@ cancel=Cancel
 repository.no_item_found=No item found.
 repository.loading=Loading
 
-button.save=Save Your Changes
+button.save=Save Changes
+button.admin=Open Dashboard
 saveMessage=The following content can now be saved :

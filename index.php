@@ -22,7 +22,7 @@
 	$appname =  DIR_CTRL . '/'; // Load symbolic application links
 	$indexname =  DIR_CTRL . '/'; // Load symbolic index links
 	$scriptname = DOC_ROOT . $_SERVER['REQUEST_URI'] . '.php'; // Load script directly
-	$pagename = DIR_PAGE . rtrim($_SERVER['REQUEST_URI'], '/') . '.md'; // Load MARKDOWN templates
+	$pagename = DIR_PAGE . '/markdown/' . rtrim($_SERVER['REQUEST_URI'], '/') . '.md'; // Load MARKDOWN templates
 		
 	// Load app controller
 	for($i = 1; $i < sizeof($requestURI) - 1; $i++)	

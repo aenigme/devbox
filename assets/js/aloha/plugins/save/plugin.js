@@ -21,7 +21,15 @@ EXAMPLE.DummySavePlugin.init = function () {
 			that.save();
 		}
 	});
-
+	
+	var adminButton = new GENTICS.Aloha.ui.Button({
+		label : this.i18n("button.admin"),
+		onclick : function() {
+			window.location.replace("/dashboard");
+		}
+	});
+	
+	GENTICS.Aloha.Ribbon.addButton(adminButton);
 	GENTICS.Aloha.Ribbon.addButton(saveButton);
 };
 

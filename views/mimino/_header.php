@@ -14,6 +14,11 @@
 
 			echo HTML::script(array
 			(
+				'assets/js/jquery-1.6.2.min',
+				'assets/js/jquery.accordion',
+				'assets/js/jquery.bt',
+				'assets/js/jquery.colorbox', 
+				'assets/js/jquery.form',
 				'assets/js/aloha/aloha',
 				'assets/js/aloha/plugins/save/plugin',
 				'assets/js/aloha/plugins/format/plugin',
@@ -23,11 +28,6 @@
 				'assets/js/aloha/plugins/link/linklist',
 				'assets/js/aloha/plugins/paste/plugin',
 				'assets/js/aloha/plugins/paste/wordpastehandler',
-				
-				'assets/js/jquery.accordion',
-				'assets/js/jquery.bt',
-				'assets/js/jquery.colorbox', 
-				'assets/js/jquery.form',
 				'assets/js/common',
 				'assets/js/main',
 			), FALSE, TRUE);		
