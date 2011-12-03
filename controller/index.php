@@ -9,21 +9,8 @@
 			<!-- main -->
 			<div id="main">
 
-				<script type="text/javascript" charset="utf-8"> Home.init(); </script>
-
-				<div class="page-heading">
-					<font style="font-size: 40px; font-weight: 800; line-height: 36px;" class="white">
-						The late night hour breeds thought.<br />
-						That's the advantage of insomnia.<br />
-						...You get a lot done.
-					</font>
-
-					<p style="margin-top: 20px;"><em>Lorem ipsum</em> dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt 
-					ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-					nisi ut <em>aliquip ex ea commodo</em> consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-					cillum dolore eu fugiat nulla pariatur. <em>Excepteur sint</em> occaecat cupidatat non proident, sunt in culpa 
-					qui officia deserunt mollit anim id est laborum.
-					</p>
+				<div class="page-heading article" title="homepage_headline">
+					<?php include_once DIR_PAGE . '/html/homepage_headline.html'; ?>
 				</div>
 				
 				<div class="columns">
@@ -137,7 +124,7 @@
 								<h6><a href="#">Jenny McLowery</a></h6>
 								<h6>The linguist</h6>
 								<div class="personal-contact">
-									<p><a href="mailto:jemaine@sitename.com">christine@neverslee.ps</a></p>
+									<p><a href="mailto:jemaine@sitename.com">jenny@neverslee.ps</a></p>
 									<p>+353 40 260 7589 778</p>
 								</div>
 								<ul>

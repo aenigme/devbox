@@ -14,7 +14,16 @@
 
 			echo HTML::script(array
 			(
-			    'assets/js/jquery-1.6.2.min',
+				'assets/js/aloha/aloha',
+				'assets/js/aloha/plugins/com.example.aloha.plugins.Save/plugin',
+				'assets/js/aloha/plugins/com.gentics.aloha.plugins.Format/plugin',
+				'assets/js/aloha/plugins/com.gentics.aloha.plugins.List/plugin',
+				'assets/js/aloha/plugins/com.gentics.aloha.plugins.Link/plugin',
+				'assets/js/aloha/plugins/com.gentics.aloha.plugins.HighlightEditables/plugin',
+				'assets/js/aloha/plugins/com.gentics.aloha.plugins.Link/LinkList',
+				'assets/js/aloha/plugins/com.gentics.aloha.plugins.Paste/plugin',
+				'assets/js/aloha/plugins/com.gentics.aloha.plugins.Paste/wordpastehandler',
+				
 				'assets/js/jquery.accordion',
 				'assets/js/jquery.bt',
 				'assets/js/jquery.colorbox', 
@@ -47,14 +56,88 @@
 		  });
 		</script>
 		
+		<!-- turn an element into editable Aloha continuous text -->
+		<script type="text/javascript">
+			GENTICS.Aloha.settings = {
+				logLevels: {'error': true, 'warn': false, 'info': false, 'debug': false},
+				errorhandling : false,
+				ribbon: true,	
+				"i18n": {
+					"current": "en" 
+				},
+				"repositories": {
+				 	"com.gentics.aloha.repositories.LinkList": {
+				 		data: [
+			 		        { name: 'Aloha Developers Wiki', url:'http://www.aloha-editor.com/wiki', type:'website', weight: 0.50 },
+			 		        { name: 'Aloha Editor - The HTML5 Editor', url:'http://aloha-editor.com', type:'website', weight: 0.90  },
+			 		        { name: 'Aloha Demo', url:'http://www.aloha-editor.com/demos.html', type:'website', weight: 0.75  },
+			 		        { name: 'Aloha Wordpress Demo', url:'http://www.aloha-editor.com/demos/wordpress-demo/index.html', type:'website', weight: 0.75  },
+			 		        { name: 'Aloha Logo', url:'http://www.aloha-editor.com/images/aloha-editor-logo.png', type:'image', weight: 0.10  }
+				 		]
+					}
+				},
+				"plugins": {
+					"com.example.aloha.DummySave": { },
+					"com.gentics.aloha.plugins.Format": {
+					 	// all elements with no specific configuration get this configuration
+						config : [ 'b', 'i','del','sup', 'p','h1','h2','h3' ],
+					  	editables : {
+							'#title'		: [ ], 
+							'.article'		: [ 'b', 'i','del','sup', 'p','h1','h2','h3', 'h4', 'h5', 'h6','removeFormat' ],
+					  	}
+					},
+				 	"com.gentics.aloha.plugins.List": { 
+						config : [  'ul' ],
+					  	editables : {
+							'#title'	: [ ], 
+					  	}
+					},
+				 	"com.gentics.aloha.plugins.Link": {
+					 	// all elements with no specific configuration may insert links
+						config : [ 'a' ],
+					  	editables : {
+							// No links in the title.
+							'#title'	: [ ]
+					  	},
+					  	// all links that match the targetregex will get set the target
+			 			// e.g. ^(?!.*aloha-editor.com).* matches all href except aloha-editor.com
+					  	targetregex : '^(?!.*aloha-editor.com).*',
+					  	// this target is set when either targetregex matches or not set
+					    // e.g. _blank opens all links in new window
+					  	target : '_blank',
+					  	// the same for css class as for target
+					  	cssclassregex : '^(?!.*aloha-editor.com).*',
+					  	cssclass : 'aloha',
+					  	// use all resources of type website for autosuggest
+					  	objectTypeFilter: ['website'],
+					  	// handle change of href
+					  	onHrefChange: function( obj, href, item ) {
+						  	if ( item ) {
+								jQuery(obj).attr('data-name', item.name);
+						  	} else {
+								jQuery(obj).removeAttr('data-name');
+						  	}
+					  	}
+					},
+			  	}
+			};
+			
+			$(document).ready(function() {
+				$('.article').aloha();
+				$('.teaser').aloha();
+			});
+
+		</script>
+		
 		<!--[if lt IE 8]>
 			<link rel="stylesheet" type="text/css" href="/assets/css/ie.css">
 			<script type="text/javascript" src="/assets/js/ie-png-fix.js"></script>
 			<script type="text/javascript" src="/assets/js/ie-hover-ns-pack.js"></script>
 		<![endif]-->
+		
 	</head>
 	<body>
-
+		
 		<div id="wrapper">
 			<div class="top-line">&nbsp;</div>
 			<div id="slide-block" class="active">
@@ -63,7 +146,7 @@
 					
 					<h1><a href="index.html" class="white">neverslee.ps</a></h1>
 					<nav>
-						<ul id="nav" class="accordion2">
+						<ul id="nav" class="accordion2 edit-text">
 							<li><a class="active" href="/">Home</a></li>
 							<li><a href="/portfolio/">Portfolio</a></li>
 							<li><a href="/team/">Meet Us</a></li>

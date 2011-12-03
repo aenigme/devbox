@@ -1,5 +1,8 @@
 <?php defined('LIBRARY') or die('No direct script access allowed');
 	
+	ini_set('error_reporting', E_ALL);
+	ini_set('display_errors', 1);
+	
 	switch ($requestURI[3]) 
 	{
 		case 'gallery':
@@ -12,5 +15,14 @@
 			$image->resize(400, 300);
 			$image->toString();
 			echo $image;
+			break;
+			
+		case 'page':
+			$filename = DIR_PAGE . '/html/' . $Input->post('filename') . '.html';
+			$fh = fopen($filename, 'w') or die("0|can't open file");
+			$str = $Input->post('content');
+			fwrite($fh, $str);
+			fclose($fh);
+			echo "1|file has been saved";
 			break;
 	}

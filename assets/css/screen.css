@@ -72,7 +72,7 @@ a {
 }
 a:hover {color: #fff;}
 
-em {
+#main p em, #main p b {
 	color: #ffffff;
     font-size: 1.2em;
     letter-spacing: -0.05em;
