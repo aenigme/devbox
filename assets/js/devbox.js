@@ -1,7 +1,7 @@
 jQuery.fn.plupload_button = function() {
 	return this.each(function() {
 		var $this = $(this);
-		var params = EZee.helpers.attr_params($this.attr('title'));
+		var params = devbox.helpers.attr_params($this.attr('title'));
 
     	var step = 0;
 	    var uploader = new plupload.Uploader({
@@ -44,7 +44,7 @@ jQuery.fn.plupload_button = function() {
 			if(id == 'error') {
 				AttentionBox.showMessage(msg);
 			} else {
-				$this.parent().prev().children().html('<a href="#" class="delLink"></a><img src="' + Ezee.config.upload_dir + msg + '" width="' + $this.attr('width') + '" height="' + $this.attr('height') + '" data-index="1" data-admincode="undefined" >').parent().show().css("background", "none").next().hide();
+				$this.parent().prev().children().html('<a href="#" class="delLink"></a><img src="' + devbox.config.upload_dir + msg + '" width="' + $this.attr('width') + '" height="' + $this.attr('height') + '" data-index="1" data-admincode="undefined" >').parent().show().css("background", "none").next().hide();
 				$this.parent().prev().children('#imageCode').attr('value', id);
 			}
 			
@@ -65,12 +65,12 @@ jQuery.fn.plupload_button = function() {
 	});
 };
 
-var Toolbox = {
+var devbox = {
 	
 	config: {
 		base_url: '/',
 		site_url: '/', 
-		upload_dir: '/useruploads/images/'
+		upload_dir: '/uploads/images/'
 	},
 	
 	// this method is called on every page
@@ -148,4 +148,4 @@ var Toolbox = {
 	}
 };
 
-Toolbox.init();
+devbox.init();

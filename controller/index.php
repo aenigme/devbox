@@ -73,7 +73,7 @@
 							<article class="team-box">
 								<div class="visual">
 									<a href="#">
-										<img src="/assets/images/mimino/team/russell.jpg" width="230" height="170" alt="image description">
+										<img src="/assets/images/neversleeps/eddie_small.jpg" width="230" height="170" alt="image description">
 									</a>
 								</div>
 								<h6><a href="#">Eddie O'bryan</a></h6>

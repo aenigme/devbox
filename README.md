@@ -6,19 +6,19 @@ A collection of commonly used JS, CSS and techniques for web development.
 Features
 --------
 * Drop Dead easy CMS
-* NO MVC frameworks, NO template engines
+* NO MVC frameworks
+* NO template engines
 * Plug and Play any website template
 * Easily create "template blocks"
 * Fully automated "Pretty URLs"
 * Textile and Markdown support
-* FAQ Module
-* Testimonial Module
-* Photo Gallery Module
-* Contact Form Module
-* Paypal Module
-* Dropbox Module
-* Mailchimp Module
-* Easy Variables Module *
+* FAQ controller
+* Testimonial controller
+* Photo Gallery controller
+* Contact Form controller
+* Paypal controller
+* Mailchimp controller
+* Automated Backups
 
 ****
 How It's Done
@@ -74,7 +74,7 @@ INSERT / UPDATE Database
 -------------
 coming soon
 
-Custom Modules HOW-TO Guide
+Custom Controllers HOW-TO Guide
 -------------
 coming soon
 

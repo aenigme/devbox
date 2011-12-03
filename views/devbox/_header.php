@@ -10,8 +10,8 @@
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
 	
-	<link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
-	<link rel="icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="/assets/images/toolbox.ico" type="image/x-icon" />
+	<link rel="icon" href="/assets/images/toolbox.ico" type="image/x-icon" />
 
 	<?php
 		echo HTML::stylesheet(array
@@ -26,13 +26,13 @@
 		
 		echo HTML::script(array
 		(
-		    'assets/js/jquery-1.4.1.min',
+		    'assets/js/jquery-1.6.2.min',
 			'assets/js/jquery-ui-1.8.10.custom.min',
 			'assets/js/jquery.bt',
 			'assets/js/jquery.colorbox', 
 			'assets/js/jquery.form',
 			'assets/js/jquery.rangeslider',
-			'assets/js/plupload.full.min',
+			'assets/js/bootstrap/bootstrap-dropdown',
 			'assets/js/common',
 			'assets/js/devbox',
 		), FALSE, TRUE);		

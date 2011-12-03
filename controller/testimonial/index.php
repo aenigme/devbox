@@ -28,13 +28,10 @@
 					<?php endif ?>
 						
 					<div class="row">
-						<a class="button button-blue" href="/testimonial/new/"><span class="add"></span>New Testimonial</a>
+						<a class="btn success" href="/testimonial/new/">New Testimonial &raquo;</a>
 						
 						<div class="tbl_header">
-							<h2>
-								<img src="/assets/images/icons/pico/testimonial.png" width="24" />
-								EZee Testimonials
-							</h2>
+							<h2>Easy Testimonials</h2>
 						</div>
 						<table class="light shadow">
 							<thead>
@@ -57,6 +54,24 @@
 								<?php endforeach ?>
 							</tbody>
 						</table>
+						
+<pre>
+<code>&lt;?php defined('LIBRARY') or die('No direct script access allowed');
+
+$testimonial = Testimonial::fetch();
+
+require_once DIR_VIEW . '/_header.php'; 
+?&gt;
+
+&lt;div id="container"&gt;
+	&lt;ul&gt;
+		&lt;?php foreach ($testimonial as $row): ?&gt;
+			&lt;li&gt;&lt;?= $row-&gt;caption ?&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;?= $row-&gt;quote ?&gt;&lt;/li&gt;
+		&lt;?php endforeach ?&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</code>
+</pre>
 					</div>
 				</div>
 			</div>
