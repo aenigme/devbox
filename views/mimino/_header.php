@@ -150,7 +150,7 @@
 
 				<header id="header">
 					
-					<h1><a href="index.html" class="white">neverslee.ps</a></h1>
+					<h1><a href="/" class="white">neverslee.ps</a></h1>
 					<nav>
 						<ul id="nav" class="accordion2 edit-text">
 							<li><a class="active" href="/">Home</a></li>
