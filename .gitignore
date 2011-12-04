@@ -40,3 +40,10 @@ logs
 # build script local files
 build/buildinfo.properties
 build/config/buildinfo.properties
+
+uploads/*
+!uploads/.gitignore
+!uploads/images/.gitignore
+!uploads/thumbnails/.gitignore
+!uploads/temp/.gitignore
+
