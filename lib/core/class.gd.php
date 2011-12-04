@@ -121,7 +121,7 @@
                 $new_width = $this->width / $this->height * $new_height;
             elseif(!is_null($new_width) && !is_null($new_height))
             {
-                if($this->width < $this->height)
+                if($width_aspect > $height_aspect)
                     $new_width = $this->width / $this->height * $new_height;
                 else
                     $new_height = $new_width * $this->height / $this->width;

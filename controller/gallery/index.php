@@ -2,10 +2,10 @@
 
 	if(!$Auth->loggedIn()) redirect('/login');
 	
-	$page_title = '&raquo; Gallery Upload';
+	$page_title = '&raquo; Gallery View';
 	$load_picmeleo = FALSE;
 	
-	$testimonial = Testimonial::fetch();
+	$gallery = Gallery::fetch();
 	
 	require_once DIR_VIEW . '/devbox/_header.php';
 	require_once DIR_VIEW . '/devbox/_navigation.php'; 
@@ -27,38 +27,41 @@
 							</div>
 						</div>
 					<?php endif ?>
-						
-					<div class="row">
-						<div class="imgHolder">
-							<? // dsiplay default image if upload exists ?>
-							<?php if (isset($row->location)): ?>
-								<a href="#" class="delLink"></a>
-								<img class="myImage" src="<?= $row->location ?>" width="400" height="300">
-								
-								<script type="text/javascript" charset="utf-8">
-									$('.imgHolder').parent().show().css("background", "none"); 	
-								
-									$(function() {
-										$("#img_upload").hide();
-										$(".delLink").click(function(e) {
-								            $(this).parent().parent().next().show();
-								            $(this).parent().parent().hide();
-											$('#imageCode').attr('value', '');
-											$('#pick_files').plupload_button();
-								            e.preventDefault();
-								        });
-									});
-								</script>
-							<?php endif ?>
-						</div>
-						<? // hidden file_id value ?>
-						<input type="hidden" id="imageCode" name="file_id" value="<?= set_default($row->file_id) ?>" />
-						<div id="img_upload" class="gallery_image">
-							<a href="javascript:;" id="pick_files" rel="upload/gallery/" width="400" height="300">upload image</a>
-						</div>
-					</div>
+					
+					<a class="btn success" href="/gallery/upload/">Upload New Picture &raquo;</a>
+					
+					<h2>Gallery View <small>(Click any image for more options)</small></h2>	
+					<ul class="media-grid">
+						<?php foreach ($gallery as $row): ?>
+							<li>
+								<a href="/gallery/edit/<?= $row->id ?>">
+									<img alt="" src="/uploads/thumbnails/<?= $row->filename ?>" class="thumbnail">
+								</a>
+							</li>
+						<?php endforeach ?>
+					</ul>
+<pre>
+<code>&lt;?php defined('LIBRARY') or die('No direct script access allowed');
+
+$gallery = Gallery::fetch();
+
+require_once DIR_VIEW . '/_header.php'; 
+?&gt;
+
+&lt;div id="container"&gt;
+	&lt;ul&gt;
+		&lt;?php foreach ($gallery as $row): ?&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;&lt;?= $row-&gt;location ?&gt;&quot;&gt;
+				&lt;img src=&quot;/uploads/images/thumbnails/&lt;?= $row-&gt;filename ?&gt;&quot;&gt;
+				&lt;/a&gt;
+			&lt;/li&gt;
+		&lt;?php endforeach ?&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</code>
+</pre>
+
 				</div>
 			</div>
 		</div>
-
 <?php require_once DIR_VIEW . '/devbox/_footer.php'; ?>

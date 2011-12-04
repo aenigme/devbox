@@ -152,7 +152,8 @@ class Upload
             'status' => true,
             'fileName' => $fileName,
             'path' => $filePath,
-            'ext' => pathinfo($filePath, PATHINFO_EXTENSION)
+            'ext' => pathinfo($filePath, PATHINFO_EXTENSION), 
+			'error' => 'There was an unknown error [YY345] when uploading your image. Please contact the webmaster.'
         );
     }
 }

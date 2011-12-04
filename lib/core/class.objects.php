@@ -49,6 +49,14 @@
         }
     }
 
+    class Gallery extends DBObject
+    {
+        public function __construct($id = null)
+        {
+            parent::__construct('file', array('user_id', 'matrix_id', 'filename', 'location', 'title', 'description', 'client', 'service', 'insert_date', 'update_date'), $id);
+        }
+    }
+
     class Testimonial extends DBObject
     {
         public function __construct($id = null)
