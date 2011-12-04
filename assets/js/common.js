@@ -256,7 +256,7 @@ var Site = {
 					data: { action: 'validate', rule: el.attr('rel'), value: el.attr('value'), title: el.attr('title') },
 					async: false,
 					success: function(str) {
-						el.next('span').remove();
+						el.next('span.tooltip').remove();
 
 						var result = str.split("|");
 						var valid = result[0];

@@ -33,8 +33,9 @@
 					<h3>Easy Pages</h3>
 					<p>Easily add pages using your default template or start a new template.</p>
 					
+					<a href="/dashboard/email/">
 					<img alt="" src="/assets/images/icons/dashboard/icon_06.png" class="thumbnail floatleft" style="margin-top: 10px;">
-					<h3>Easy Contact Form</h3>
+					<h3>Easy Contact Form</h3></a>
 					<p>Supports direct email, <a href="http://www.mailchimp.com" target="_blank">Mailchimp</a> and 
 					<a href="http://www.constantcontact.com" target="_blank">Constant Contact</a>.</p>
 					
@@ -47,7 +48,7 @@
 					<h3>Easy Testimonials</h3></a>
 					<p>Build a collection of customer Testimonials.</p>
 					
-					<a href="/gallery/upload/">
+					<a href="/gallery/">
 					<img alt="" src="/assets/images/milky/27.png" class="thumbnail floatleft" style="margin: 10px 8px 0;">
 					<h3>Easy Gallery</h3></a>
 					<p>Upload your picture gallery. Crop, resize and apply popular filters.</p>
@@ -63,7 +64,6 @@
 				<div class="span-one-third">
 				</div>
 				<div class="span-one-third">
-					
 				</div>
 			</div>
 		</div>

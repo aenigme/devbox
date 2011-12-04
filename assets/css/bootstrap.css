@@ -2158,7 +2158,9 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
 .media-grid li {
   display: inline;
 }
-.media-grid a, .media-grid li{
+
+/*.media-grid a, .media-grid li{*/
+.media-grid li{
   float: left;
   padding: 4px;
   margin: 0 0 20px 20px;

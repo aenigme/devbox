@@ -1,8 +1,6 @@
 <?php defined('LIBRARY') or die('No direct script access allowed');
 
-	$page_title = '&raquo; New Testimonial';
-	
-    if(!$Auth->loggedIn()) redirect('/login');
+	if(!$Auth->loggedIn()) redirect('/login');
 	
 	if($Input->post('action'))
     {
@@ -24,6 +22,7 @@
 		}
     }
     
+	$page_title = '&raquo; New Testimonial';
 	require_once DIR_VIEW . '/devbox/_header.php'; 
 	require_once DIR_VIEW . '/devbox/_navigation.php'; 
 ?>

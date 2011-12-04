@@ -51,12 +51,12 @@
 									<ul class="list2">
 										<li>4 week delivery</li>
 										<li>Turnkey website package</li>
-										<li>10 hours customer support</li>
+										<li>8 hours customer support</li>
 										<li>Includes Hosting &amp; Deployment</li>
 										<li>Access to our easiest CMS yet</li>
 										<li>SEO Review &amp; Best Practices</li>
 										<li class="white">Samples</li>
-										<li>$12000</li>
+										<li>$8000</li>
 									</ul>
 								</div>
 							</div>
