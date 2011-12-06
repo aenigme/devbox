@@ -34,6 +34,8 @@
 			'assets/js/jquery.form',
 			'assets/js/jquery.rangeslider',
 			'assets/js/bootstrap/bootstrap-dropdown',
+			'assets/js/ckeditor/ckeditor',
+			'assets/js/ckeditor/adapters/jquery',
 			'assets/js/common',
 			'assets/js/devbox',
 		), FALSE, TRUE);		

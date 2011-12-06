@@ -49,7 +49,7 @@
 		  });
 		</script>
 		
-		<?php if ($Auth->loggedIn()): ?>
+		<?php if (!$Auth->loggedIn()): ?>
 			<?php
 				// Load Aloha Editor
 				echo HTML::script(array

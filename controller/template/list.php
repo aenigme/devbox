@@ -58,7 +58,7 @@ $memorylimit = false; // Integer
 Show Directories - Do you want to make subdirectories available?
 If not set this to false
 */
-$showdirs = true;
+$showdirs = false;
 
 /* 
 Force downloads - Do you want to force people to download the files
@@ -83,37 +83,10 @@ $showtypes = array('html');
 			 
 /* 
 Show index files - if an index file is found in a directory
-to you want to display that rather than the listing output 
+do you want to display that rather than the listing output 
 from this script?
 */			
 $displayindex = false;
-
-/*
-Allow uploads? - If enabled users will be able to upload 
-files to any viewable directory. You should really only enable
-this if the area this script is in is already password protected.
-*/
-$allowuploads = false;
-
-/* Upload Types - If you are allowing uploads but only want
-users to be able to upload file with specific extensions,
-you can specify these extensions below. All other file
-types will be rejected. Comment out this array to allow
-all file types to be uploaded.
-*/
-/*$uploadtypes = array(
-						'zip',
-						'gif',
-						'doc',
-						'png'
-					);*/
-
-/*
-Overwrite files - If a user uploads a file with the same
-name as an existing file do you want the existing file
-to be overwritten?
-*/
-$overwrite = false;
 
 /*
 Index files - The follow array contains all the index files
@@ -229,38 +202,6 @@ if($_GET['download'] && $forcedownloads) {
 	die();
 }
 
-if($allowuploads && $_FILES['file']) {
-	$upload = true;
-	if(!$overwrite) {
-		if(file_exists($leadon.$_FILES['file']['name'])) {
-			$upload = false;
-		}
-	}
-	
-	if($uploadtypes)
-	{
-		if(!in_array(substr($_FILES['file']['name'], strpos($_FILES['file']['name'], '.')+1, strlen($_FILES['file']['name'])), $uploadtypes))
-		{
-			$upload = false;
-			$uploaderror = "<strong>ERROR: </strong> You may only upload files of type ";
-			$i = 1;
-			foreach($uploadtypes as $k => $v)
-			{
-				if($i == sizeof($uploadtypes) && sizeof($uploadtypes) != 1) $uploaderror.= ' and ';
-				else if($i != 1) $uploaderror.= ', ';
-				
-				$uploaderror.= '.'.strtoupper($v);
-				
-				$i++;
-			}
-		}
-	}
-	
-	if($upload) {
-		move_uploaded_file($_FILES['file']['tmp_name'], $includeurl.$leadon . $_FILES['file']['name']);
-	}
-}
-
 $opendir = $includeurl.$leadon;
 
 if(!$leadon) $opendir = $opendir = DOC_ROOT . '/pages/inc/';;
@@ -339,7 +280,7 @@ if($_GET['order']=="desc" && $_GET['sort']!="size") {$dirs = @array_reverse($dir
 if($_GET['order']=="desc") {$files = @array_reverse($files);}
 $dirs = @array_values($dirs); $files = @array_values($files);
 
-$page_title = '&raquo; Template Listing';
+$page_title = '&raquo; Template Listings';
 require_once DIR_VIEW . '/devbox/_header.php'; 
 require_once DIR_VIEW . '/devbox/_navigation.php';
 
@@ -351,15 +292,11 @@ require_once DIR_VIEW . '/devbox/_navigation.php';
 			<div class="span10">
 			
 				<?php if (!$Error->ok()): ?>
-					<div class="row">
-						<div style="width: 562px; margin: 0 auto;">
-							<div class="alert-message error">
-								<?php foreach ($Error->errors as $k => $v): ?>
-									<p><?= $v; ?></p>
-								<?php endforeach ?>
-						    </div>
-						</div>
-					</div>
+					<div class="alert-message error">
+						<?php foreach ($Error->errors as $k => $v): ?>
+							<p><?= $v; ?></p>
+						<?php endforeach ?>
+				    </div>
 				<?php endif ?>
 					
 				<div class="row">
@@ -376,16 +313,17 @@ require_once DIR_VIEW . '/devbox/_navigation.php';
 						</script>
 					<?php endif ?>
 
-				  	<h2>Template Listings for</h2>
-					<h3><?php echo '/' . $leadon;?></h3>
-				  	<div id="breadcrumbs"><a href="<?php echo strip_tags($_SERVER['PHP_SELF']);?>">home</a> 
+				  	<h2>Template Listings <small><?php echo '/' . $leadon;?></small></h2>
+
+				  	<div id="breadcrumbs">
+						<!-- <a href="<?php echo strip_tags($_SERVER['PHP_SELF']);?>">home</a>  -->
 				  		<?php
 						 	 $breadcrumbs = split('/', str_replace($startdir, '', $leadon));
 						  	if(($bsize = sizeof($breadcrumbs))>0) {
 						  		$sofar = '';
 						  		for($bi=0;$bi<($bsize-1);$bi++) {
 									$sofar = $sofar . $breadcrumbs[$bi] . '/';
-									echo ' &gt; <a href="'.strip_tags($_SERVER['PHP_SELF']).'?dir='.urlencode($sofar).'">'.$breadcrumbs[$bi].'</a>';
+									// echo ' &gt; <a href="'.strip_tags($_SERVER['PHP_SELF']).'?dir='.urlencode($sofar).'">'.$breadcrumbs[$bi].'</a>';
 								}
 						  	}
  
@@ -464,51 +402,12 @@ require_once DIR_VIEW . '/devbox/_navigation.php';
 						}
 
 					?>
-					<div><a href="/page/edit/<?php echo $filename;?>" class="<?php echo $class;?>"<?php echo $thumb2;?>><img src="/assets/images/icons/dlf/<?php echo $icon;?>" alt="<?php echo $files[$i];?>" /><strong><?php echo $filename;?></strong> <em><?php echo round(filesize($includeurl.$leadon.$files[$i])/1024);?>KB</em> <?php echo date ("M d Y h:i:s A", filemtime($includeurl.$leadon.$files[$i]));?><?php echo $thumb;?></a></div>
+					<div> <a href="/template/edit/<?php echo $filename;?>" class="<?php echo $class;?>"<?php echo $thumb2;?>><img src="/assets/images/icons/dlf/<?php echo $icon;?>" alt="<?php echo $files[$i];?>" /><strong><?php echo $filename;?></strong> <em><?php echo round(filesize('/'. $leadon.$files[$i])/1024);?>KB</em> <?php echo date ("M d Y h:i:s A", filemtime('/'. $leadon.$files[$i]));?><?php echo $thumb;?></a></div>
 					<?php
 						if($class=='b') $class='w';
 						else $class = 'b';	
 					}	
 					?></div>
-			
-						<?php if ($allowuploads): ?>
-							<?php
-								$phpallowuploads = (bool) ini_get('file_uploads');		
-								$phpmaxsize = ini_get('upload_max_filesize');
-								$phpmaxsize = trim($phpmaxsize);
-								$last = strtolower($phpmaxsize{strlen($phpmaxsize)-1});
-								switch($last) {
-									case 'g':
-										$phpmaxsize *= 1024;
-									case 'm':
-										$phpmaxsize *= 1024;
-								}
-							?>
-				
-						<div id="upload">
-							<div id="uploadtitle">
-								<strong>File Upload</strong> (Max Filesize: <?php echo $phpmaxsize;?>KB)
-
-								<?php if($uploaderror) echo '<div class="upload-error">'.$uploaderror.'</div>'; ?>
-							</div>
-							<div id="uploadcontent">
-								<?php
-								if($phpallowuploads) {
-								?>
-								<form method="post" action="<?php echo strip_tags($_SERVER['PHP_SELF']);?>?dir=<?php echo urlencode(str_replace($startdir,'',$leadon));?>" enctype="multipart/form-data">
-								<input type="file" name="file" /> <input type="submit" value="Upload" />
-								</form>
-								<?php
-								}
-								else {
-								?>
-								File uploads are disabled in your php.ini file. Please enable them.
-								<?php
-								}
-								?>
-							</div>
-						</div>
-					<?php endif ?>
 				</div>
 
 <?php require_once DIR_VIEW . '/devbox/_footer.php'; ?>
