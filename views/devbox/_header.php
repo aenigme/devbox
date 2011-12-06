@@ -12,7 +12,7 @@
 	
 	<link rel="shortcut icon" href="/assets/images/toolbox.ico" type="image/x-icon" />
 	<link rel="icon" href="/assets/images/toolbox.ico" type="image/x-icon" />
-
+	
 	<?php
 		echo HTML::stylesheet(array
 		(
@@ -22,6 +22,7 @@
 			'assets/css/plupload',
 			'assets/css/rangeslider', 
 			'assets/css/smoothness/jquery-ui-1.8.10.custom',
+			'assets/images/icons/dlf',
 		), FALSE, FALSE, TRUE);
 		
 		echo HTML::script(array
