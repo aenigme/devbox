@@ -110,16 +110,6 @@ var devbox = {
 			
 			$('#pick_files').plupload_button('pick_files');
 			
-			var config = {
-				toolbar:
-				[
-					['Source', '-', 'Bold', 'Italic', '-', 'NumberedList', 'BulletedList', '-', 'Link', 'Unlink'],
-					['UIColor']
-				]
-			};
-
-			$('.html5').ckeditor(config);
-			
 			// Picmeleo Manager
 			// $('#pick_files').click(function() {
 			// 	picmeleoApi.open('http://www.nexersys.com/assets/images/nexersys/img-07.png');
