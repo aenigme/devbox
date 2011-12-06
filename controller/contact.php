@@ -1,6 +1,6 @@
 <?php defined('LIBRARY') or die('No direct script access allowed');
 
-	require_once DIR_VIEW . '/neversleeps/_header.php'; 
+	require_once DIR_VIEW . '/mimino/_header.php'; 
 ?>
 
 <div class="major-holder">
@@ -68,4 +68,4 @@
 				</div>
 			</div>
 			
-<?php require_once DIR_VIEW . '/neversleeps/_footer.php'; ?>
+<?php require_once DIR_VIEW . '/mimino/_footer.php'; ?>

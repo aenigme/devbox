@@ -2,7 +2,7 @@
 
 	$page_title = '&raquo; Read Me';
 	
-	require_once DIR_VIEW . '/neversleeps/_header.php'; 
+	require_once DIR_VIEW . '/mimino/_header.php'; 
 
 	require_once DIR_SYS . '/markdown.php';	
 	$str = file_get_contents(DOC_ROOT . '/readme.md');
@@ -16,4 +16,4 @@
 				<?= $my_html ?>
 			</div>
 
-<?php require_once DIR_VIEW . '/neversleeps/_footer.php'; ?>
+<?php require_once DIR_VIEW . '/mimino/_footer.php'; ?>
