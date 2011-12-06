@@ -18,7 +18,7 @@
 			break;
 			
 		case 'page':
-			$filename = DIR_PAGE . '/'. $Input->post('filename') . '.html';
+			$filename = DIR_PAGE . '/inc/'. $Input->post('filename') . '.html';
 			$fh = fopen($filename, 'w') or die("false|can't open file");
 			$str = $Input->post('content');
 			fwrite($fh, $str);

@@ -9,7 +9,7 @@
 			<div id="main">
 
 				<div class="page-heading article" title="homepage_headline">
-					<?php include_once DIR_PAGE . '/homepage_headline.html'; ?>
+					<?php include_once DIR_PAGE . '/inc/homepage_headline.html'; ?>
 				</div>
 				
 				<div class="columns">
