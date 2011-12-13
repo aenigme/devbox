@@ -34,6 +34,9 @@
 		header ("Pragma: no-cache"); // HTTP/1.0
 	}
 	
+	// Object for fetching $_POST, $_GET and $_REQUEST array
+	$Input = new Input();
+	
 	// Load our config settings
 	$Config = Config::getConfig();
 
@@ -53,9 +56,6 @@
 
 	// Object for tracking and displaying error messages
 	$Error = Error::getError();
-	
-	// Object for fetching $_POST, $_GET and $_REQUEST array
-	$Input = new Input();
 	
 	// Object for fetching URI
 	$requestURI = explode('/', $_SERVER['REQUEST_URI']);

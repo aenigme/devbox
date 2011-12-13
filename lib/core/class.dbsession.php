@@ -3,7 +3,7 @@
     {
         public static function register()
         {
-            ini_set('session.save_handler', 'user');
+            // ini_set('session.save_handler', 'user'); // KLUDGE: error with host gator (???? FML)
             session_set_save_handler(array('DBSession', 'open'), array('DBSession', 'close'), array('DBSession', 'read'), array('DBSession', 'write'), array('DBSession', 'destroy'), array('DBSession', 'gc'));
         }
 
