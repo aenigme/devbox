@@ -5,7 +5,7 @@
 	require_once DIR_VIEW . '/mimino/_header.php'; 
 
 	require_once DIR_SYS . '/markdown.php';	
-	$str = file_get_contents(DOC_ROOT . '/readme.md');
+	$str = file_get_contents(DOC_ROOT . '/README.md');
 	$my_html = Markdown($str);
 ?>
 
