@@ -104,6 +104,15 @@
 			
 			// Settings for sessions			
 			$this->sessionName = 'ezee';
+			
+			// Settings for email contact forms.  
+			// List possible input form names with a short description.
+			$this->emailQuestionaire = array(
+				'address' => 'Address',
+				'location' => 'City, State Zip',
+				'phone' => 'Phone', 
+				'url' => 'Website',
+			);
         }
 
         // Add code/variables to be run only on production servers

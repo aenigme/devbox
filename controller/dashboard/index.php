@@ -44,12 +44,12 @@
 					<h3>Easy FAQ</h3>
 					<p>Build a Frequently Asked Questions list with jQuery UI support.</p>
 					
-					<a href="/testimonial/">
+					<a href="/plugins/testimonial/">
 					<img alt="" src="/assets/images/origami/comment_rect.png" class="thumbnail floatleft" style="margin: 10px 5px 0; width: 55px;">
 					<h3>Easy Testimonials</h3></a>
 					<p>Build a collection of customer Testimonials.</p>
 					
-					<a href="/gallery/">
+					<a href="/plugins/gallery/">
 					<img alt="" src="/assets/images/milky/27.png" class="thumbnail floatleft" style="margin: 10px 8px 0;">
 					<h3>Easy Gallery</h3></a>
 					<p>Upload your picture gallery. Crop, resize and apply popular filters.</p>

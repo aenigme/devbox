@@ -192,11 +192,17 @@ class Input
 		if ($key === array())
 			return $array;
 
-		if ( ! isset($array[$key]) && Config::get('autofill') === TRUE)
-			return Data::autofill($default);
-		else if ( ! isset($array[$key]) ) 
-			return $default;
+		/*
+			TODO Aadd autofill to Input class search_array
+		*/
+		// if ( ! isset($array[$key]) && Config::get('autofill') === TRUE)
+		// 	return Data::autofill($default);
+		// else if ( ! isset($array[$key]) ) 
+		// 	return $default;
 		
+		if ( ! isset($array[$key]) ) 
+			return $default;
+			
 		// set default value
 		if ( ! isset($array[$key]) ) 
 			return $default;
