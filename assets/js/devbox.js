@@ -1,3 +1,23 @@
+jQuery.fn.confirm = function(message, callback) {
+	return this.each(function() {
+		AttentionBox.showMessage(message,
+		{
+			buttons : 
+			[
+				{ caption : "Cancel", cancel: false },
+				{ caption : "Delete" }
+			],
+			callback: function(action)
+			{	
+				if (action == "Delete")
+				{
+					window.location= callback;
+				}
+			}
+		});
+	});
+}
+
 jQuery.fn.plupload_button = function() {
 	return this.each(function() {
 		var $this = $(this);
@@ -109,6 +129,11 @@ var devbox = {
 	        });
 			
 			$('#pick_files').plupload_button('pick_files');
+			
+			$('.confirm').click(function (e) {
+				e.preventDefault();
+				$(this).confirm($(this).attr('rel'), $(this).attr('href'));
+			});
 			
 			// Picmeleo Manager
 			// $('#pick_files').click(function() {
