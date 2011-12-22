@@ -7,6 +7,9 @@
 	
 	$gallery = Gallery::fetch();
 	
+	if (count($gallery) === 0) 
+		redirect('/plugins/gallery/upload');
+	
 	require_once DIR_VIEW . '/devbox/_header.php';
 	require_once DIR_VIEW . '/devbox/_navigation.php'; 
 ?>
@@ -28,13 +31,13 @@
 						</div>
 					<?php endif ?>
 					
-					<a class="btn success" href="/gallery/upload/">Upload New Picture &raquo;</a>
+					<a class="btn success" href="/plugins/gallery/upload/">Upload New Picture &raquo;</a>
 					
 					<h2>Gallery View <small>(Click any image for more options)</small></h2>	
 					<ul class="media-grid">
 						<?php foreach ($gallery as $row): ?>
 							<li>
-								<a href="/gallery/edit/<?= $row->id ?>">
+								<a href="/plugins/gallery/edit/<?= $row->id ?>">
 									<img alt="" src="/uploads/thumbnails/<?= $row->filename ?>" class="thumbnail">
 								</a>
 							</li>

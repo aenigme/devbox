@@ -5,7 +5,7 @@
 	$upload_dir = 'uploads/images';
 	$thumbnail_dir = 'uploads/thumbnails';
 	$temp_dir = 'uploads/temp';
-    $size = '600K';
+    $size = '2048K';
     $type = array('jpg', 'jpeg');
     $remove_spaces = true;
 
@@ -30,7 +30,7 @@
 			$thumb = new GD(DOC_ROOT . '/' . $temp_dir . '/' . $file['fileName']);
 		
 			$img->scale($w,NULL);
-
+			$thumb->scale(250,NULL);
 		
 			if ($img->width < $w || $img->height < $h) 
 			{
@@ -59,7 +59,6 @@
 	else if (isset($_POST['action']) && $_POST['action'] == 'save') // Save image to DB and store data (title, description, etc.)
 	{
 		$Error->blank($_POST['title'], 'Title');
-		$Error->blank($_POST['description'], 'Description');
 		
 		if($Error->ok())
 		{
@@ -77,7 +76,7 @@
 			$id = $record->insert(); // Insert record
 			
 			$Error->add('Congratulations! Your new image is now available in your gallery.', 'Congrats');
-			redirect('/gallery');
+			redirect('/plugins/gallery');
 		}
 		else 
 		{
@@ -122,7 +121,7 @@
 	
 		<?php if (isset($_POST['action']) && $_POST['action'] == 'save'): ?>
 			
-			<form action="/gallery/upload/" method="post" enctype="multipart/form-data" accept-charset="utf-8" class="form-stacked">
+			<form action="/plugins/gallery/upload/" method="post" enctype="multipart/form-data" accept-charset="utf-8" class="form-stacked">
 				<input type="hidden" name="action" value="save">
 				<input type="hidden" name="filename" value="<?= $file['fileName'] ?>">
 				
@@ -145,35 +144,10 @@
 					<div class="clearfix">	
 						<label>Description</label>
 						<div class="input">
-							<textarea rows="3" name="description" class="xxlarge validate" rel="required"></textarea>
+							<textarea rows="3" name="description" class="xxlarge validate" rel=""></textarea>
 						</div>
 					</div>
-					
-					<div class="clearfix">	
-						<label>Client</label>
-						<div class="input">
-							<input type="text" name="client" class="xxlarge">
-						</div>
-					</div>
-					
-					<div class="clearfix">	
-						<label id="optionsCheckboxes">List of options</label>
-						<div class="input">
-							<ul class="inputs-list">
-								<?php foreach ($service as $k => $v): ?>
-									<li>
-										<label>
-											<input type="checkbox" value="<?= $v ?>" name="service[]">
-											<span><?= $v ?></span>
-										</label>
-									</li>
-								<?php endforeach ?>
-							</ul>
-							<span class="help-block">
-								<strong>Note:</strong> A maximum of 5 choices is recommended.
-							</span>
-						</div>
-					</div>
+
 				</fieldset>
 
 				<div class="actions">
@@ -185,7 +159,7 @@
 	
 			<h2>Choose an aspect ratio or load <a href="http://picmeleo.com/" target="_blank">Picmeleo</a></h2>
 
-			<form action="/gallery/upload/" method="post" enctype="multipart/form-data" accept-charset="utf-8">
+			<form action="/plugins/gallery/upload/" method="post" enctype="multipart/form-data" accept-charset="utf-8">
 				<input type="hidden" name="action" value="upload">
 		
 				<ul class="inputs-list">
@@ -204,10 +178,10 @@
 				</ul>
 
 				<div class="floatleft">
-					<label for="750_310">
-						<img src="http://placehold.it/750x310">
-						750px X 310px
-						<input type="radio" name="aspectratio" value="750,310" id="750_310">
+					<label for="750_500">
+						<img src="http://placehold.it/750x500">
+						750px X 500px
+						<input type="radio" name="aspectratio" value="750,500" id="750_500">
 					</label>
 				</div>
 				
