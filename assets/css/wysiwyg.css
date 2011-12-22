@@ -1,0 +1,275 @@
+@import url("reset.css");
+
+/*---------- Start General setting ---------------*/
+html, body {
+	height: 100%;
+	min-height: 100%;
+	color: #505256;
+}
+
+body {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	line-height: 1em;
+	color: #393939;
+	margin: 0 12px;
+}
+
+a {
+	outline: none !important;
+	color: #000000 !important;
+	text-decoration:none !important;
+}
+
+img {
+	border: none;
+}
+
+p {
+	padding: 0 0 18px 0;
+	line-height: 1.385em;
+	font-size: 1.083em;
+	color: #8e8e8e;
+	margin:0 !important;
+	padding:0 !important;
+}
+
+
+h2 {
+	padding: 0 0 18px 0;
+	line-height: 1.2em;
+	font-size: 30px;
+	font-weight: 500;
+	color: #2c2c2c;
+}
+
+	h2 em {
+		display: block;
+		margin: 0 0 -2px 0;
+		font-style: normal;
+	}
+	
+	h2 i {
+		display: block;
+		margin: 0 0 -7px 0;
+		font-style: normal;
+	}
+	
+	h2 small {
+		display: block;
+		margin: 0 0 -6px 0;
+		font-size: 1em;
+	}
+	
+	h2 strong {
+		display: block;
+		padding: 0 0 7px 0;
+		font-weight: normal;
+	}
+	
+	h2 b {
+		display: block;
+		padding: 0 0 5px 0;
+		font-weight: normal;
+	}
+
+h5 {
+	padding: 0 0 18px 0;
+	line-height: 1.385em;
+	font-size: 13px;
+	color: #000;
+}
+
+	h5 span {
+		display: block;
+		padding: 1px 0 2px 0;
+		line-height: 1.538em;
+	}
+
+h6 {
+	padding: 0 0 2px 0;
+	line-height: 1.385em;
+	font-size: 13px;
+	font-weight: normal;
+	color: #4b4b4b;
+}
+
+.list {
+	padding: 0 0 15px 2px;
+	overflow: hidden;
+}
+
+	.list li {
+		background: url(/assets/images/allpaws/marker.gif) no-repeat 0% 9px;
+		padding: 0 0 0 13px;
+		line-height: 1.538em;
+		font-size: 1.083em;
+		color: #319ea8;
+	}
+	
+		.list li a {
+			text-decoration: underline;
+			color: #319ea8;
+		}	
+
+.list-1 {
+	padding: 0 0 34px 0;
+	overflow: hidden;
+}
+
+	.list-1 li {
+		background: url(/assets/images/allpaws/marker-1.gif) no-repeat 0% 11px;
+		padding: 0 0 0 14px;
+		line-height: 2em;
+		font-size: 1.083em;
+		color: #89c206;
+	}
+	
+		.list-1 li a {
+			color: #89c206;
+		}
+
+.list-2 {
+	overflow: hidden;
+}
+
+	.list-2 li {
+		background: url(/assets/images/allpaws/marker-2.gif) no-repeat 0% 10px;
+		padding: 0 0 0 13px;
+		line-height: 1.846em;
+		font-size: 1.083em;
+		font-weight: bold;
+		color: #454b44;
+	}
+	
+		.list-2 li a {
+			text-decoration: none;
+			color: #454b44;
+		}
+		
+		.list-2 li a:hover {
+			text-decoration: underline;
+		}
+
+.list-3 {
+	width: 100%;
+	margin: 0 0 -29px 0;
+	padding: 8px 0 0 0;
+	overflow: hidden;
+}
+
+	.list-3 li {
+		width: 100%;
+		padding: 0 0 29px 0;
+		overflow: hidden;
+		vertical-align: top;
+	}
+	
+		.list-3 li img {
+			float: left;
+			margin: 0 23px 0 1px;
+		}
+		
+		.list-3 li strong {
+			display: block;
+			padding: 5px 0 0 0;
+			line-height: 1.385em;
+			font-size: 1.083em;
+			font-weight: normal;
+			color: #4b4b4b;
+		}
+		
+			.list-3 li strong a {
+				color: #4b4b4b;
+			}
+			
+		.list-3 li p {
+			padding: 0 0 13px 0 !important;
+			line-height: 1.385em !important;
+			font-size: 1.083em !important;
+			color: #8e8e8e !important;
+		}
+
+.list-4 {
+	overflow: hidden;
+}
+
+	.list-4 li {
+		background: url(/assets/images/allpaws/marker-3.gif) no-repeat 0% 10px;
+		padding: 0 0 0 12px;
+		line-height: 1.846em;
+		font-size: 1.083em;
+		font-weight: bold;
+		color: #454b44;
+	}
+	
+		.list-4 li a {
+			text-decoration: none;
+			color: #454b44;
+		}
+		
+		.list-4 li a:hover {
+			text-decoration: underline;
+		}
+
+.list-5 {
+	width: 100%;
+	padding: 5px 0 27px 0;
+	overflow: hidden;
+}
+
+	.list-5 li {
+		float: left;
+		width: 206px;
+		padding: 0 16px 0 0;
+		line-height: 1.385em;
+		font-size: 1.083em;
+		color: #8e8e8e;
+	}
+	
+	.list-5 li.last {
+		padding: 0;
+	}
+	
+		.list-5 li img {
+			margin: 0 0 18px 0;
+		}
+	
+		.list-5 li strong {
+			display: block;
+			font-weight: normal;
+			color: #000;
+		}
+		
+			.list-5 li strong a {
+				color: #000;
+			}
+
+.list-6 {
+	margin: 0 0 -20px 0;
+	padding: 2px 0 3px 0;
+	overflow: hidden;
+	line-height: 1.538em;
+	font-size: 1.083em;
+	color: #8e8e8e;
+}
+
+	.list-6 dt {
+		font-weight: bold;
+		color: #545850;
+	}
+	
+	.list-6 dd {
+		width: 100%;
+		padding: 0 0 20px 0;
+		overflow: hidden;
+	}
+	
+		.list-6 dd small {
+			float: right;
+			padding: 0 32% 0 0;
+			font-size: 1em;
+		}
+		
+		.list-6 dd a {
+			color: #89c206;
+		}
