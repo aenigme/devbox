@@ -57,7 +57,10 @@
 							toolbar:
 							[
 								[ <?= set_default($template->toolbar, $default_toolbar) ?> ]
-							]
+							],
+							contentsCss: [ '/assets/css/wysiwyg.css' ],
+							height: [ '420px' ]
+							
 						};
 
 						$('#content').ckeditor(config);
